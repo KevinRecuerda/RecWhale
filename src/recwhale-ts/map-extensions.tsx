@@ -10,9 +10,7 @@ declare global {
         map<T>(selector: (k: K, v: V) => T): T[];
 
         mapStrict<T>(keySelector: (k: K, v: V) => T): Map<T, V>;
-
         mapKey<T>(selector: (k: K, v: V) => T): Map<T, V>;
-
         mapValue<T>(selector: (k: K, v: V) => T): Map<K, T>;
     }
 }

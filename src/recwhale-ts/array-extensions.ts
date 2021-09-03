@@ -7,36 +7,26 @@ declare global {
     interface Array<T> {
         // manipulation
         firstOrDefault(): T | undefined;
-
         last(): T;
 
         distinct(): T[];
-
         empty(fallbackItems: T[]): T[];
-
         sortBy<TKey>(keySelector: (element: T) => TKey, desc?: boolean): T[];
-
         sortByEnumOrder<TKey>(type: any, keySelector: (element: T) => TKey, desc?: boolean): T[];
 
         chunk(count: number): T[][];
-
         delete<TKey>(keySelector: (element: T) => TKey): T[];
 
         sum(keySelector?: (element: T) => number): number;
-
         max<TKey>(keySelector: (element: T) => TKey, defaultValue: TKey): TKey;
 
         // transformation
         mapStrict<TResult>(selector: (element: T) => TResult): TResult[];
-
         cast<TResult>(): TResult[];
-
         ofType<TResult extends T>(type: { new(): T }): TResult[];
 
         groupBy<TKey>(keySelector: (element: T) => TKey, deepCompare?: boolean): Map<TKey, T[]>;
-
         toMap<TKey>(keySelector: (element: T) => TKey): Map<TKey, T>;
-
         toFlatSet<TKey>(keysSelector: (element: T) => TKey[]): Set<TKey>;
 
         // parallel
@@ -48,17 +38,17 @@ declare global {
 Array.prototype.firstOrDefault = function <T>(this: T[]): T | undefined {
     return this.length ? this[0] : undefined;
 };
-Array.prototype.last           = function <T>(this: T[]): T {
-    return this[this.length - 1];
+Array.prototype.last = function <T>(this: T[]): T {
+    return this[this.length-1];
 };
 
-Array.prototype.distinct        = function <T>(this: T[]): T[] {
+Array.prototype.distinct = function <T>(this: T[]): T[] {
     return [...new Set(this)];
 };
-Array.prototype.empty           = function <T>(this: T[], fallbackItems: T[]): T[] {
+Array.prototype.empty = function <T>(this: T[], fallbackItems: T[]): T[] {
     return this.length ? this : fallbackItems;
 };
-Array.prototype.sortBy          = function <T, TKey>(this: T[], keySelector: (element: T) => TKey, desc?: boolean): T[] {
+Array.prototype.sortBy = function <T, TKey>(this: T[], keySelector: (element: T) => TKey, desc?: boolean): T[] {
     return this.sort((a, b) => {
         const keyA = keySelector(a);
         const keyB = keySelector(b);
@@ -74,7 +64,7 @@ Array.prototype.sortByEnumOrder = function <T, TKey>(this: T[], type: TKey, keyS
     return this.sortBy(x => order.indexOf(keySelector(x)), desc);
 };
 
-Array.prototype.chunk  = function <T>(this: T[], count: number): T[][] {
+Array.prototype.chunk = function <T>(this: T[], count: number): T[][] {
     const chunk: T[][] = [];
     for (let i = 0; i < this.length; i += count)
         chunk.push(this.slice(i, i + count));

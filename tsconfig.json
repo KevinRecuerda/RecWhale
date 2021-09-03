@@ -7,6 +7,7 @@
       "esnext"
     ],
     "esModuleInterop": true,
+    "moduleResolution": "node",
     "declaration": true,
     "outDir": "./dist",
     "sourceMap": true,
