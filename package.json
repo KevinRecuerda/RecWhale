@@ -1,11 +1,10 @@
-﻿
-{
+﻿{
   "name": "RecWhale",
   "version": "0.0.1",
   "description": "TODO",
   "repository": {
     "type": "git",
-    "url": "git://https://github.com/KevinRecuerda/RecWhale.git"
+    "url": "git@github.com:KevinRecuerda/RecWhale.git"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -31,8 +30,8 @@
       "pre-commit": "lint-staged -v"
     }
   },
-  "author": "u/#{USER_OR_ORG}#",
-  "license": "MIT",
+  "author": "u/KevinRecuerda",
+  "license": "Apache",
   "files": [
     "src/",
     "!src/test/",
@@ -41,7 +40,7 @@
     "!dist/tsconfig.tsbuildinfo"
   ],
   "keywords": [],
-  "homepage": "https://github.com/#{USER_OR_ORG}#/#{REPO_NAME}#",
+  "homepage": "https://github.com/KevinRecuerda/RecWhale",
   "devDependencies": {
     "@types/node": "^16.4.9",
     "typescript": "^4.3.5",
