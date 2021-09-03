@@ -1,6 +1,6 @@
 ﻿{
   "name": "recwhale",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "TODO",
   "repository": {
     "type": "git",
@@ -30,7 +30,7 @@
       "pre-commit": "lint-staged -v"
     }
   },
-  "author": "u/KevinRecuerda",
+  "author": "kevinrecuerda",
   "license": "Apache",
   "files": [
     "src/",
