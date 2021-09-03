@@ -1,5 +1,5 @@
 ﻿/*eslint no-extend-native: ["error", { "exceptions": ["Array"] }]*/
-import {runParallel} from "./PromiseHelper";
+import {runParallel} from "./promise-helper";
 
 export {};
 
