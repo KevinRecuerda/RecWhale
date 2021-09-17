@@ -1,0 +1,31 @@
+{
+  "name": "recwhale-react-boostrap",
+  "version": "0.0.5",
+  "description": "Provides component wrapper for react-bootstrap.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KevinRecuerda/RecWhale.git",
+    "directory": "src/recwhale-react-bootstrap"
+  },
+  "keywords": [
+    "ts",
+    "typescript",
+    "extension",
+    "react",
+    "bootstrap"
+  ],
+  "homepage": "https://github.com/KevinRecuerda/RecWhale",
+  "author": "kevinrecuerda",
+  "license": "Apache-2.0",
+  "main": "index.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo DODO"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-bootstrap": "^1.6.3",
+    "recwhale-ts": "^0.0.7"
+  },
+  "gitHead": "eafcd4a827c47e1095bb736274a4abe4e0f69dd0"
+}
