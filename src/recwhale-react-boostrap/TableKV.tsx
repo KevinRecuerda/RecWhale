@@ -25,6 +25,7 @@ export const TableKV: React.FC<ITableKVProps> = (props) => {
             return moment(value).formatDate();
 
         // TODO: add dependency
+        console.log("test");
         const number = Number(value);
         if (!isNaN(number)) {
             if (lowerKey.includes("weight"))
