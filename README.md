@@ -4,6 +4,11 @@
 
   npx lerna publish --no-git-tag-version --no-push
   
+  npx lerna version --conventional-commits --yes
+
+
+
+  
   next step:
   
   - publish multiple with lerna

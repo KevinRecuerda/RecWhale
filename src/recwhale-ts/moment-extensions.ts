@@ -31,6 +31,8 @@ moment.fn.toJSON = function () { return this.toISOString(true); };
 
 if (!moment.prototype.formatView) {
     (moment as any).prototype.formatView = function (this: Moment, view: MomentView): string {
+        // TODO: remove this
+        console.log("toto");
         return this.format(map.get(view));
     };
 }
