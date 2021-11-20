@@ -1,18 +1,13 @@
 {
   "name": "recwhale-ts",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Provides typescript extensions. Mainly, as C# Linq.",
   "repository": {
     "type": "git",
     "url": "https://github.com/KevinRecuerda/RecWhale.git",
     "directory": "src/recwhale-ts"
   },
-  "keywords": [
-    "ts",
-    "typescript",
-    "extension",
-    "linq"
-  ],
+  "keywords": ["ts", "typescript", "extension", "linq"],
   "homepage": "https://github.com/KevinRecuerda/RecWhale",
   "author": "kevinrecuerda",
   "license": "Apache-2.0",

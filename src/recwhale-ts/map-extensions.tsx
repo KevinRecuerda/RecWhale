@@ -1,4 +1,4 @@
-﻿﻿/*eslint no-extend-native: ["error", { "exceptions": ["Map"] }]*/
+﻿/*eslint no-extend-native: ["error", { "exceptions": ["Map"] }]*/
 export {};
 
 declare global {
