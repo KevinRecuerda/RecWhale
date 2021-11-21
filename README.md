@@ -47,4 +47,23 @@ need lerna ? only for dependencies
 otherwise can loop on src/**/packages.json and build/publish
 
 
-lerna details: https://medium.com/@jsilvax/a-workflow-guide-for-lerna-with-yarn-workspaces-60f97481149d
+#### lerna details 
+- https://medium.com/@jsilvax/a-workflow-guide-for-lerna-with-yarn-workspaces-60f97481149d
+- https://dev.to/xaviercanchal/monorepo-using-lerna-conventional-commits-and-github-packages-4m8m
+- https://dev.to/xaviercanchal/automatic-versioning-in-a-lerna-monorepo-using-github-actions-4hij
+
+#### sample
+- https://github.com/react-cosmos/react-cosmos
+
+#### publish dist only ?
+```json
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/",
+    "!dist/tsconfig.tsbuildinfo"
+  ],
+  "publishConfig": {
+    "directory": "dist"
+  },
+```
