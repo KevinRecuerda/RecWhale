@@ -26,9 +26,6 @@
     "dist/",
     "!dist/tsconfig.tsbuildinfo"
   ],
-  "publishConfig": {
-    "directory": "dist"
-  },
   "devDependencies": {
     "@types/node": "^16.4.9",
     "typescript": "^4.3.5"
@@ -36,5 +33,5 @@
   "dependencies": {
     "moment": "^2.29.1"
   },
-  "gitHead": "30cea4876a9ad4c44a1d9d42fc31408c3411cba3"
+  "gitHead": "8c2d99c112283040ab686dfa377d01933da61d37"
 }

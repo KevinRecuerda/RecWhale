@@ -9,7 +9,6 @@
     "esModuleInterop": true,
     "moduleResolution": "node",
     "declaration": true,
-    "outDir": "./dist",
     "sourceMap": true,
     "newLine": "LF",
     "noUnusedLocals": true,
@@ -23,12 +22,10 @@
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true
   },
-  "include": [
-    "src"
-  ],
   "exclude": [
     "node_modules",
-    "build"
+    "build",
+    "dist"
   ]
 }
 
