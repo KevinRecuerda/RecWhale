@@ -6,10 +6,6 @@
       "DOM",
       "esnext"
     ],
-    "baseUrl": ".",
-    "paths": {
-      "*": ["dist/*"]
-    },
     "esModuleInterop": true,
     "moduleResolution": "node",
     "declaration": true,

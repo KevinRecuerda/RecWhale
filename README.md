@@ -29,6 +29,7 @@ npx lerna publish --from-git
 npx lerna publish --from-package
 
 npx lerna publish from-package --conventional-commits --yes
+npx lerna publish from-package --contents dist --conventional-commits --yes
 
 npx lerna changed
 ```
