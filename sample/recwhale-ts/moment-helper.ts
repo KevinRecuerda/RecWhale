@@ -6,3 +6,4 @@ console.log(MomentHelper.test());
 const e = ["a", "b", "c"];
 const f = e.last();
 console.log(f);
+
