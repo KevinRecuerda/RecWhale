@@ -1,5 +1,5 @@
 {
-  "name": "@recwhale/ts",
+  "name": "recwhale-ts",
   "version": "0.0.19",
   "description": "Provides typescript extensions. Mainly, as C# Linq.",
   "repository": {
@@ -34,5 +34,5 @@
   "dependencies": {
     "moment": "^2.29.1"
   },
-  "gitHead": "515c61e0df084f56c329c476fcc02e05e197647e"
+  "gitHead": "921923b19fb3109042d2681c64bb60e6da006975"
 }
