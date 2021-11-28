@@ -55,6 +55,9 @@ otherwise can loop on src/**/packages.json and build/publish
 - https://medium.com/@jsilvax/a-workflow-guide-for-lerna-with-yarn-workspaces-60f97481149d
 - https://dev.to/xaviercanchal/monorepo-using-lerna-conventional-commits-and-github-packages-4m8m
 - https://dev.to/xaviercanchal/automatic-versioning-in-a-lerna-monorepo-using-github-actions-4hij
+---
+- https://github.com/NiGhTTraX/ts-monorepo
+- https://medium.com/@NiGhTTraX/how-to-set-up-a-typescript-monorepo-with-lerna-c6acda7d4559
 
 #### sample
 - https://github.com/react-cosmos/react-cosmos

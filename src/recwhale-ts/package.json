@@ -1,6 +1,6 @@
 {
   "name": "recwhale-ts",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "description": "Provides typescript extensions. Mainly, as C# Linq.",
   "repository": {
     "type": "git",
@@ -17,15 +17,12 @@
   "author": "kevinrecuerda",
   "license": "Apache-2.0",
   "scripts": {
-    "build": "tsc",
-    "test": "echo DODO",
-    "prepublishOnly": "cp package.json dist/"
+    "build": "tsc"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "*",
-    "!dist/tsconfig.tsbuildinfo"
+    "dist"
   ],
   "devDependencies": {
     "@types/node": "^16.4.9",

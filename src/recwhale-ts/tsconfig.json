@@ -1,12 +1,11 @@
 ﻿{
   "extends": "../../tsconfig",
   "compilerOptions": {
-    "outDir": "dist",
-    "baseUrl": ".",
-    "paths": {
-      "*": ["dist/*"]
-    }
-  }
+    "outDir": "dist"
+  },
+  "include": [
+    "src/**/*"
+  ]
 }
 
 //{
