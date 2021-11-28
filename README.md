@@ -41,9 +41,12 @@ npx lerna changed
 - [x] test dependencies
 - [x] publish version auto
 
-- [ ] test lib ts
-- [ ] test lib ts extension
+- [x] test lib ts
+- [x] test lib ts extension
 - [ ] test lib react
+
+- [ ] use npm orga `@recwhale`
+- [ ] use github actions
 
 
 ### others

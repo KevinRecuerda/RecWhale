@@ -1,10 +1,10 @@
 ﻿import moment         from "moment";
 import React          from "react";
 import {Table}        from "react-bootstrap";
-import {MomentHelper} from "recwhale-ts/moment-helper";
 import type {Size}    from "./Size";
 import {SizeHelper}   from "./Size";
 import "./TableKV.scss";
+import "@recwhale/";
 
 export interface ITableKVProps {
     rows: [string, any][];

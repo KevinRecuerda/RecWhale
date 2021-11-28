@@ -25,7 +25,7 @@
   "dependencies": {
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.3",
-    "recwhale-ts": "^0.0.9"
+    "recwhale-ts": "*"
   },
   "gitHead": "eafcd4a827c47e1095bb736274a4abe4e0f69dd0"
 }

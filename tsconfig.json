@@ -20,7 +20,11 @@
     "jsx": "react",
     "noFallthroughCasesInSwitch": true,
     "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@recwhale/*": ["*/src"]
+    }
   },
   "exclude": [
     "node_modules",

@@ -7,6 +7,6 @@
     "typescript": "^4.3.5"
   },
   "dependencies": {
-    "recwhale-ts": "^0.0.19"
+    "recwhale-ts": "^0.0.21"
   }
 }
