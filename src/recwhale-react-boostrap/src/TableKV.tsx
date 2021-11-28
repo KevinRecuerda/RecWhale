@@ -3,8 +3,8 @@ import React          from "react";
 import {Table}        from "react-bootstrap";
 import type {Size}    from "./Size";
 import {SizeHelper}   from "./Size";
+import "recwhale-ts";
 import "./TableKV.scss";
-import "@recwhale/";
 
 export interface ITableKVProps {
     rows: [string, any][];
@@ -24,8 +24,6 @@ export const TableKV: React.FC<ITableKVProps> = (props) => {
         if (lowerKey.includes("date"))
             return moment(value).formatDate();
 
-        // TODO: add dependency
-        console.log("test");
         const number = Number(value);
         if (!isNaN(number)) {
             if (lowerKey.includes("weight"))
@@ -40,7 +38,6 @@ export const TableKV: React.FC<ITableKVProps> = (props) => {
     return (
         <div className={props.className}>
             {props.title && <h5>{props.title}</h5>}
-            {MomentHelper.test()}
             <Table striped bordered size="sm" className="text-small" style={{width: width}}>
                 <tbody>
                 {props.rows.map(([key, value]) =>

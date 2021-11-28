@@ -2,10 +2,7 @@
   "compilerOptions": {
     "module": "esnext",
     "target": "es5",
-    "lib": [
-      "DOM",
-      "esnext"
-    ],
+    "lib": ["DOM", "esnext"],
     "esModuleInterop": true,
     "moduleResolution": "node",
     "declaration": true,
@@ -21,14 +18,13 @@
     "noFallthroughCasesInSwitch": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "baseUrl": "./src",
+    "baseUrl": ".",
     "paths": {
-      "@recwhale/*": ["*/src"]
+      "recwhale-ts": ["src/recwhale-ts/src"]
     }
   },
   "exclude": [
     "node_modules",
-    "build",
     "dist"
   ]
 }
@@ -37,7 +33,6 @@
 //  "compilerOptions": {
 //    "allowJs": true,
 //    "skipLibCheck": true,
-//    "moduleResolution": "node",
 //    "resolveJsonModule": true,
 //    "isolatedModules": true,
 //    "noEmit": true,
