@@ -2,10 +2,7 @@
   "extends": "../../tsconfig",
   "compilerOptions": {
     "outDir": "dist"
-  },
-  "include": [
-    "src/**/*"
-  ]
+  }
 }
 
 //{

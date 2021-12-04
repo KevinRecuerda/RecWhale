@@ -19,9 +19,9 @@
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
-    "paths": {
-      "recwhale-ts": ["src/recwhale-ts/src"]
-    }
+//    "paths": {
+//      "recwhale-ts": ["src/recwhale-ts/src"]
+//    }
   },
   "exclude": [
     "node_modules",
