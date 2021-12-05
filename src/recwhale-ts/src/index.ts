@@ -1,5 +1,4 @@
 ﻿export * from "./array-extensions";
-export * from "./array-helper";
 export * from "./enum-helper";
 export * from "./map-extensions";
 export * from "./moment-extensions";
