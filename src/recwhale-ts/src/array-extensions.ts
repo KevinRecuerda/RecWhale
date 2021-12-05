@@ -4,6 +4,12 @@ import {runParallel} from "./promise-helper";
 export {};
 
 declare global {
+    interface ArrayConstructor {
+        build<T>(item?: T[] | T | null): T[];
+    }
+}
+
+declare global {
     interface Array<T> {
         // manipulation
         firstOrDefault(): T | undefined;
@@ -33,6 +39,14 @@ declare global {
         mapParallel<TResult>(count: number, action: (element: T) => Promise<TResult>): Promise<TResult[]>;
     }
 }
+
+Array.build = function <T>(value?: T[] | T | null): T[] {
+    if (!value) return [];
+
+    if (Array.isArray(value)) return value;
+
+    return [value];
+};
 
 //region manipulation
 Array.prototype.firstOrDefault = function <T>(this: T[]): T | undefined {
