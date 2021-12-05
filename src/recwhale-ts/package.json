@@ -1,6 +1,6 @@
 {
   "name": "recwhale-ts",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Provides typescript extensions. Mainly, as C# Linq.",
   "repository": {
     "type": "git",
@@ -17,7 +17,10 @@
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist",
+    "!dist/tsconfig.tsbuildinfo"
+  ],
   "devDependencies": {
     "@types/node": "^16.4.9",
     "typescript": "^4.3.5"

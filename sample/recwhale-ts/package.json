@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "clean": "rm -rf dist",
     "build": "tsc"
   },
   "devDependencies": {
@@ -7,6 +8,6 @@
     "typescript": "^4.3.5"
   },
   "dependencies": {
-    "recwhale-ts": "^0.1.2"
+    "recwhale-ts": "^0.1.3"
   }
 }
