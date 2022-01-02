@@ -11,15 +11,35 @@
   "homepage": "https://github.com/KevinRecuerda/RecWhale",
   "author": "kevinrecuerda",
   "license": "Apache-2.0",
-  "main": "index.ts",
   "scripts": {
     "clean": "rm -rf dist",
-    "build": "tsc"
+    "build": "rollup -c",
+    "start": "rollup -c -w"
   },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "!dist/tsconfig.tsbuildinfo"
+  ],
   "dependencies": {
-    "react": "^17.0.2",
     "react-bootstrap": "^1.6.3",
     "recwhale-ts": "*"
+  },
+  "peerDependencies": {
+    "react": "^16.12.0"
+  },
+  "devDependencies": {
+    "@types/react": "^16.3.13",
+    "@types/react-dom": "^16.0.5",
+    "babel-core": "^6.26.3",
+    "babel-runtime": "^6.26.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "rollup": "^1.29.0",
+    "rollup-plugin-sass": "^1.2.2",
+    "rollup-plugin-typescript2": "^0.25.3",
+    "typescript": "^2.8.3"
   },
   "gitHead": "eafcd4a827c47e1095bb736274a4abe4e0f69dd0"
 }

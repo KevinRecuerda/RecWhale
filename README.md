@@ -66,6 +66,7 @@ need lerna ? only for dependencies otherwise can loop on src/**/packages.json an
 
 #### sample
 - https://github.com/react-cosmos/react-cosmos
+- https://github.com/ovieokeh/dummy-counter
 
 #### publish dist only ?
 
