@@ -1,12 +1,11 @@
-﻿import {MomentHelper, toArray} from "recwhale-ts";
-import "recwhale-ts";
-
-console.log(MomentHelper.test());
+﻿import "recwhale-ts";
 
 const e = ["a", "b", "c"];
 const f = e.last();
 console.log(f);
 
-const a = toArray("to array method");
-console.log(a);
+const arr1 = Array.build("to array method");
+const arr2 = Array.build(["1", "2", "3"]);
+console.log(arr1);
+console.log(arr2);
 

@@ -41,9 +41,11 @@ declare global {
 }
 
 Array.build = function <T>(value?: T[] | T | null): T[] {
-    if (!value) return [];
+    if (!value) 
+        return [];
 
-    if (Array.isArray(value)) return value;
+    if (Array.isArray(value)) 
+        return value;
 
     return [value];
 };

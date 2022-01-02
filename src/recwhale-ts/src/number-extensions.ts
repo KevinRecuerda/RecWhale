@@ -16,10 +16,11 @@ Number.prototype.adapt = function (this: number, unit?: Unit): number {
 };
 
 Number.prototype.format = function (this: number | undefined, unit?: Unit, fractionDigits?: number): string {
-    if (this === undefined || isNaN(this))
+    const number = Number(this);
+    if (isNaN(number))
         return "";
 
-    const value = Number(this).adapt(unit);
+    const value = number.adapt(unit);
 
     // use ES2020 to have more format options
     const formatter    = Intl.NumberFormat("fr", {maximumFractionDigits: fractionDigits ?? 0});
