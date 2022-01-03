@@ -1,10 +1,11 @@
 {
-  "name": "root",
+  "name": "recwhale",
   "private": true,
   "workspaces": [
     "src/*"
   ],
   "devDependencies": {
     "lerna": "^4.0.0"
-  }
+  },
+  "packageManager": "yarn@3.1.1"
 }
