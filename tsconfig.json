@@ -2,7 +2,8 @@
   "compilerOptions": {
     "module": "commonjs",
     "target": "es5",
-    "lib": ["dom", "esnext"],
+    "composite": true,
+    "lib": ["dom", "dom.iterable", "esnext"],
     "esModuleInterop": true,
     "moduleResolution": "node",
     "declaration": true,
@@ -14,7 +15,7 @@
     "strict": true,
     "strictNullChecks": true,
     "downlevelIteration": true,
-    "jsx": "react",
+    "jsx": "react-jsx",
     "noFallthroughCasesInSwitch": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,

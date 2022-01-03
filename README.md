@@ -17,6 +17,10 @@ npx lerna add a --scope=b --scope=c --scope=d
 
 npx lerna bootstrap
 npx lerna ls
+
+
+pnpm -r build --filter recwhale-ts
+
 ```
 
 ### CD
@@ -68,6 +72,15 @@ need lerna ? only for dependencies otherwise can loop on src/**/packages.json an
 - https://github.com/react-cosmos/react-cosmos
 - https://github.com/ovieokeh/dummy-counter
 
+- https://devsday.ru/blog/details/43682
+- https://github.com/CryogenicPlanet/typescript-monorepo-example
+
+- https://react-styleguidist.js.org/
+- https://divotion.com/blog/creating-a-component-library-with-vite-and-storybook
+
+- https://pnpm.io/workspaces
+- https://vitejs.dev/guide/build.html#library-mode
+
 #### publish dist only ?
 
 ```json
@@ -78,3 +91,5 @@ need lerna ? only for dependencies otherwise can loop on src/**/packages.json an
   "directory": "dist"
 },
 ```
+
+"packageManager": "pnpm@6.22.2"

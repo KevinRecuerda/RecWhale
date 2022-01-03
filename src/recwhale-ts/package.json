@@ -7,13 +7,18 @@
     "url": "https://github.com/KevinRecuerda/RecWhale.git",
     "directory": "src/recwhale-ts"
   },
-  "keywords": ["ts", "typescript", "extension", "linq"],
+  "keywords": [
+    "ts",
+    "typescript",
+    "extension",
+    "linq"
+  ],
   "homepage": "https://github.com/KevinRecuerda/RecWhale",
   "author": "kevinrecuerda",
   "license": "Apache-2.0",
   "scripts": {
     "clean": "rm -rf dist",
-    "build": "tsc"
+    "build": "rm -rf dist && tsc"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -21,13 +26,11 @@
     "dist",
     "!dist/tsconfig.tsbuildinfo"
   ],
-  "dependencies": {},
-  "peerDependencies": {
+  "dependencies": {
     "moment": "^2.29.1"
   },
   "devDependencies": {
     "@types/node": "^16.4.9",
-    "typescript": "^4.3.5"
-  },
-  "gitHead": "921923b19fb3109042d2681c64bb60e6da006975"
+    "typescript": "^4.4.2"
+  }
 }

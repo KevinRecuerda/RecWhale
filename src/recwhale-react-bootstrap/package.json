@@ -1,5 +1,5 @@
 {
-  "name": "recwhale-react-boostrap",
+  "name": "recwhale-react-bootstrap",
   "version": "0.1.0",
   "description": "Provides component wrapper for react-bootstrap.",
   "repository": {
@@ -7,37 +7,51 @@
     "url": "https://github.com/KevinRecuerda/RecWhale.git",
     "directory": "src/recwhale-react-bootstrap"
   },
-  "keywords": ["ts", "typescript", "extension", "react", "bootstrap"],
+  "keywords": [
+    "ts",
+    "typescript",
+    "extension",
+    "react",
+    "bootstrap"
+  ],
   "homepage": "https://github.com/KevinRecuerda/RecWhale",
   "author": "kevinrecuerda",
   "license": "Apache-2.0",
   "scripts": {
     "clean": "rm -rf dist",
-    "build": "rollup -c",
-    "start": "rollup -c -w"
+    "dev": "vite",
+    "build": "rm -rf dist && tsc && vite build",
+    "preview": "vite preview"
   },
-  "main": "dist/index.js",
+  "main": "dist/index.umd.js",
   "types": "dist/index.d.ts",
+  "module": "dist/index.es.ts",
   "files": [
     "dist",
     "!dist/tsconfig.tsbuildinfo"
   ],
-  "dependencies": {},
-  "peerDependencies": {
+  "dependencies": {
     "moment": "^2.29.1",
     "react": "^16.12.0",
     "react-bootstrap": "^1.6.3",
     "react-dom": "^16.12.0",
-    "recwhale-ts": "*"
+    "recwhale-ts": "workspace:*"
   },
   "devDependencies": {
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-typescript": "^8.3.0",
     "@types/node": "^16.4.9",
+    "@types/react": "^16.12.0",
+    "@types/react-dom": "^16.9.8",
+    "@vitejs/plugin-react": "^1.1.3",
     "babel-core": "^6.26.3",
     "babel-runtime": "^6.26.0",
     "rollup": "^2.62.0",
     "rollup-plugin-sass": "^1.2.10",
     "rollup-plugin-typescript2": "^0.31.1",
-    "typescript": "^4.3.5"
-  },
-  "gitHead": "eafcd4a827c47e1095bb736274a4abe4e0f69dd0"
+    "typescript": "^4.4.2",
+    "vite": "^2.7.10",
+    "vite-plugin-dts": "^0.9.7"
+  }
 }
