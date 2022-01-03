@@ -1,6 +1,7 @@
 ﻿{
   "extends": "../../tsconfig",
   "compilerOptions": {
+    "module": "esnext",
     "outDir": "dist"
   },
   "include": [
