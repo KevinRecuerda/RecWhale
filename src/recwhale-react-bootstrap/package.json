@@ -35,7 +35,7 @@
     "react": "^16.12.0",
     "react-bootstrap": "^1.6.3",
     "react-dom": "^16.12.0",
-    "recwhale-ts": "*"
+    "recwhale-ts": "workspace:*"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
