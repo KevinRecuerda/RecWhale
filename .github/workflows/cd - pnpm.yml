@@ -1,4 +1,4 @@
-name: ts - CD lerna
+name: ts - CD pnpm
 
 on:
   push:
@@ -19,10 +19,6 @@ jobs:
         with:
           version: 6.22.2
       - name: Install
-        run: lerna bootstrap
-      - name: Install
-        run: lerna run build
-      - name: Publish
-        run: lerna version --conventional-commits --yes
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: pnpm -r install
+      - name: Build
+        run: pnpm -r run build
