@@ -16,7 +16,7 @@ jobs:
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org'
       - name: Install dependencies
-        run: pnpm install
+        run: yarn install
       - name: Build
         run: lerna bootstrap
       - name: Publish
