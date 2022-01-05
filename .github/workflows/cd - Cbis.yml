@@ -21,7 +21,7 @@ jobs:
       - name: Install
         run: lerna bootstrap
       - name: Install
-        run: lerna build
+        run: lerna run build
       - name: Publish
         run: lerna version --conventional-commits --yes
         env:
