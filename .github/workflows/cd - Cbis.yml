@@ -1,25 +1,25 @@
-#name: ts - CD
-#
-#on:
-#  push:
-#    branches: [ main ]
-#
-#jobs:
-#  publish:
-#
-#    runs-on: ubuntu-latest
-#
-#    steps:
-#      - uses: actions/checkout@v2
-#      - uses: actions/setup-node@v2
-#        with:
-#          node-version: '12.x'
-#          registry-url: 'https://registry.npmjs.org'
-#      - name: Install dependencies
-#        run: yarn install
-#      - name: Build
-#        run: yarn build
-#      - name: Publish
-#        run: yarn publish
-#        env:
-#          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+name: ts - CD lerna
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  publish:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16.x'
+          registry-url: 'https://registry.npmjs.org'
+      - name: Install dependencies
+        run: pnpm install
+      - name: Build
+        run: lerna bootstrap
+      - name: Publish
+        run: npx lerna version --conventional-commits --yes
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
