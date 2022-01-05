@@ -15,8 +15,11 @@ jobs:
         with:
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org'
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.22.2
       - name: Install dependencies
-        run: yarn install
+        run: pnpm install
       - name: Build
         run: lerna bootstrap
       - name: Publish
