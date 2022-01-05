@@ -18,11 +18,11 @@ jobs:
       - uses: pnpm/action-setup@v2.0.1
         with:
           version: 6.22.2
-      - name: Install dependencies
-        run: pnpm install
-      - name: Build
+      - name: Install
         run: lerna bootstrap
+      - name: Install
+        run: lerna build
       - name: Publish
-        run: npx lerna version --conventional-commits --yes
+        run: lerna version --conventional-commits --yes
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
