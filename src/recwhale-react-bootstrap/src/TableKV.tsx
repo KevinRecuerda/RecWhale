@@ -1,10 +1,9 @@
-﻿// import moment       from "moment";
+﻿import moment       from "moment";
 import React        from "react";
 import {Table}      from "react-bootstrap";
-import {EnumHelper} from "recwhale-ts";
 import type {Size}  from "./Size";
 import {SizeHelper} from "./Size";
-// import "recwhale-ts";
+import "recwhale-ts";
 import "./TableKV.scss";
 
 export interface ITableKVProps {
@@ -21,17 +20,16 @@ export const TableKV: React.FC<ITableKVProps> = (props) => {
         if (props.smart !== true || !value)
             return value; // eslint-disable-line @typescript-eslint/no-unsafe-return
 
-        console.log(EnumHelper.format(key));
-        // const lowerKey = key.toLowerCase();
-        // if (lowerKey.includes("date"))
-        //     return moment(value).formatDate();
-        //
-        // const number = Number(value);
-        // if (!isNaN(number)) {
-        //     if (lowerKey.includes("weight"))
-        //         return number.format("%", 4);
-        //     return number.format();
-        // }
+        const lowerKey = key.toLowerCase();
+        if (lowerKey.includes("date"))
+            return moment(value).formatDate();
+
+        const number = Number(value);
+        if (!isNaN(number)) {
+            if (lowerKey.includes("weight"))
+                return number.format("%", 4);
+            return number.format();
+        }
         
         return value; // eslint-disable-line @typescript-eslint/no-unsafe-return
     };
