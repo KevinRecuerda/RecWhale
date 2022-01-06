@@ -18,7 +18,7 @@ importers:
       react: ^16.12.0
       react-bootstrap: ^1.6.3
       react-dom: ^16.12.0
-      recwhale-ts: ^0.2.0
+      recwhale-ts: workspace:^
       sass: ^1.46.0
       typescript: ^4.4.2
       vite: ^2.7.10
