@@ -39,7 +39,7 @@
   "dependencies": {
     "moment": "^2.29.1",
     "react-bootstrap": "^1.6.3",
-    "recwhale-ts": "^0.2.0"
+    "recwhale-ts": "workspace:^"
   },
   "devDependencies": {
     "@types/node": "^16.4.9",
