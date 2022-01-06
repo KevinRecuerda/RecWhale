@@ -27,5 +27,5 @@ jobs:
         
       - name: Publish
         run: pnpm -r publish
-        with:
-          token: ${{secrets.NPM_TOKEN}}
+#        with:
+#          token: ${{secrets.NPM_TOKEN}}
