@@ -38,8 +38,9 @@
     }
   },
   "dependencies": {
+    "@material-ui/core": "^4.12.1",
+    "@material-ui/lab": "^4.0.0-alpha.56",
     "moment": "^2.29.1",
-    "react-bootstrap": "^1.6.3",
     "recwhale-ts": "workspace:^"
   },
   "devDependencies": {

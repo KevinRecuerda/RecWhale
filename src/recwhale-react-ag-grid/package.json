@@ -37,8 +37,9 @@
     }
   },
   "dependencies": {
-    "ag-grid-community": "^26.0.0",
-    "ag-grid-react": "^26.0.0",
+    "@ag-grid-community/core": "^24.0.0",
+    "ag-grid-community": "^24.0.0",
+    "ag-grid-react": "^24.0.0",
     "moment": "^2.29.1",
     "recwhale-ts": "workspace:^"
   },
