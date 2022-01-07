@@ -1,0 +1,74 @@
+.MuiAutocomplete-inputRoot[class*='MuiOutlinedInput-root'] {
+  border-radius: 0;
+
+  .MuiAutocomplete-input {
+    padding: 0 !important;
+  }
+
+  .MuiAutocomplete-endAdornment {
+    top: auto;
+  }
+
+  .MuiAutocomplete-scroll {
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      display: block;
+      height:  4px;
+    }
+  }
+
+  .MuiAutocomplete-option-wrapper {
+    white-space: nowrap;
+    height:      20px;
+  }
+
+  .MuiAutocomplete-tag {
+    max-width: unset !important;
+
+    &.MuiChip-root {
+      border-radius: 0;
+      margin:        0 2px;
+      font-size:     0.9rem;
+    }
+  }
+}
+
+.MuiAutocomplete-popper {
+
+  .MuiAutocomplete-listbox {
+    max-height: 50vh;
+
+    ul {
+      margin-bottom: 0;
+    }
+
+    .MuiListSubheader-root,
+    .MuiAutocomplete-option-wrapper {
+      white-space: nowrap;
+    }
+
+    .MuiListSubheader-root {
+      padding-left: 8px;
+      line-height:  20px !important;
+      font-size:    0.85em;
+    }
+
+    .MuiAutocomplete-option {
+      background-color: inherit;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.04);
+      }
+
+      .check {
+        margin-left:  -8px;
+        margin-right: 8px;
+      }
+    }
+
+    hr {
+      margin: 0;
+    }
+  }
+}
