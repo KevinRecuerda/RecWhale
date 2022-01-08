@@ -1,3 +1,5 @@
 ﻿export * from "./button";
-export * from "./TableKV";
+export * from "./link";
+export * from "./modal";
+export * from "./table";
 export * from "./Size";

@@ -1,7 +1,4 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-return */
-import {faCheck}                                                                 from "@fortawesome/free-solid-svg-icons/faCheck";
-import {faPlus}                                                                  from "@fortawesome/free-solid-svg-icons/faPlus";
-import {FontAwesomeIcon}                                                         from "@fortawesome/react-fontawesome";
 import {Chip, CircularProgress, TextField}                                       from "@material-ui/core";
 import ListSubheader                                                             from "@material-ui/core/ListSubheader";
 import type {AutocompleteGetTagProps, AutocompleteRenderGroupParams, Value as V} from "@material-ui/lab";
@@ -13,16 +10,15 @@ import _                                                                        
 import queryString                                                               from "query-string";
 import React, {useState, useEffect}                                              from "react";
 import {useLocation}                                                             from "react-router";
-import type {Size}                                                               from "../Size";
-import {SizeHelper}                                                              from "../Size";
+import {Size}                                                                    from "recwhale-ts";
 import {virtualizationProps}                                                     from "./AutocompleteVirtualization";
 import "./Autocomplete.scss";
 
 // prefer default 'undefined' instead of 'null'
 export type Value<T, Multiple, DisableClearable>
     = Multiple extends true ? T[]
-    : DisableClearable extends true ? NonNullable<T>
-        : T | undefined;
+                            : DisableClearable extends true ? NonNullable<T>
+                                                            : T | undefined;
 
 // multiple default props
 export interface IAutocompleteWrapperProps<T,
@@ -121,7 +117,8 @@ export function Autocomplete<T,
         const isNew = (option as any)._new === true;
         return <>
             <span className={`MuiAutocomplete-option-wrapper ${!innerProps.multiple ? "MuiAutocomplete-scroll" : ""}`}>
-            {state.inputValue !== "__nocheck__" && <FontAwesomeIcon icon={isNew ? faPlus : faCheck} className="check" style={{visibility: state.selected || isNew ? "visible" : "hidden"}}/>}
+            {state.inputValue !== "__nocheck__" &&
+            <FontAwesomeIcon icon={isNew ? faPlus : faCheck} className="check" style={{visibility: state.selected || isNew ? "visible" : "hidden"}}/>}
                 {render}
             </span>
         </>;
@@ -171,7 +168,7 @@ export function Autocomplete<T,
         if (!innerProps.renderTags)
             innerProps.renderTags = (tags: any[], getTagProps: AutocompleteGetTagProps) => {
                 const tagsToRender   = tags.slice(0, innerProps.limitTags)
-                    .map((option, index) => <Chip key={index} label={renderOptionNoCheck(option)} size="small" {...getTagProps({index})} />);
+                                           .map((option, index) => <Chip key={index} label={renderOptionNoCheck(option)} size="small" {...getTagProps({index})} />);
                 const additionalTags = tags.length - innerProps.limitTags!;
                 return <div className="MuiAutocomplete-tags mr-2 MuiAutocomplete-scroll">
                     {tagsToRender}

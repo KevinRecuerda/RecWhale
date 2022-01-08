@@ -4,9 +4,9 @@ import type {ReactNode}           from "react";
 import React                      from "react";
 import {Filter}                   from "../BuiltIn";
 import {AgCol}                    from "./AgCol";
-import {AgColBase}                from "./AgColBase";
+import {BaseAgCol}                from "./BaseAgCol";
 
-export class AgColDirection extends AgColBase<AgGridColumnProps> {
+export class AgColDirection extends BaseAgCol<AgGridColumnProps> {
 
     static mappings = new Map(
         [

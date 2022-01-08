@@ -1,5 +1,3 @@
-import {LicenseManager}                                                                                  from "@ag-grid-enterprise/core";
-import {agThemeSgBootstrapCondensed}                                                                     from "@sg-bootstrap/ag-grid";
 import type {ColumnApi, BaseExportParams, GridOptions, ProcessCellForExportParams, ValueFormatterParams} from "ag-grid-community";
 import type {RowNode}                                                                                    from "ag-grid-community/dist/lib/entities/rowNode";
 import type {ColumnGroupOpenedEvent, GridReadyEvent, ModelUpdatedEvent, SelectionChangedEvent}           from "ag-grid-community/dist/lib/events";
@@ -9,22 +7,14 @@ import type {StatusPanelDef}                                                    
 import {AgGridReact}                                                                                     from "ag-grid-react";
 import {isMoment}                                                                                        from "moment";
 import React, {useEffect, useState}                                                                      from "react";
-import {Form}                                                                                            from "react-bootstrap";
-import type {Size}                                                                                       from "../Size";
-import {SizeHelper}                                                                                      from "../Size";
+import {Size}                                                                                            from "recwhale-react-bootstrap";
 import {StatusBarComp}                                                                                   from "./BuiltIn";
 import {AgCol}                                                                                           from "./columns/AgCol";
 import type {AgGetContextMenuItemsParams, AgMenuItemDef}                                                 from "./context";
 import {AgContext}                                                                                       from "./context";
-import "ag-grid-enterprise";
 import "ag-grid-community/dist/styles/ag-grid.min.css";
-import "@ag-grid-enterprise/all-modules/dist/styles/ag-grid.css";
 import "ag-grid-community/dist/styles/ag-theme-alpine.min.css";
-import "@ag-grid-enterprise/all-modules/dist/styles/ag-theme-alpine.min.css";
-// import "@sg-bootstrap/ag-grid/dist/theme-standard.min.css";
 import "./Ag.scss";
-
-LicenseManager.setLicenseKey("your license key");
 
 export interface IAgGridReactSGProps extends GridOptions {
     rowData: any[];
@@ -71,11 +61,6 @@ export const Ag: React.FC<IAgGridReactSGProps> = (props) => {
         }
 
         agApi.resetRowHeights();
-
-        // TODO: fix search
-        // agApi.forEachNode(function (rowNode: any, index: number) {
-        //     console.log("Row " + index + " quick filter text is " + rowNode.quickFilterAggregateText);
-        // });
 
     }, [agApi, props.rowData]); // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -157,17 +142,16 @@ export const Ag: React.FC<IAgGridReactSGProps> = (props) => {
     if (props.size)
         style.height = SizeHelper.height(props.size);
 
-    const theme = "ag-theme-alpine ag-theme-sg-bootstrap ag-theme-sg-bootstrap-condensed";
-
-    agThemeSgBootstrapCondensed.headerHeight = 28;
+    const theme = "ag-theme-alpine";
 
     return (
         <div className={`ag-table ${theme}`} style={style}>
-            {props.useSearch && <Form.Control type="text" placeholder="search..." onChange={e => setSearchText(e.target.value)}/>}
+            {props.useSearch && <input type="text" placeholder="search..." className="form-control" onChange={e => setSearchText(e.target.value)} />}
 
             <AgGridReact {...AgCol.buildProps(props)}
+                         // headerHeight={32}
+                         // rowHeight={24}
 
-                         {...agThemeSgBootstrapCondensed}
                          suppressPropertyNamesCheck
                          onGridReady={onGridReady}
                          onModelUpdated={onModelUpdated}

@@ -17,9 +17,13 @@ importers:
       '@vitejs/plugin-react': ^1.1.3
       ag-grid-community: ^24.0.0
       ag-grid-react: ^24.0.0
+      lodash: ^4.17.20
       moment: ^2.29.1
       react: ^16.12.0
       react-dom: ^16.12.0
+      react-icons: ^4.3.1
+      recwhale-react-bootstrap: workspace:^
+      recwhale-react-core: workspace:^
       recwhale-ts: workspace:^
       sass: ^1.46.0
       typescript: ^4.4.2
@@ -29,7 +33,11 @@ importers:
       '@ag-grid-community/core': 24.1.0
       ag-grid-community: 24.1.0
       ag-grid-react: 24.1.1_2b17e0c9e2912a69d347f6055d37c320
+      lodash: 4.17.21
       moment: 2.29.1
+      react-icons: 4.3.1_react@16.14.0
+      recwhale-react-bootstrap: link:../recwhale-react-bootstrap
+      recwhale-react-core: link:../recwhale-react-core
       recwhale-ts: link:../recwhale-ts
     devDependencies:
       '@types/node': 16.11.18
@@ -51,9 +59,13 @@ importers:
       '@types/react': ^16.12.0
       '@types/react-dom': ^16.9.8
       '@vitejs/plugin-react': ^1.1.3
+      lodash: ^4.17.20
       moment: ^2.29.1
+      query-string: ^6.13.1
       react: ^16.12.0
       react-dom: ^16.12.0
+      react-router: ^6.0.2
+      react-window: ^1.8.5
       recwhale-ts: workspace:^
       sass: ^1.46.0
       typescript: ^4.4.2
@@ -62,7 +74,11 @@ importers:
     dependencies:
       '@material-ui/core': 4.12.3_cf6b888523c4e91fb446489a82d416ef
       '@material-ui/lab': 4.0.0-alpha.60_09c5960972fc494813763adff4b4c140
+      lodash: 4.17.21
       moment: 2.29.1
+      query-string: 6.14.1
+      react-router: 6.0.2_react@16.14.0
+      react-window: 1.8.6_react-dom@16.14.0+react@16.14.0
       recwhale-ts: link:../recwhale-ts
     devDependencies:
       '@types/node': 16.11.18
@@ -86,6 +102,8 @@ importers:
       react: ^16.12.0
       react-bootstrap: ^1.6.3
       react-dom: ^16.12.0
+      react-icons: ^4.3.1
+      react-router-dom: ^6.0.2
       recwhale-ts: workspace:^
       sass: ^1.46.0
       typescript: ^4.4.2
@@ -94,6 +112,7 @@ importers:
     dependencies:
       moment: 2.29.1
       react-bootstrap: 1.6.4_react-dom@16.14.0+react@16.14.0
+      react-icons: 4.3.1_react@16.14.0
       recwhale-ts: link:../recwhale-ts
     devDependencies:
       '@types/node': 16.11.18
@@ -102,6 +121,33 @@ importers:
       '@vitejs/plugin-react': 1.1.3
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
+      react-router-dom: 6.0.2_react-dom@16.14.0+react@16.14.0
+      sass: 1.46.0
+      typescript: 4.5.4
+      vite: 2.7.10_sass@1.46.0
+      vite-plugin-dts: 0.9.7_vite@2.7.10
+
+  src/recwhale-react-core:
+    specifiers:
+      '@types/node': ^16.4.9
+      '@types/react': ^16.12.0
+      '@types/react-dom': ^16.9.8
+      '@vitejs/plugin-react': ^1.1.3
+      react: ^16.12.0
+      react-dom: ^16.12.0
+      react-router-dom: 6.0.2
+      sass: ^1.46.0
+      typescript: ^4.4.2
+      vite: ^2.7.10
+      vite-plugin-dts: ^0.9.7
+    devDependencies:
+      '@types/node': 16.11.18
+      '@types/react': 16.14.21
+      '@types/react-dom': 16.9.14
+      '@vitejs/plugin-react': 1.1.3
+      react: 16.14.0
+      react-dom: 16.14.0_react@16.14.0
+      react-router-dom: 6.0.2_react-dom@16.14.0+react@16.14.0
       sass: 1.46.0
       typescript: 4.5.4
       vite: 2.7.10_sass@1.46.0
@@ -355,7 +401,6 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.13.9
-    dev: false
 
   /@babel/template/7.16.7:
     resolution: {integrity: sha512-I8j/x8kHUrbYRTUxXrrMbfCa7jxkE7tZre39x3kjr9hvI82cK1FfqLygotcWN5kdPGWcLdWMHpSBavse5tWw3w==}
@@ -2176,7 +2221,6 @@ packages:
   /decode-uri-component/0.2.0:
     resolution: {integrity: sha1-6zkTMzRYd1y4TNGh+uBiEGu4dUU=}
     engines: {node: '>=0.10'}
-    dev: true
 
   /dedent/0.7.0:
     resolution: {integrity: sha1-JJXduvbrh0q7Dhvp3yLS5aVEMmw=}
@@ -2599,7 +2643,6 @@ packages:
   /filter-obj/1.1.0:
     resolution: {integrity: sha1-mzERErxsYSehbgFsbF1/GeCAXFs=}
     engines: {node: '>=0.10.0'}
-    dev: true
 
   /find-up/2.1.0:
     resolution: {integrity: sha1-RdG35QbHF93UgndaK3eSCjwMV6c=}
@@ -2898,6 +2941,11 @@ packages:
     dependencies:
       function-bind: 1.1.1
     dev: true
+
+  /history/5.2.0:
+    resolution: {integrity: sha512-uPSF6lAJb3nSePJ43hN3eKj1dTWpN9gMod0ZssbFTIsen+WehTmEadgL+kg78xLJFdRfrrC//SavDzmRVdE+Ig==}
+    dependencies:
+      '@babel/runtime': 7.16.7
 
   /hoist-non-react-statics/3.3.2:
     resolution: {integrity: sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw==}
@@ -3534,7 +3582,6 @@ packages:
 
   /lodash/4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
-    dev: true
 
   /loose-envify/1.4.0:
     resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==}
@@ -3620,6 +3667,10 @@ packages:
     resolution: {integrity: sha512-hdN1wVrZbb29eBGiGjJbeP8JbKjq1urkHJ/LIP/NY48MZ1QVXUsQBV1G1zvYFHn1XE06cwjBsOI2K3Ulnj1YXQ==}
     engines: {node: '>=8'}
     dev: true
+
+  /memoize-one/5.2.1:
+    resolution: {integrity: sha512-zYiwtZUcYyXKo/np96AGZAckk+FWWsUdJ3cHGGmld7+AhvcWmQyGCYUh1hc4Q/pkOhb65dQR/pqCyK0cOaHz4Q==}
+    dev: false
 
   /meow/8.1.2:
     resolution: {integrity: sha512-r85E3NdZ+mpYk1C6RjPFEMSE+s1iZMuHtsHAqY0DT3jZczl0diWUZ8g6oU7h0M9cD2EL+PzaYghhCLzR0ZNn5Q==}
@@ -4438,7 +4489,6 @@ packages:
       filter-obj: 1.1.0
       split-on-first: 1.1.0
       strict-uri-encode: 2.0.0
-    dev: true
 
   /queue-microtask/1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==}
@@ -4488,6 +4538,14 @@ packages:
       scheduler: 0.19.1
     dev: true
 
+  /react-icons/4.3.1_react@16.14.0:
+    resolution: {integrity: sha512-cB10MXLTs3gVuXimblAdI71jrJx8njrJZmNMEMC+sQu5B/BIOmlsAjskdqpn81y8UBVEGuHODd7/ci5DvoSzTQ==}
+    peerDependencies:
+      react: '*'
+    dependencies:
+      react: 16.14.0
+    dev: false
+
   /react-is/16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
 
@@ -4518,6 +4576,26 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
+  /react-router-dom/6.0.2_react-dom@16.14.0+react@16.14.0:
+    resolution: {integrity: sha512-cOpJ4B6raFutr0EG8O/M2fEoyQmwvZWomf1c6W2YXBZuFBx8oTk/zqjXghwScyhfrtnt0lANXV2182NQblRxFA==}
+    peerDependencies:
+      react: '>=16.8'
+      react-dom: '>=16.8'
+    dependencies:
+      history: 5.2.0
+      react: 16.14.0
+      react-dom: 16.14.0_react@16.14.0
+      react-router: 6.0.2_react@16.14.0
+    dev: true
+
+  /react-router/6.0.2_react@16.14.0:
+    resolution: {integrity: sha512-8/Wm3Ed8t7TuedXjAvV39+c8j0vwrI5qVsYqjFr5WkJjsJpEvNSoLRUbtqSEYzqaTUj1IV+sbPJxvO+accvU0Q==}
+    peerDependencies:
+      react: '>=16.8'
+    dependencies:
+      history: 5.2.0
+      react: 16.14.0
+
   /react-transition-group/4.4.2_react-dom@16.14.0+react@16.14.0:
     resolution: {integrity: sha512-/RNYfRAMlZwDSr6z4zNKV6xu53/e2BuaBbGhbyYIXTrmgu/bGHzmqOs7mJSJBHy9Ud+ApHx3QjrkKSp1pxvlFg==}
     peerDependencies:
@@ -4528,6 +4606,19 @@ packages:
       dom-helpers: 5.2.1
       loose-envify: 1.4.0
       prop-types: 15.8.0
+      react: 16.14.0
+      react-dom: 16.14.0_react@16.14.0
+    dev: false
+
+  /react-window/1.8.6_react-dom@16.14.0+react@16.14.0:
+    resolution: {integrity: sha512-8VwEEYyjz6DCnGBsd+MgkD0KJ2/OXFULyDtorIiTz+QzwoP94tBoA7CnbtyXMm+cCeAUER5KJcPtWl9cpKbOBg==}
+    engines: {node: '>8.0.0'}
+    peerDependencies:
+      react: ^15.0.0 || ^16.0.0 || ^17.0.0
+      react-dom: ^15.0.0 || ^16.0.0 || ^17.0.0
+    dependencies:
+      '@babel/runtime': 7.16.7
+      memoize-one: 5.2.1
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
     dev: false
@@ -4680,7 +4771,6 @@ packages:
 
   /regenerator-runtime/0.13.9:
     resolution: {integrity: sha512-p3VT+cOEgxFsRRA9X4lkI1E+k2/CtnKtU4gcxyaCUreilL/vqI6CdZ3wxVUx3UOUg+gnUOQQcRI7BmSI656MYA==}
-    dev: false
 
   /request/2.88.2:
     resolution: {integrity: sha512-MsvtOrfG9ZcrOwAW+Qi+F6HbD0CWXEh9ou77uOb7FM2WPhwT7smM833PzanhJLsgXjN89Ir6V2PczXNnMpwKhw==}
@@ -4976,7 +5066,6 @@ packages:
   /split-on-first/1.1.0:
     resolution: {integrity: sha512-43ZssAJaMusuKWL8sKUBQXHWOpq8d6CfN/u1p4gUzfJkM05C8rxTmYrkIPTXapZpORA6LkkzcUulJ8FqA7Uudw==}
     engines: {node: '>=6'}
-    dev: true
 
   /split/1.0.1:
     resolution: {integrity: sha512-mTyOoPbrivtXnwnIxZRFYRrPNtEFKlpB2fvjSnCQUiAA6qAZzqwna5envK4uk6OIeP17CsdF3rSBGYVBsU0Tkg==}
@@ -5016,7 +5105,6 @@ packages:
   /strict-uri-encode/2.0.0:
     resolution: {integrity: sha1-ucczDHBChi9rFC3CdLvMWGbONUY=}
     engines: {node: '>=4'}
-    dev: true
 
   /string-width/1.0.2:
     resolution: {integrity: sha1-EYvfW4zcUaKn5w0hHgfisLmxB9M=}

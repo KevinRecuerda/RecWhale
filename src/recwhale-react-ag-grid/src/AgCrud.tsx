@@ -1,10 +1,9 @@
-﻿import {faCopy, faPlus, faSortAmountUp, faSync, faTrash, faUndo}      from "@fortawesome/free-solid-svg-icons";
-import type {CellClassParams, GridApi, GridOptions, RowNode}          from "ag-grid-community";
+﻿import type {CellClassParams, GridApi, GridOptions, RowNode}          from "ag-grid-community";
 import type {AgGridEvent, CellValueChangedEvent, RowDataUpdatedEvent} from "ag-grid-community/dist/lib/events";
 import _                                                              from "lodash";
 import React, {useEffect, useRef, useState}                           from "react";
-import type {IModalConfirmRef}                                        from "../modal";
-import {ModalConfirm}                                                 from "../modal";
+import {FaCopy, FaPlus, FaSortAmountUp, FaSync, FaTrash, FaUndo}      from "react-icons/fa";
+import {IModalConfirmRef, ModalConfirm}                               from "recwhale-react-bootstrap";
 import {Ag}                                                           from "./Ag";
 import {CellClass}                                                    from "./BuiltInExtended";
 import type {AgGetContextMenuItemsParams, AgMenuItemDef}              from "./context";
@@ -75,7 +74,7 @@ export const AgCrud: React.FC<IAgCrudProps> = (props) => {
         if (!item._initial.has(field))
             item._initial.set(field, event.oldValue);
 
-        // use '==' for null & undefined
+            // use '==' for null & undefined
         // eslint-disable-next-line eqeqeq
         else if (item._initial.get(field) == event.newValue)
             item._initial.delete(field);
@@ -137,14 +136,14 @@ export const AgCrud: React.FC<IAgCrudProps> = (props) => {
             context.setDeletedRows([]);
         };
         return [
-            AgContext.Item("Add", add, faPlus),
-            AgContext.Item(`Duplicate ${info}`, dup, faCopy, selectedRows.length === 0),
-            AgContext.Item(`Delete ${info}`, del, faTrash, selectedRows.length === 0),
-            AgContext.Item("Undo Delete", undoDel, faUndo, context.deletedRows.length === 0),
+            AgContext.Item("Add", add, FaPlus),
+            AgContext.Item(`Duplicate ${info}`, dup, FaCopy, selectedRows.length === 0),
+            AgContext.Item(`Delete ${info}`, del, FaTrash, selectedRows.length === 0),
+            AgContext.Item("Undo Delete", undoDel, FaUndo, context.deletedRows.length === 0),
             AgContext.Separator,
-            AgContext.Item("Sort", sor, faSortAmountUp),
+            AgContext.Item("Sort", sor, FaSortAmountUp),
             AgContext.Separator,
-            AgContext.Item("Refresh", ref, faSync),
+            AgContext.Item("Refresh", ref, FaSync),
             AgContext.Separator,
             AgContext.Menu("Export",
                            AgContext.CsvFull(agApi, [{colId: key, sort: "asc"}]),

@@ -5,7 +5,7 @@ import React                       from "react";
 import {Unit}                      from "recwhale-ts";
 import {CellClass}                 from "../BuiltInExtended";
 import {AgCol}                     from "./AgCol";
-import {AgColBase}                 from "./AgColBase";
+import {BaseAgCol}                 from "./BaseAgCol";
 import {FilterBuilder}             from "./FilterBuilder";
 
 export interface IAgColNumberProps extends AgGridColumnProps {
@@ -14,7 +14,7 @@ export interface IAgColNumberProps extends AgGridColumnProps {
     large?: boolean;
 }
 
-export class AgColNumber extends AgColBase<IAgColNumberProps> {
+export class AgColNumber extends BaseAgCol<IAgColNumberProps> {
 
     static numberParserPct(value: number): number {
         return value ? value / 100 : value;
@@ -23,14 +23,13 @@ export class AgColNumber extends AgColBase<IAgColNumberProps> {
     render(): ReactNode {
         return <AgCol.Default width={this.props.large ? 120 : 80}
                               cellClass={CellClass.Right}
-                              {...FilterBuilder.Number(this.props.unit)}
+                              {...FilterBuilder.number(this.props.unit)}
                               valueFormatter={(params: ValueFormatterParams) => this.valueFormatter(params, this.props)}
                               {...this.props}
         />;
     }
 
     valueFormatter(params: ValueFormatterParams, props: IAgColNumberProps): string {
-        // use '==' for null & undefined
         if (params.value == null)
             return "";
 

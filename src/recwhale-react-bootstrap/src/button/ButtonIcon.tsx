@@ -1,12 +1,11 @@
-import type {IconProp}    from "@fortawesome/fontawesome-svg-core";
-import {FontAwesomeIcon}  from "@fortawesome/react-fontawesome";
 import React, {useState}  from "react";
 import type {ButtonProps} from "react-bootstrap";
 import {Button, Spinner}  from "react-bootstrap";
+import {IconType}         from "react-icons/lib";
 import "./ButtonIcon.scss";
 
 export interface IButtonIconProps extends ButtonProps {
-    icon: IconProp;
+    icon: IconType;
     title: string;
     run: () => Promise<void> | void;
 }
@@ -35,8 +34,8 @@ export const ButtonIcon: React.FC<IButtonIconProps> = (props) => {
         <Button variant={variant} disabled={isRunning} onClick={onClick} {...innerProps}>
             {props.children && <span className="mr-2">{props.children}</span>}
             {isRunning
-                ? <Spinner className="pull-right" animation="border" variant={spinnerVariant}/>
-                : <FontAwesomeIcon icon={props.icon} className="pull-right fa-w-16"/>
+             ? <Spinner className="pull-right" animation="border" variant={spinnerVariant}/>
+             : <props.icon className="pull-right fa-w-16"/>
             }
         </Button>
     );

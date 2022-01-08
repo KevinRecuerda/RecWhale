@@ -1,10 +1,9 @@
-﻿import type {IconDefinition}               from "@fortawesome/fontawesome-common-types";
-import {FontAwesomeIcon}                   from "@fortawesome/react-fontawesome";
-import type {GridApi}                      from "ag-grid-community";
+﻿import type {GridApi}                      from "ag-grid-community";
 import type {ProcessHeaderForExportParams} from "ag-grid-community/dist/lib/interfaces/exportParams";
 import _                                   from "lodash";
 import React                               from "react";
 import ReactDOMServer                      from "react-dom/server";
+import {IconType}                          from "react-icons/lib";
 import type {AgMenuItemDef}                from "./index";
 
 export class AgContext implements AgMenuItemDef {
@@ -29,11 +28,11 @@ export class AgContext implements AgMenuItemDef {
     }
 
     // Create an item
-    static Item(name: string, action: () => void, icon?: IconDefinition, disabled?: boolean, tooltip?: string): AgMenuItemDef {
+    static Item(name: string, action: () => void, icon?: IconType, disabled?: boolean, tooltip?: string): AgMenuItemDef {
         let html = "";
         if (icon) {
-            const faIcon = <FontAwesomeIcon icon={icon}/>;
-            html         = ReactDOMServer.renderToStaticMarkup(faIcon);
+            const Component = icon;
+            html = ReactDOMServer.renderToStaticMarkup(<Component />);
         }
         return new AgContext(name, action, html, disabled, tooltip);
     }

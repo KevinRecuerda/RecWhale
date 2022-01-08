@@ -4,6 +4,8 @@ export {};
 declare global {
     interface Map<K, V> {
         isEmpty(): boolean;
+        
+        getSafely(key?: K, defaultValue?: V): V | undefined;
 
         filter(predicate: (k: K, v: V) => boolean): Map<K, V>;
 
@@ -17,6 +19,12 @@ declare global {
 
 Map.prototype.isEmpty = function <K, V>(this: Map<K, V>): boolean {
     return this.size === 0;
+};
+
+Map.prototype.getSafely = function <K, V>(this: Map<K, V>, key?: K, defaultValue?: V): V | undefined {
+    return key != null && this.has(key)
+        ? this.get(key)
+        : defaultValue;
 };
 
 Map.prototype.filter = function <K, V>(this: Map<K, V>, predicate: (k: K, v: V) => boolean): Map<K, V> {

@@ -1,18 +1,18 @@
-﻿import {faExternalLinkAlt}                 from "@fortawesome/free-solid-svg-icons";
-import type {RowNode, ICellRendererParams} from "ag-grid-community";
+﻿import type {RowNode, ICellRendererParams} from "ag-grid-community";
 import type {AgGridColumnProps}            from "ag-grid-react/lib/agGridColumn";
 import type {ReactNode}                    from "react";
 import React                               from "react";
+import {FaExternalLinkAlt}                 from "react-icons/fa";
 import {CellClass}                         from "../BuiltInExtended";
 import {AgCol}                             from "./AgCol";
-import {AgColBase}                         from "./AgColBase";
-import {HtmlHelper}                        from "./HtmlHelper";
+import {BaseAgCol}   from "./BaseAgCol";
+import {HtmlBuilder} from "./HtmlBuilder";
 
 export interface IAgColLinkProps {
     enabled?: (node: RowNode) => boolean;
 }
 
-export class AgColLink extends AgColBase<IAgColLinkProps & AgGridColumnProps> {
+export class AgColLink extends BaseAgCol<IAgColLinkProps & AgGridColumnProps> {
 
     render(): ReactNode {
         return <AgCol.Default width={50}
@@ -24,6 +24,8 @@ export class AgColLink extends AgColBase<IAgColLinkProps & AgGridColumnProps> {
     }
 
     renderCell(params: ICellRendererParams): HTMLElement | string {
-        return this.props.enabled && !this.props.enabled(params.node) ? "": HtmlHelper.link(params.value, HtmlHelper.icon(faExternalLinkAlt), true);
+        return this.props.enabled?.(params.node) === false 
+               ? ""
+               : HtmlBuilder.link(params.value, HtmlBuilder.icon(FaExternalLinkAlt), true);
     }
 }

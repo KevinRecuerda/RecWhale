@@ -3,13 +3,12 @@ import {AgGridColumn}                                    from "ag-grid-react";
 import type {AgGridReactProps}                           from "ag-grid-react/lib/agGridReact";
 import type {PropsWithChildren, ReactElement, ReactNode} from "react";
 import React                                             from "react";
-import {keys}                                            from "ts-transformer-keys";
-import {ReactHelper}                                     from "../../../../helpers/ReactHelper";
+import {ReactHelper}                                     from "recwhale-react-core";
 import type {IAgGridReactSGProps}                        from "../Ag";
 import {CellClass}                                       from "../BuiltInExtended";
-import {AgColAction}                                     from "./AgColAction";
-import {AgColBase}                                       from "./AgColBase";
-import {AgColBool}                                       from "./AgColBool";
+import {AgColAction} from "./AgColAction";
+import {BaseAgCol}   from "./BaseAgCol";
+import {AgColBool}   from "./AgColBool";
 import {AgColDate}                                       from "./AgColDate";
 import {AgColDirection}                                  from "./AgColDirection";
 import {AgColEnum}                                       from "./AgColEnum";
@@ -38,8 +37,6 @@ export class AgCol {
                                       checkboxSelection headerCheckboxSelection
                                       headerCheckboxSelectionFilteredOnly
                                       sortable={false} filter={false} suppressMenu/>;
-
-    static colDefKeys = new Set(keys<ColDef>() as string[]);
 
     static buildProps = (props: IAgGridReactSGProps): AgGridReactProps => {
         return {
@@ -106,9 +103,9 @@ export class AgCol {
         if (!element)
             return [];
 
-        const isCustom = Object.prototype.isPrototypeOf.call(AgColBase, element.type);
+        const isCustom = Object.prototype.isPrototypeOf.call(BaseAgCol, element.type);
         if (isCustom) {
-            const customCol = ReactHelper.getComponent<AgColBase<any>>(element);
+            const customCol = ReactHelper.getComponent<BaseAgCol<any>>(element);
             element         = customCol.render() as ReactElement;
         }
 
@@ -120,15 +117,15 @@ export class AgCol {
         if (isFragment)
             return childrenColDef;
 
-        const colDef: ColDef | ColGroupDef = {};
-        Object.keys(element.props)
-              .filter(x => AgCol.colDefKeys.has(x))
-              .forEach(x => (colDef as any)[x] = (props as any)[x]); // eslint-disable-line @typescript-eslint/no-unsafe-assignment,@typescript-eslint/no-unsafe-return,@typescript-eslint/no-unsafe-member-access
+        // const colDef: ColDef | ColGroupDef = {};
+        // Object.keys(element.props)
+        //       .filter(x => AgCol.colDefKeys.has(x))
+        //       .forEach(x => (colDef as any)[x] = (props as any)[x]); // eslint-disable-line @typescript-eslint/no-unsafe-assignment,@typescript-eslint/no-unsafe-return,@typescript-eslint/no-unsafe-member-access
 
         if (childrenColDef.length)
-            (colDef as ColGroupDef).children = childrenColDef;
+            props.children = childrenColDef;
 
-        return [colDef];
+        return [props];
     }
 
     static safeSubValueSetter<T>(params: ValueSetterParams, safe: (data: T) => void): boolean {

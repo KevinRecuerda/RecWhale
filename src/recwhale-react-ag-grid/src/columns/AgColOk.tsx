@@ -1,25 +1,25 @@
-﻿import {faCheck, faExclamation, faTimes} from "@fortawesome/free-solid-svg-icons";
-import type {ICellRendererParams}        from "ag-grid-community";
+﻿import type {ICellRendererParams}        from "ag-grid-community";
 import type {AgGridColumnProps}          from "ag-grid-react/lib/agGridColumn";
 import type {ReactNode}                  from "react";
 import React                             from "react";
+import {FaCheck, FaExclamation, FaTimes} from "react-icons/fa";
 import {Filter}                          from "../BuiltIn";
 import {AgCol}                           from "./AgCol";
-import {AgColBase}                       from "./AgColBase";
-import {HtmlHelper}                      from "./HtmlHelper";
+import {BaseAgCol}                       from "./BaseAgCol";
+import {HtmlBuilder}                     from "./HtmlBuilder";
 
 interface IAgColOkProps extends AgGridColumnProps {
     errorLabel?: string;
     useMissing?: (params: ICellRendererParams) => boolean;
 }
 
-export class AgColOk extends AgColBase<IAgColOkProps> {
+export class AgColOk extends BaseAgCol<IAgColOkProps> {
 
     static map = new Map(
         [
-            [true, {text: "Ok", icon: faCheck, class: "text-success"}],
-            [false, {text: "Error", icon: faTimes, class: "text-danger"}],
-            [undefined, {text: "Missing", icon: faExclamation, class: "text-warning"}]
+            [true, {text: "Ok", icon: FaCheck, class: "text-success"}],
+            [false, {text: "Error", icon: FaTimes, class: "text-danger"}],
+            [undefined, {text: "Missing", icon: FaExclamation, class: "text-warning"}]
         ]);
 
     render(): ReactNode {
@@ -36,8 +36,8 @@ export class AgColOk extends AgColBase<IAgColOkProps> {
             return "";
 
         const item = AgColOk.map.get(params.value)!;
-        const icon = HtmlHelper.icon(item.icon);
-        return HtmlHelper.span(icon, item.class);
+        const icon = HtmlBuilder.icon(item.icon);
+        return HtmlBuilder.span(icon, item.class);
     }
 
     filterCellRenderer(params: ICellRendererParams, errorLabel?: string): string {

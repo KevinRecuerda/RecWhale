@@ -5,9 +5,9 @@ import type {ReactNode}                                                    from 
 import React                                                               from "react";
 import {CellClass}                                                         from "../BuiltInExtended";
 import {AgCol}                                                             from "./AgCol";
-import {AgColBase}                                                         from "./AgColBase";
-import {FloatingFilterComp}                                                from "./FloatingFilterComp";
-import {HtmlHelper}                                                        from "./HtmlHelper";
+import {BaseAgCol}                                                         from "./BaseAgCol";
+import {FloatingFilterComp} from "./FloatingFilterComp";
+import {HtmlBuilder}        from "./HtmlBuilder";
 
 // TODO: make this extensible as autocomplete
 export interface IAgColActionProps {
@@ -27,15 +27,15 @@ export class AgColActionParams {
 }
 
 // TODO: manage multiple actions: another component or same ?
-export class AgColAction extends AgColBase<IAgColActionProps & AgGridColumnProps> {
+export class AgColAction extends BaseAgCol<IAgColActionProps & AgGridColumnProps> {
 
     static buildButton(params: ICellRendererParams, props: Omit<IAgColActionProps, "onClick">, onClick: () => void): HTMLElement {
         const content = [
             props.showValue && params.value?.toString(), // eslint-disable-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access
-            props.icon && HtmlHelper.icon(props.icon),
+            props.icon && HtmlBuilder.icon(props.icon),
             props.text
         ];
-        return HtmlHelper.button(content, onClick);
+        return HtmlBuilder.button(content, onClick);
     }
 
     render(): ReactNode {

@@ -4,11 +4,11 @@ import React                       from "react";
 import {Filter}                    from "../BuiltIn";
 import {CellClass}                 from "../BuiltInExtended";
 import {AgCol}                     from "./AgCol";
-import {AgColBase}                 from "./AgColBase";
+import {BaseAgCol}                 from "./BaseAgCol";
 import type {IAgColNumberProps}    from "./AgColNumber";
 import {FilterBuilder}             from "./FilterBuilder";
 
-export class AgColSmart extends AgColBase<IAgColNumberProps> {
+export class AgColSmart extends BaseAgCol<IAgColNumberProps> {
 
     static basicValues = [true, false, "true", "false"];
 
@@ -16,14 +16,13 @@ export class AgColSmart extends AgColBase<IAgColNumberProps> {
         return <AgCol.Default
             width={150}
             cellClass={this.props.cellClass ?? CellClass.Right}
-            {...FilterBuilder.Multiple(Filter.Text, Filter.Set, FilterBuilder.Number())}
+            {...FilterBuilder.multiple(Filter.Text, Filter.Set, FilterBuilder.number())}
             valueFormatter={(params: ValueFormatterParams) => this.valueFormatter(params, this.props)}
             {...this.props}
         />;
     }
 
     valueFormatter(params: ValueFormatterParams, props: IAgColNumberProps): string {
-        // use '==' for null & undefined
         if (params.value == null)
             return "";
 

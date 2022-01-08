@@ -1,9 +1,8 @@
-﻿import _                 from "lodash";
-import React, {useState} from "react";
-import {EnumHelper}      from "recwhale-ts";
-import {Size}            from "../Size";
-import type {Value}      from "./Autocomplete";
-import {Autocomplete}    from "./Autocomplete";
+﻿import _                  from "lodash";
+import React, {useState}  from "react";
+import {EnumHelper, Size} from "recwhale-ts";
+import type {Value}       from "./Autocomplete";
+import {Autocomplete}     from "./Autocomplete";
 
 export interface IEnumPickerProps<T extends string> {
     onChange: (item?: T) => void;

@@ -40,7 +40,11 @@
     "@ag-grid-community/core": "^24.0.0",
     "ag-grid-community": "^24.0.0",
     "ag-grid-react": "^24.0.0",
+    "lodash": "^4.17.20",
     "moment": "^2.29.1",
+    "react-icons": "^4.3.1",
+    "recwhale-react-bootstrap": "workspace:^",
+    "recwhale-react-core": "workspace:^",
     "recwhale-ts": "workspace:^"
   },
   "devDependencies": {

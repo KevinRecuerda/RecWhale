@@ -4,15 +4,15 @@ import type {ReactNode}           from "react";
 import React                      from "react";
 import {Filter}                   from "../BuiltIn";
 import {AgCol}                    from "./AgCol";
-import {AgColBase}                from "./AgColBase";
-import {HtmlHelper}               from "./HtmlHelper";
+import {BaseAgCol}   from "./BaseAgCol";
+import {HtmlBuilder} from "./HtmlBuilder";
 
 interface IAgColBoolProps extends AgGridColumnProps {
     hideFalse?: boolean;
     view?: "checkbox";
 }
 
-export class AgColBool extends AgColBase<IAgColBoolProps> {
+export class AgColBool extends BaseAgCol<IAgColBoolProps> {
 
     private static map = new Map(
         [
@@ -36,7 +36,7 @@ export class AgColBool extends AgColBase<IAgColBoolProps> {
             return "";
 
         if (view === "checkbox")
-            return HtmlHelper.inputCheckbox(params);
+            return HtmlBuilder.inputCheckbox(params);
 
         return AgColBool.map.get(params.value)!;
     }

@@ -3,7 +3,8 @@ import {Filter}      from "../BuiltIn";
 import {AgColNumber} from "./AgColNumber";
 
 export class FilterBuilder {
-    static Multiple(...filters: (Filter | Record<string, unknown>)[]): Record<string, unknown> {
+    
+    static multiple(...filters: (Filter | Record<string, unknown>)[]): Record<string, unknown> {
         return {
             filter:       Filter.Multi,
             filterParams: {
@@ -14,7 +15,7 @@ export class FilterBuilder {
         };
     }
 
-    static Number(unit?: Unit): Record<string, unknown> {
+    static number(unit?: Unit): Record<string, unknown> {
         return {
             filter:       Filter.Number,
             filterParams: {

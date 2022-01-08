@@ -9,7 +9,7 @@ export default defineConfig({
                                 build:   {
                                     lib:           {
                                         entry:    path.resolve(__dirname, "src/index.ts"),
-                                        name:     "recwhale-react-bootstrap",
+                                        name:     "recwhale-react-autocomplete",
                                         fileName: "index"
                                     },
                                     rollupOptions: {

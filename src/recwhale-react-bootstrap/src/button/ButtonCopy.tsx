@@ -1,12 +1,11 @@
-import type {IconDefinition} from "@fortawesome/fontawesome-common-types";
-import {faClone}             from "@fortawesome/free-solid-svg-icons";
-import {FontAwesomeIcon}     from "@fortawesome/react-fontawesome";
-import React                 from "react";
-import {Button}              from "react-bootstrap";
+import React        from "react";
+import {FaClone}    from "react-icons/fa";
+import {IconType}   from "react-icons/lib";
+import {ButtonIcon} from "./ButtonIcon";
 
 interface IButtonCopyProps {
     value?: string | number;
-    icon?: IconDefinition;
+    icon: IconType;
 }
 
 export const ButtonCopy: React.FC<IButtonCopyProps> = (props) => {
@@ -21,7 +20,10 @@ export const ButtonCopy: React.FC<IButtonCopyProps> = (props) => {
         }
     };
 
-    return <Button title="Copy to clipboard" variant="link" onClick={async () => copyToClipBoard(props.value)}>
-        <FontAwesomeIcon icon={props.icon ?? faClone}/>
-    </Button>;
+    return <ButtonIcon title="Copy to clipboard" variant="link"
+                       icon={FaClone}
+                       run={async () => copyToClipBoard(props.value)}/>; 
+    // <Button title="Copy to clipboard" variant="link" onClick={async () => copyToClipBoard(props.value)}>
+    //     <FontAwesomeIcon icon={props.icon ?? faClone}/>
+    // </Button>;
 };

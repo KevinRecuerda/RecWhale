@@ -4,7 +4,7 @@ import type {ReactNode}           from "react";
 import React                      from "react";
 import {Filter}                   from "../BuiltIn";
 import {AgCol}                    from "./AgCol";
-import {AgColBase}                from "./AgColBase";
+import {BaseAgCol}                from "./BaseAgCol";
 import {FilterBuilder}            from "./FilterBuilder";
 
 interface IAgColTextProps extends AgGridColumnProps {
@@ -12,7 +12,7 @@ interface IAgColTextProps extends AgGridColumnProps {
     useSetFilter?: boolean;
 }
 
-export class AgColText extends AgColBase<IAgColTextProps> {
+export class AgColText extends BaseAgCol<IAgColTextProps> {
 
     render(): ReactNode {
         const multilineProps = {
@@ -20,9 +20,9 @@ export class AgColText extends AgColBase<IAgColTextProps> {
             wrapText:     true,
             cellRenderer: this.multilineRenderer
         };
-        
+
         return <AgCol.Default suppressSizeToFit={false}
-                              {...FilterBuilder.Multiple(Filter.Text, ...(this.props.useSetFilter ? [Filter.Set] : []))}
+                              {...FilterBuilder.multiple(Filter.Text, ...(this.props.useSetFilter ? [Filter.Set] : []))}
                               {...(this.props.multiline ? multilineProps : {})}
                               {...this.props}
         />;

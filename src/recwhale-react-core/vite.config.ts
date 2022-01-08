@@ -9,7 +9,7 @@ export default defineConfig({
                                 build:   {
                                     lib:           {
                                         entry:    path.resolve(__dirname, "src/index.ts"),
-                                        name:     "recwhale-react-ag-grid",
+                                        name:     "recwhale-react-core",
                                         fileName: "index"
                                     },
                                     rollupOptions: {

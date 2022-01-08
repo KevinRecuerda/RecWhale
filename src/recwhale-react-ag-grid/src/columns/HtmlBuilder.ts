@@ -1,15 +1,14 @@
-﻿import type {IconDefinition}      from "@fortawesome/fontawesome-common-types";
-import {icon}                     from "@fortawesome/fontawesome-svg-core";
-import type {ICellRendererParams} from "ag-grid-community";
+﻿import type {ICellRendererParams} from "ag-grid-community";
+import {IconType}                 from "react-icons";
 
 export type contentType = string | Element | (string | Element | undefined)[];
 
-export class HtmlHelper {
+export class HtmlBuilder {
     static button(content: contentType, onClick: () => void): HTMLButtonElement {
         const button     = document.createElement("button");
         button.className = "btn btn-link btn-sm px-1";
         button.onclick   = onClick;
-        HtmlHelper.setContent(button, content);
+        HtmlBuilder.setContent(button, content);
         return button;
     }
 
@@ -18,14 +17,14 @@ export class HtmlHelper {
         a.href  = href;
         if (openNewTab)
             a.target = "_blank";
-        HtmlHelper.setContent(a, content);
+        HtmlBuilder.setContent(a, content);
         return a;
     }
 
     static span(content: contentType, className?: string): HTMLSpanElement {
         const span     = document.createElement("span");
         span.className = className ?? "";
-        HtmlHelper.setContent(span, content);
+        HtmlBuilder.setContent(span, content);
         return span;
     }
 
@@ -37,17 +36,19 @@ export class HtmlHelper {
 
     // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
     static inputCheckbox(params: ICellRendererParams): HTMLInputElement {
-        const input   = HtmlHelper.input("checkbox");
+        const input   = HtmlBuilder.input("checkbox");
         input.checked = params.value as boolean;
         input.addEventListener("click", () => params.setValue(!params.value));
         return input;
     }
 
-    static icon(iconDef: IconDefinition): SVGElement {
-        const renderedIcon = icon(iconDef);
-        const element      = renderedIcon.node[0] as SVGElement;
-        element.className.baseVal += " mx-1"; // eslint-disable-line @typescript-eslint/no-unsafe-member-access
-        return element;
+    static icon(iconType: IconType): string {
+        console.log(iconType);
+        const svgPath = "";//iconType().props.children[0].props.d
+        // const renderedIcon = icon(iconType);
+        // const element      = renderedIcon.node[0] as SVGElement;
+        // element.className.baseVal += " mx-1"; // eslint-disable-line @typescript-eslint/no-unsafe-member-access
+        return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="${svgPath}"></path></svg>`;;
     }
 
     static setContent(element: HTMLElement, content: contentType): void {
@@ -56,7 +57,7 @@ export class HtmlHelper {
             return;
         }
 
-        const nodes = HtmlHelper.toNodes(content);
+        const nodes = HtmlBuilder.toNodes(content);
         nodes.forEach(n => element.appendChild(n));
     }
 
