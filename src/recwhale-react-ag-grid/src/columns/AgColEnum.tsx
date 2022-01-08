@@ -2,7 +2,6 @@ import {ValueFormatterParams}   from "ag-grid-community";
 import type {RowNode}           from "ag-grid-community";
 import type {AgGridColumnProps} from "ag-grid-react/lib/agGridColumn";
 import type {ReactNode}         from "react";
-import React                    from "react";
 import {EnumHelper}             from "recwhale-ts";
 import {CellEditor, Filter}     from "../BuiltIn";
 import {AgCol}                  from "./AgCol";

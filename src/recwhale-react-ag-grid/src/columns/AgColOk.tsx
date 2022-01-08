@@ -1,7 +1,6 @@
 ﻿import type {ICellRendererParams}        from "ag-grid-community";
 import type {AgGridColumnProps}          from "ag-grid-react/lib/agGridColumn";
 import type {ReactNode}                  from "react";
-import React                             from "react";
 import {FaCheck, FaExclamation, FaTimes} from "react-icons/fa";
 import {Filter}                          from "../BuiltIn";
 import {AgCol}                           from "./AgCol";

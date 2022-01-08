@@ -1,7 +1,6 @@
 ﻿import type {GridApi}                      from "ag-grid-community";
 import type {ProcessHeaderForExportParams} from "ag-grid-community/dist/lib/interfaces/exportParams";
 import _                                   from "lodash";
-import React                               from "react";
 import ReactDOMServer                      from "react-dom/server";
 import {IconType}                          from "react-icons/lib";
 import type {AgMenuItemDef}                from "./index";

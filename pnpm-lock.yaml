@@ -11,6 +11,7 @@ importers:
   src/recwhale-react-ag-grid:
     specifiers:
       '@ag-grid-community/core': ^24.0.0
+      '@types/lodash': ^4.14.161
       '@types/node': ^16.4.9
       '@types/react': ^16.12.0
       '@types/react-dom': ^16.9.8
@@ -32,6 +33,7 @@ importers:
       vite-plugin-dts: ^0.9.7
     dependencies:
       '@ag-grid-community/core': 24.1.0
+      '@types/lodash': 4.14.178
       ag-grid-community: 24.1.0
       ag-grid-react: 24.1.1_2b17e0c9e2912a69d347f6055d37c320
       lodash: 4.17.21
@@ -1502,6 +1504,10 @@ packages:
 
   /@types/invariant/2.2.35:
     resolution: {integrity: sha512-DxX1V9P8zdJPYQat1gHyY0xj3efl8gnMVjiM9iCY6y27lj+PoQWkgjt8jDqmovPqULkKVpKRg8J36iQiA+EtEg==}
+    dev: false
+
+  /@types/lodash/4.14.178:
+    resolution: {integrity: sha512-0d5Wd09ItQWH1qFbEyQ7oTQ3GZrMfth5JkbN3EvTKLXcHLRDSXeLnlvlOn0wvxVIwK5o2M8JzP/OWz7T3NRsbw==}
     dev: false
 
   /@types/minimatch/3.0.5:
