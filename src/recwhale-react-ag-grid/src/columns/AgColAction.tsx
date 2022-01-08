@@ -1,18 +1,18 @@
-import type {IconDefinition}                                               from "@fortawesome/fontawesome-common-types";
 import type {GridApi, ICellRendererParams, IFloatingFilterParams, RowNode} from "ag-grid-community";
 import type {AgGridColumnProps}                                            from "ag-grid-react/lib/agGridColumn";
 import type {ReactNode}                                                    from "react";
 import React                                                               from "react";
+import {IconType}                                                          from "react-icons";
 import {CellClass}                                                         from "../BuiltInExtended";
 import {AgCol}                                                             from "./AgCol";
 import {BaseAgCol}                                                         from "./BaseAgCol";
-import {FloatingFilterComp} from "./FloatingFilterComp";
-import {HtmlBuilder}        from "./HtmlBuilder";
+import {FloatingFilterComp}                                                from "./FloatingFilterComp";
+import {HtmlBuilder}                                                       from "./HtmlBuilder";
 
 // TODO: make this extensible as autocomplete
 export interface IAgColActionProps {
     text?: string;
-    icon?: IconDefinition;
+    icon?: IconType;
     onClick: (node: RowNode, ag: GridApi) => void;
     onBulkClick?: (params: AgColActionParams) => void;
     enabled?: (node: RowNode) => boolean;

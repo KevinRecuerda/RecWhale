@@ -30,6 +30,5 @@ export class FloatingFilterComp implements IFloatingFilterComp {
         return this.ui!;
     }
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars,@typescript-eslint/no-empty-function,@typescript-eslint/explicit-module-boundary-types
-    onParentModelChanged(parentModel: any, filterChangedEvent?: FilterChangedEvent): void { }
+    onParentModelChanged(_parentModel: any, _filterChangedEvent?: FilterChangedEvent): void { }
 }

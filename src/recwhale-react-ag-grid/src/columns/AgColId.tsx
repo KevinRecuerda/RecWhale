@@ -23,7 +23,7 @@ export class AgColId extends BaseAgCol<IAgColIdProps> {
 
     static getWidth(idType?: IdType): number {
         const defaultValue = AgColId.widthMappings.get("*");
-        return AgColId.widthMappings.getSafely(idType, defaultValue);
+        return AgColId.widthMappings.getSafely(idType, defaultValue)!;
     }
 
     render(): ReactNode {

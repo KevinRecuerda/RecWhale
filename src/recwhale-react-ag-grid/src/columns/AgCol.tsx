@@ -111,7 +111,7 @@ export class AgCol {
 
         const props          = element.props as PropsWithChildren<ColDef | ColGroupDef>;
         const children       = ReactHelper.getChildren(props);
-        const childrenColDef = children.map((x) => AgCol.toColDef(x)).flat();
+        const childrenColDef = children.map((x: ReactNode) => AgCol.toColDef(x)).flat();
 
         const isFragment = element.type === React.Fragment;
         if (isFragment)
