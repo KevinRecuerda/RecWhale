@@ -20,22 +20,15 @@
   "scripts": {
     "clean": "rm -rf dist",
     "dev": "vite",
-    "build": "rm -rf dist && tsc --emitDeclarationOnly && vite build",
+    "build": "rm -rf dist && tsc && vite build",
     "preview": "vite preview"
   },
-  "main": "dist/index.umd.js",
+  "main": "dist/index.es.js",
   "types": "dist/src/index.d.ts",
-  "module": "dist/index.es.js",
   "files": [
     "dist",
     "!dist/tsconfig.tsbuildinfo"
   ],
-  "exports": {
-    ".": {
-      "import": "./dist/index.es.js",
-      "require": "./dist/index.umd.js"
-    }
-  },
   "dependencies": {
     "moment": "^2.29.1",
     "react-bootstrap": "^1.6.3",
@@ -53,6 +46,7 @@
     "sass": "^1.46.0",
     "typescript": "^4.4.2",
     "vite": "^2.7.10",
+    "vite-dts": "^1.0.4",
     "vite-plugin-dts": "^0.9.6"
   }
 }

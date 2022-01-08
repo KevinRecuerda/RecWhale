@@ -112,6 +112,7 @@ importers:
       sass: ^1.46.0
       typescript: ^4.4.2
       vite: ^2.7.10
+      vite-dts: ^1.0.4
       vite-plugin-dts: ^0.9.6
     dependencies:
       moment: 2.29.1
@@ -129,6 +130,7 @@ importers:
       sass: 1.46.0
       typescript: 4.5.4
       vite: 2.7.10_sass@1.46.0
+      vite-dts: 1.0.4_vite@2.7.10
       vite-plugin-dts: 0.9.7_vite@2.7.10
 
   src/recwhale-react-core:
@@ -5495,6 +5497,15 @@ packages:
       assert-plus: 1.0.0
       core-util-is: 1.0.2
       extsprintf: 1.3.0
+    dev: true
+
+  /vite-dts/1.0.4_vite@2.7.10:
+    resolution: {integrity: sha512-jfRsrBU8vibUS4a/AboDzHdph2/9/dpoMdYgkiD5tb4OXL75wnlzeEZ6D2XoEZNExwnkXqARKAvz7pv5VtUm5g==}
+    peerDependencies:
+      vite: '>2.0.0-0'
+    dependencies:
+      load-json-file: 6.2.0
+      vite: 2.7.10_sass@1.46.0
     dev: true
 
   /vite-plugin-dts/0.9.7_vite@2.7.10:
