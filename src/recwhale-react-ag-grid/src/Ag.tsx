@@ -7,7 +7,7 @@ import type {StatusPanelDef}                                                    
 import {AgGridReact}                                                                                     from "ag-grid-react";
 import {isMoment}                                                                                        from "moment";
 import React, {useEffect, useState}                                                                      from "react";
-import {Size}                                                                                            from "recwhale-react-bootstrap";
+import {Size, SizeHelper}                                                                                from "recwhale-react-bootstrap";
 import {StatusBarComp}                                                                                   from "./BuiltIn";
 import {AgCol}                                                                                           from "./columns/AgCol";
 import type {AgGetContextMenuItemsParams, AgMenuItemDef}                                                 from "./context";
@@ -146,11 +146,11 @@ export const Ag: React.FC<IAgGridReactSGProps> = (props) => {
 
     return (
         <div className={`ag-table ${theme}`} style={style}>
-            {props.useSearch && <input type="text" placeholder="search..." className="form-control" onChange={e => setSearchText(e.target.value)} />}
+            {props.useSearch && <input type="text" placeholder="search..." className="form-control" onChange={e => setSearchText(e.target.value)}/>}
 
             <AgGridReact {...AgCol.buildProps(props)}
-                         // headerHeight={32}
-                         // rowHeight={24}
+                // headerHeight={32}
+                // rowHeight={24}
 
                          suppressPropertyNamesCheck
                          onGridReady={onGridReady}
