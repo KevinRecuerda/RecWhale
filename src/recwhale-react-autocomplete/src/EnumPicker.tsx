@@ -1,8 +1,8 @@
-﻿import _                  from "lodash";
-import React, {useState}  from "react";
-import {EnumHelper, Size} from "recwhale-ts";
-import type {Value}       from "./Autocomplete";
-import {Autocomplete}     from "./Autocomplete";
+﻿import {Size}            from "@material-ui/core";
+import React, {useState} from "react";
+import {EnumHelper}      from "recwhale-ts";
+import type {Value}      from "./Autocomplete";
+import {Autocomplete}    from "./Autocomplete";
 
 export interface IEnumPickerProps<T extends string> {
     onChange: (item?: T) => void;
@@ -20,7 +20,7 @@ interface IEnumPickerValueProps<T extends string> extends IEnumPickerProps<T> {
 
 export function EnumPicker<T extends string>(props: IEnumPickerValueProps<T>): JSX.Element {
 
-    const [items] = useState<T[]>(_.values(props.type));
+    const [items] = useState<T[]>(Object.values(props.type));
 
     function initSelected(items: T[]): Value<T, false, undefined> | undefined {
         return props.defaultValue ?? (props.useDefault ? items[0] : undefined);
@@ -31,7 +31,7 @@ export function EnumPicker<T extends string>(props: IEnumPickerValueProps<T>): J
             options={items}
             initSelected={initSelected}
             label={props.name}
-            size={props.size ?? "sm"}
+            size={props.size ?? "small"}
             renderOption={(item: T) => <>{EnumHelper.format(item)}</>}
             urlLoader={{label: props.name, keySelector: (item: T) => item}}
             {...props}
