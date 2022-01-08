@@ -19,7 +19,7 @@
     "noFallthroughCasesInSwitch": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "baseUrl": "."
+//    "baseUrl": "."
     //    "paths": {
     //      "recwhale-ts": ["src/recwhale-ts/src"]
     //    }

@@ -5,7 +5,6 @@ import type {GridApi}                                                           
 import type {ProcessHeaderForExportParams, ShouldRowBeSkippedParams}                                     from "ag-grid-community/dist/lib/interfaces/exportParams";
 import type {StatusPanelDef}                                                                             from "ag-grid-community/dist/lib/interfaces/iStatusPanel";
 import {AgGridReact}                                                                                     from "ag-grid-react";
-import {isMoment}                                                                                        from "moment";
 import React, {useEffect, useState}                                                                      from "react";
 import {Size, SizeHelper}                                                                                from "recwhale-react-bootstrap";
 import {StatusBarComp}                                                                                   from "./BuiltIn";
@@ -99,7 +98,7 @@ export const Ag: React.FC<IAgGridReactSGProps> = (props) => {
         processCellCallback:   (params: ProcessCellForExportParams) => {
             // TODO: rework this: use excel styles
             const colDef = params.column.getColDef();
-            if (!params.node || !colDef.valueFormatter || !isMoment(params.value))
+            if (!params.node || !colDef.valueFormatter)
                 return params.value as string;
 
             const valueFormatterParams: ValueFormatterParams = {

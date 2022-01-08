@@ -1,6 +1,6 @@
 {
   "name": "recwhale-react-ag-grid",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "description": "Provides component wrapper for ag-grid.",
   "repository": {
     "type": "git",
@@ -23,19 +23,12 @@
     "build": "rm -rf dist && vite build && tsc",
     "preview": "vite preview"
   },
-  "main": "dist/index.umd.js",
-  "types": "dist/index.d.ts",
-  "module": "dist/index.es.ts",
+  "main": "dist/index.es.js",
+  "types": "dist/src/index.d.ts",
   "files": [
     "dist",
     "!dist/tsconfig.tsbuildinfo"
   ],
-  "exports": {
-    ".": {
-      "import": "./dist/index.es.js",
-      "require": "./dist/index.umd.js"
-    }
-  },
   "dependencies": {
     "@ag-grid-community/core": "^24.0.0",
     "ag-grid-community": "^24.0.0",

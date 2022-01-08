@@ -1,7 +1,8 @@
 ﻿{
   "extends": "../../tsconfig",
   "compilerOptions": {
-    "outDir": "dist"
+    "outDir": "dist",
+    "skipLibCheck": true
   },
   "include": ["src"],
   "exclude": [
