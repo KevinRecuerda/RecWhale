@@ -1,5 +1,5 @@
-﻿import {Size}            from "@material-ui/core";
-import React, {useState} from "react";
+﻿import React, {useState} from "react";
+import {Size}            from "recwhale-react-bootstrap";
 import {EnumHelper}      from "recwhale-ts";
 import type {Value}      from "./Autocomplete";
 import {Autocomplete}    from "./Autocomplete";
@@ -31,7 +31,7 @@ export function EnumPicker<T extends string>(props: IEnumPickerValueProps<T>): J
             options={items}
             initSelected={initSelected}
             label={props.name}
-            size={props.size ?? "small"}
+            size={props.size ?? "sm"}
             renderOption={(item: T) => <>{EnumHelper.format(item)}</>}
             urlLoader={{label: props.name, keySelector: (item: T) => item}}
             {...props}

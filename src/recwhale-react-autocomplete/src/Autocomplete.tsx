@@ -9,8 +9,9 @@ import type {FilterOptionsState}                                                
 import _                                                                         from "lodash";
 import queryString                                                               from "query-string";
 import React, {useState, useEffect}                                              from "react";
+import {FaCheck, FaPlus}                                                         from "react-icons/fa";
 import {useLocation}                                                             from "react-router";
-import {Size}                                                                    from "recwhale-ts";
+import {Size, SizeHelper}                                                        from "recwhale-react-bootstrap";
 import {virtualizationProps}                                                     from "./AutocompleteVirtualization";
 import "./Autocomplete.scss";
 
@@ -114,11 +115,13 @@ export function Autocomplete<T,
             ?? innerProps.getOptionLabel?.(option)
             ?? option;
 
-        const isNew = (option as any)._new === true;
+        const isNew          = (option as any)._new === true;
+        const Icon           = isNew ? FaPlus : FaCheck;
+        const iconVisibility = state.selected || isNew ? "visible" : "hidden";
+
         return <>
             <span className={`MuiAutocomplete-option-wrapper ${!innerProps.multiple ? "MuiAutocomplete-scroll" : ""}`}>
-            {state.inputValue !== "__nocheck__" &&
-            <FontAwesomeIcon icon={isNew ? faPlus : faCheck} className="check" style={{visibility: state.selected || isNew ? "visible" : "hidden"}}/>}
+                {state.inputValue !== "__nocheck__" && <Icon className="check" style={{visibility: iconVisibility}}/>}
                 {render}
             </span>
         </>;
