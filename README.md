@@ -81,6 +81,7 @@ need lerna ? only for dependencies otherwise can loop on src/**/packages.json an
 - https://divotion.com/blog/creating-a-component-library-with-vite-and-storybook
 
 - https://pnpm.io/workspaces
+- https://pnpm.io/cli/recursive
 - https://vitejs.dev/guide/build.html#library-mode
 
 #### publish dist only ?

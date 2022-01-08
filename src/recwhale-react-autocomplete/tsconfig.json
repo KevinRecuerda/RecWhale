@@ -3,7 +3,8 @@
   "compilerOptions": {
     "outDir": "dist",
     "allowJs": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "emitDeclarationOnly": true
   },
   "include": ["src"],
   "exclude": [
