@@ -20,7 +20,7 @@
   "scripts": {
     "clean": "rm -rf dist",
     "dev": "vite",
-    "build": "rm -rf dist && tsc && vite build",
+    "build": "rm -rf dist && vite build && tsc",
     "preview": "vite preview"
   },
   "main": "dist/index.es.js",
