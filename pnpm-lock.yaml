@@ -62,6 +62,7 @@ importers:
       '@types/node': ^16.4.9
       '@types/react': ^16.12.0
       '@types/react-dom': ^16.9.8
+      '@types/react-window': ^1.8.2
       '@vitejs/plugin-react': ^1.1.3
       lodash: ^4.17.20
       moment: ^2.29.1
@@ -81,6 +82,7 @@ importers:
     dependencies:
       '@material-ui/core': 4.12.3_cf6b888523c4e91fb446489a82d416ef
       '@material-ui/lab': 4.0.0-alpha.60_09c5960972fc494813763adff4b4c140
+      '@types/react-window': 1.8.5
       lodash: 4.17.21
       moment: 2.29.1
       query-string: 6.14.1
@@ -1541,6 +1543,12 @@ packages:
 
   /@types/react-transition-group/4.4.4:
     resolution: {integrity: sha512-7gAPz7anVK5xzbeQW9wFBDg7G++aPLAFY0QaSMOou9rJZpbuI58WAuJrgu+qR92l61grlnCUe7AFX8KGahAgug==}
+    dependencies:
+      '@types/react': 16.14.21
+    dev: false
+
+  /@types/react-window/1.8.5:
+    resolution: {integrity: sha512-V9q3CvhC9Jk9bWBOysPGaWy/Z0lxYcTXLtLipkt2cnRj1JOSFNF7wqGpkScSXMgBwC+fnVRg/7shwgddBG5ICw==}
     dependencies:
       '@types/react': 16.14.21
     dev: false
