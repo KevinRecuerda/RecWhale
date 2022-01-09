@@ -4,8 +4,8 @@ import {IconType}   from "react-icons/lib";
 import {ButtonIcon} from "./ButtonIcon";
 
 interface IButtonCopyProps {
-    value?: string | number;
-    icon: IconType;
+    value: string;
+    icon?: IconType;
 }
 
 export const ButtonCopy: React.FC<IButtonCopyProps> = (props) => {
@@ -21,9 +21,6 @@ export const ButtonCopy: React.FC<IButtonCopyProps> = (props) => {
     };
 
     return <ButtonIcon title="Copy to clipboard" variant="link"
-                       icon={FaClone}
-                       run={async () => copyToClipBoard(props.value)}/>; 
-    // <Button title="Copy to clipboard" variant="link" onClick={async () => copyToClipBoard(props.value)}>
-    //     <FontAwesomeIcon icon={props.icon ?? faClone}/>
-    // </Button>;
+                       icon={props.icon ?? FaClone}
+                       run={async () => copyToClipBoard(props.value)}/>;
 };

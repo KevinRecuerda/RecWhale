@@ -2,7 +2,8 @@
 
 :whale: Provide some extensions tools
 
-https://stackblitz.com/edit/react-ts-6emyqg
+- https://react-ts-recwhale.stackblitz.io
+- https://stackblitz.com/edit/react-ts-recwhale
 
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
 
@@ -50,10 +51,10 @@ npx lerna changed
 
 - [x] test lib ts
 - [x] test lib ts extension
-- [ ] test lib react
+- [x] test lib react
 
 - [ ] use npm orga `@recwhale`
-- [ ] use github actions
+- [x] use github actions
 
 ### others
 
@@ -100,5 +101,7 @@ need lerna ? only for dependencies otherwise can loop on src/**/packages.json an
 
 
 ****
+https://react-ts-recwhale.stackblitz.io
 
+***
 consider `luxon` instead of `moment`
