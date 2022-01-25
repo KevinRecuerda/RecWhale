@@ -12,7 +12,7 @@ export interface IButtonIconProps extends ButtonProps {
 
 export const ButtonIcon: React.FC<IButtonIconProps> = (props) => {
 
-    const {run, ...innerProps} = props;
+    const {run, icon, ...innerProps} = props;
 
     const [isRunning, setIsRunning] = useState<boolean>();
 
@@ -29,13 +29,15 @@ export const ButtonIcon: React.FC<IButtonIconProps> = (props) => {
         spinnerVariant = spinnerVariant.substring(8);
     else if (spinnerVariant.startsWith("flat-"))
         spinnerVariant = spinnerVariant.substring(5);
+    
+    const Icon = icon;
 
     return (
         <Button variant={variant} disabled={isRunning} onClick={onClick} {...innerProps}>
             {props.children && <span className="mr-2">{props.children}</span>}
             {isRunning
              ? <Spinner className="pull-right" animation="border" variant={spinnerVariant}/>
-             : <props.icon className="pull-right fa-w-16"/>
+             : <Icon className="pull-right fa-w-16"/>
             }
         </Button>
     );
