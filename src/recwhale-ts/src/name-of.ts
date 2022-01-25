@@ -1,6 +1,6 @@
-﻿export function nameof<T>(item: T, key: keyof T): string;
-export function nameof<T>(key: keyof T): string;
-
-export function nameof(key1: any, key2?: any): any {
-    return key2 ?? key1;
+function nameof2<T>(selector: (item: T) => any, skipPath?: number): string {
+  skipPath ??= 0;
+  const paths = selector.toString().split(".").slice(1 + skipPath);
+  const name = paths.join(".");
+  return name;
 }
