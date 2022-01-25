@@ -103,5 +103,7 @@ need lerna ? only for dependencies otherwise can loop on src/**/packages.json an
 ****
 https://react-ts-recwhale.stackblitz.io
 
+https://codesandbox.io/s/recwhale-691fm
+
 ***
 consider `luxon` instead of `moment`
