@@ -1,5 +1,6 @@
 ﻿import type {ValueFormatterParams} from "ag-grid-community/dist/lib/entities/colDef";
 import type {ReactNode}            from "react";
+import React                       from "react";
 import {Filter}                    from "../BuiltIn";
 import {CellClass}                 from "../BuiltInExtended";
 import {AgCol}                     from "./AgCol";

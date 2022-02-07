@@ -117,10 +117,10 @@ export class AgCol {
         if (isFragment)
             return childrenColDef;
 
-        // const colDef: ColDef | ColGroupDef = {};
-        // Object.keys(element.props)
-        //       .filter(x => AgCol.colDefKeys.has(x))
-        //       .forEach(x => (colDef as any)[x] = (props as any)[x]); // eslint-disable-line @typescript-eslint/no-unsafe-assignment,@typescript-eslint/no-unsafe-return,@typescript-eslint/no-unsafe-member-access
+        const colDef: ColDef | ColGroupDef = {};
+        Object.keys(element.props)
+              // .filter(x => AgCol.colDefKeys.has(x))
+              .forEach(x => (colDef as any)[x] = (props as any)[x]); // eslint-disable-line @typescript-eslint/no-unsafe-assignment,@typescript-eslint/no-unsafe-return,@typescript-eslint/no-unsafe-member-access
 
         if (childrenColDef.length)
             props.children = childrenColDef;

@@ -15,7 +15,7 @@
     "strict": true,
     "strictNullChecks": true,
     "downlevelIteration": true,
-    "jsx": "react-jsx",
+    "jsx": "react",
     "noFallthroughCasesInSwitch": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,

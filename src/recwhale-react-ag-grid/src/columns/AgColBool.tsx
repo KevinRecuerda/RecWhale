@@ -1,10 +1,11 @@
 ﻿import type {ICellRendererParams} from "ag-grid-community";
 import type {AgGridColumnProps}   from "ag-grid-react/lib/agGridColumn";
 import type {ReactNode}           from "react";
+import React                      from "react";
 import {Filter}                   from "../BuiltIn";
 import {AgCol}                    from "./AgCol";
-import {BaseAgCol}   from "./BaseAgCol";
-import {HtmlBuilder} from "./HtmlBuilder";
+import {BaseAgCol}                from "./BaseAgCol";
+import {HtmlBuilder}              from "./HtmlBuilder";
 
 interface IAgColBoolProps extends AgGridColumnProps {
     hideFalse?: boolean;

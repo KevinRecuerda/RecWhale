@@ -1,6 +1,7 @@
 import type {GridApi, ICellRendererParams, IFloatingFilterParams, RowNode} from "ag-grid-community";
 import type {AgGridColumnProps}                                            from "ag-grid-react/lib/agGridColumn";
 import type {ReactNode}                                                    from "react";
+import React                                                               from "react";
 import {IconType}                                                          from "react-icons";
 import {CellClass}                                                         from "../BuiltInExtended";
 import {AgCol}                                                             from "./AgCol";

@@ -2,6 +2,7 @@ import type {ValueFormatterParams} from "ag-grid-community";
 import type {AgGridColumnProps}    from "ag-grid-react/lib/agGridColumn";
 import moment, {Moment}            from "moment";
 import type {ReactNode}            from "react";
+import React                       from "react";
 import {MomentView}                from "recwhale-ts";
 import {Filter}                    from "../BuiltIn";
 import {AgCol}                     from "./AgCol";
