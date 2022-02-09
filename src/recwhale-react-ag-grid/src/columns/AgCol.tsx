@@ -118,14 +118,12 @@ export class AgCol {
             return childrenColDef;
 
         const colDef: ColDef | ColGroupDef = {};
-        Object.keys(element.props)
-              // .filter(x => AgCol.colDefKeys.has(x))
-              .forEach(x => (colDef as any)[x] = (props as any)[x]); // eslint-disable-line @typescript-eslint/no-unsafe-assignment,@typescript-eslint/no-unsafe-return,@typescript-eslint/no-unsafe-member-access
+        Object.assign(colDef, element.props);
 
         if (childrenColDef.length)
-            props.children = childrenColDef;
+            (colDef as ColGroupDef).children = childrenColDef;
 
-        return [props];
+        return [colDef];
     }
 
     static safeSubValueSetter<T>(params: ValueSetterParams, safe: (data: T) => void): boolean {
