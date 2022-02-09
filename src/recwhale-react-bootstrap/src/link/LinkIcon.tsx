@@ -13,7 +13,7 @@ export const LinkIcon: React.FC<ILinkIconProps> = (props) => {
     if (!props.to)
         return <></>;
 
-    const Icon = props.Icon;
+    const Icon = props.icon;
     return (
         <span className={props.className}>
             <Link to={props.to} target="_blank">
