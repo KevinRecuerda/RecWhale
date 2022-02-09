@@ -1,4 +1,4 @@
-﻿export enum CellClass {
+﻿export const enum CellClass {
     // Alignment
     Centered  = "ag-cell-centered",
     Right     = "ag-cell-right",
