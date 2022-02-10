@@ -1,4 +1,4 @@
-﻿export const enum Filter {
+﻿export enum Filter {
     Set    = "agSetColumnFilter",
     Text   = "agTextColumnFilter",
     Number = "agNumberColumnFilter",
@@ -6,14 +6,14 @@
     Multi  = "agMultiColumnFilter"
 }
 
-export const enum FloatingFilter {
+export enum FloatingFilter {
     Set    = "agSetColumnFloatingFilter",
     Text   = "agTextColumnFloatingFilter",
     Number = "agNumberColumnFloatingFilter",
     Date   = "agDateColumnFloatingFilter"
 }
 
-export const enum CellEditor {
+export enum CellEditor {
     Text        = "agTextCellEditor",
     TextLarge   = "agLargeTextCellEditor",
     Select      = "agSelectCellEditor",
@@ -22,25 +22,25 @@ export const enum CellEditor {
     PopupSelect = "agPopupSelectCellEditor"
 }
 
-export const enum CellRenderer {
+export enum CellRenderer {
     Group = "agGroupCellRenderer"
 }
 
-export const enum MasterDetail {
+export enum MasterDetail {
     CellRenderer = "agDetailCellRenderer"
 }
 
-export const enum ColGroupShow {
+export enum ColGroupShow {
     Open   = "open",
     Closed = "closed"
 }
 
-export const enum AggFunc {
+export enum AggFunc {
     Sum    = "sum",
     Single = "single"
 }
 
-export const enum StatusBarComp {
+export enum StatusBarComp {
     Total            = "agTotalRowCountComponent",
     TotalAndFiltered = "agTotalAndFilteredRowCountComponent",
     Filtered         = "agFilteredRowCountComponent",
