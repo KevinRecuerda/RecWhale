@@ -10,7 +10,6 @@ import _                                                                        
 import queryString                                                               from "query-string";
 import React, {useState, useEffect}                                              from "react";
 import {FaCheck, FaPlus}                                                         from "react-icons/fa";
-import {useLocation}                                                             from "react-router";
 import {Size, SizeHelper}                                                        from "recwhale-react-bootstrap";
 import {virtualizationProps}                                                     from "./AutocompleteVirtualization";
 import "./Autocomplete.scss";
@@ -60,8 +59,6 @@ export function Autocomplete<T,
     DisableClearable extends boolean | undefined = undefined,
     FreeSolo extends boolean | undefined = undefined>(props: IAutocompleteProps<T, Multiple, DisableClearable, FreeSolo>): JSX.Element {
 
-    const location = useLocation();
-
     //If use undefined => material-ui component is uncontrolled => selected property cannot be set
     const [selectedValue, setSelectedValue] = useState<Value<T, Multiple, DisableClearable>>((props.multiple ? [] : undefined) as Value<T, Multiple, DisableClearable>);
 
@@ -78,7 +75,7 @@ export function Autocomplete<T,
         function init(): Value<T, Multiple, DisableClearable> | undefined {
             if (urlLoader) {
                 const urlLabel = _.camelCase(urlLoader.label);
-                const params   = queryString.parse(location.search, {arrayFormat: "comma"});
+                const params   = queryString.parse(window.location.search, {arrayFormat: "comma"});
                 const keys     = Array.build(params[urlLabel]).map(x => x.toLowerCase());
 
                 if (keys.length) {
