@@ -98,7 +98,8 @@ need lerna ? only for dependencies otherwise can loop on src/**/packages.json an
 
 "packageManager": "pnpm@6.22.2"
 
-
+TODO: remove lerna
+TOOD: facto tsconfig-react
 
 ****
 https://react-ts-recwhale.stackblitz.io
