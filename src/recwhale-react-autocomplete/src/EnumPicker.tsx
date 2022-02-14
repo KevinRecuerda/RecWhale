@@ -1,8 +1,8 @@
-﻿import React, {useState} from "react";
-import {Size}            from "recwhale-react-bootstrap";
+﻿import _                 from "lodash";
+import React, {useState} from "react";
 import {EnumHelper}      from "recwhale-ts";
 import type {Value}      from "./Autocomplete";
-import {Autocomplete}    from "./Autocomplete";
+import {Autocomplete, IAutocompleteWrapperProps}    from "./Autocomplete";
 
 export interface IEnumPickerProps<T extends string, Multiple extends boolean | undefined = undefined> extends IAutocompleteWrapperProps<T, Multiple> {
     useDefault?: boolean;
