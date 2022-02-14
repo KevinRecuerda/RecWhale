@@ -4,27 +4,30 @@ import {EnumHelper}      from "recwhale-ts";
 import type {Value}      from "./Autocomplete";
 import {Autocomplete}    from "./Autocomplete";
 
-export interface IEnumPickerProps<T extends string> {
-    onChange: (item?: T) => void;
-    optional?: boolean;
+export interface IEnumPickerProps<T extends string, Multiple extends boolean | undefined = undefined> extends IAutocompleteWrapperProps<T, Multiple> {
     useDefault?: boolean;
     defaultValue?: T;
-    renderOption?: (item: T) => React.ReactNode;
-    size?: Size;
+    strictRender?: boolean;
 }
 
-interface IEnumPickerValueProps<T extends string> extends IEnumPickerProps<T> {
+interface IEnumPickerValueProps<T extends string, Multiple extends boolean | undefined = undefined> extends IEnumPickerProps<T, Multiple> {
     type: Record<string, T>;
     name: string;
 }
 
-export function EnumPicker<T extends string>(props: IEnumPickerValueProps<T>): JSX.Element {
+export function EnumPicker<T extends string, Multiple extends boolean | undefined = undefined>(props: IEnumPickerValueProps<T, Multiple>): JSX.Element {
 
-    const [items] = useState<T[]>(Object.values(props.type));
+    const [items] = useState<T[]>(_.values(props.type));
 
-    function initSelected(items: T[]): Value<T, false, undefined> | undefined {
-        return props.defaultValue ?? (props.useDefault ? items[0] : undefined);
+    function initSelected(items: T[]): Value<T, Multiple, undefined> | undefined {
+        const defaultValue = props.defaultValue ?? (props.useDefault ? items[0] : undefined);
+        const selected     = props.multiple ? Array.build(defaultValue) : defaultValue;
+        return selected as Value<T, Multiple, undefined> | undefined;
     }
+
+    const renderOption = props.strictRender
+        ? undefined
+        : (item: T) => <>{EnumHelper.format(item)}</>;
 
     return (
         <Autocomplete
@@ -32,7 +35,7 @@ export function EnumPicker<T extends string>(props: IEnumPickerValueProps<T>): J
             initSelected={initSelected}
             label={props.name}
             size={props.size ?? "sm"}
-            renderOption={(item: T) => <>{EnumHelper.format(item)}</>}
+            renderOption={renderOption}
             urlLoader={{label: props.name, keySelector: (item: T) => item}}
             {...props}
         />
