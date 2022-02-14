@@ -12,6 +12,8 @@ export interface ITableKVProps {
     className?: string;
     size?: Size;
     smart?: boolean;
+    bordered?: boolean;
+    stripedReverse?: boolean;
 }
 
 export const TableKV: React.FC<ITableKVProps> = (props) => {
@@ -34,11 +36,13 @@ export const TableKV: React.FC<ITableKVProps> = (props) => {
         return value; // eslint-disable-line @typescript-eslint/no-unsafe-return
     };
 
+    const bordered = props.bordered ?? true;
+    const className = props.stripedReverse ? "table-striped-reverse" : "";
     const width = SizeHelper.width(props.size ?? "xs");
     return (
         <div className={props.className}>
             {props.title && <h5>{props.title}</h5>}
-            <Table striped bordered size="sm" className="text-small" style={{width: width}}>
+            <Table striped bordered={bordered} size="sm" className={`text-small ${className}`} style={{width: width}}>
                 <tbody>
                 {props.rows.map(([key, value]) =>
                                     <tr key={key}>
