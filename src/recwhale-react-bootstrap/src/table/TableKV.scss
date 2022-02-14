@@ -3,4 +3,7 @@
     width: 1% !important;
     white-space: nowrap !important;
   }
+  
+  &.table-striped-reverse tbody tr:nth-of-type(odd) { background-color: transparent; }
+  &.table-striped-reverse tbody tr:nth-of-type(even) { background-color: rgba(0,0,0,.05); }
 }
