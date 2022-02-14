@@ -141,7 +141,7 @@ export const Ag: React.FC<IAgGridReactSGProps> = (props) => {
     if (props.size)
         style.height = SizeHelper.height(props.size);
 
-    const theme = "ag-theme-alpine";
+    const theme = "ag-theme-alpine ag-theme-sg-bootstrap ag-theme-sg-bootstrap-condensed";
 
     return (
         <div className={`ag-table ${theme}`} style={style}>
