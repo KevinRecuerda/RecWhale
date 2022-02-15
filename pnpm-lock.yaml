@@ -11,12 +11,14 @@ importers:
   src/recwhale-react-ag-grid:
     specifiers:
       '@ag-grid-community/core': ^24.0.0
+      '@ag-grid-enterprise/all-modules': ^27.0.1
       '@types/lodash': ^4.14.161
       '@types/node': ^17.0.15
       '@types/react': ^17.0.39
       '@types/react-dom': ^17.0.11
       '@vitejs/plugin-react': ^1.1.3
       ag-grid-community: ^24.0.0
+      ag-grid-enterprise: ^27.0.1
       ag-grid-react: ^24.0.0
       lodash: ^4.17.20
       moment: ^2.29.1
@@ -34,8 +36,10 @@ importers:
       vite-plugin-dts: ^0.9.6
     dependencies:
       '@ag-grid-community/core': 24.1.0
+      '@ag-grid-enterprise/all-modules': 27.0.1
       '@types/lodash': 4.14.178
       ag-grid-community: 24.1.0
+      ag-grid-enterprise: 27.0.1
       ag-grid-react: 24.1.1_10b28e7de39865b8642df76ecbec36c1
       lodash: 4.17.21
       moment: 2.29.1
@@ -186,8 +190,196 @@ importers:
 
 packages:
 
+  /@ag-grid-community/all-modules/27.0.1:
+    resolution: {integrity: sha512-M3ldD+zzF08V9/qNBpCl4RpY6FbyzvwIYFX0vZe7bstb9ZUKN7+J2b7qTrSMml4fJxX8EBVhGMbDDYkhZFogxg==}
+    dependencies:
+      '@ag-grid-community/client-side-row-model': 27.0.0
+      '@ag-grid-community/core': 27.0.1
+      '@ag-grid-community/csv-export': 27.0.0
+      '@ag-grid-community/infinite-row-model': 27.0.0
+    dev: false
+
+  /@ag-grid-community/client-side-row-model/27.0.0:
+    resolution: {integrity: sha512-aj0VcVT2mhwQmyYOkQvPqI27enidOj0ujNHSyqYYECNPOFVq2o+1zhR/jqxJIARhPGYPP1HEVyPzlrfzecpzbw==}
+    dependencies:
+      '@ag-grid-community/core': 27.0.1
+    dev: false
+
   /@ag-grid-community/core/24.1.0:
     resolution: {integrity: sha512-dmC7rgEoe6NIsGrBK4vENWorJ/yZxNU4TyaWp1Rwn0iCJENNOSbtjA8QejyTzKtLyWcYPlfkXxG1q2irAfRD7A==}
+    dev: false
+
+  /@ag-grid-community/core/27.0.1:
+    resolution: {integrity: sha512-ar4N+SNzXDGjMyT/2GkYJYPhi7wCdOUcCuOwWQR0I0nK0li1ELLrg0bPaUuPws/GkzhWpSGws8sOubpFwPl6Tw==}
+    dev: false
+
+  /@ag-grid-community/csv-export/27.0.0:
+    resolution: {integrity: sha512-GfDE1Il1HbzafnQMOyCBrIBdnVMtcizEYsSB4JHJZ+o33mN9F5cVdhBJ8Xt+rjk9mGAK8A/dUA2H+YKqM9sePw==}
+    dependencies:
+      '@ag-grid-community/core': 27.0.1
+    dev: false
+
+  /@ag-grid-community/infinite-row-model/27.0.0:
+    resolution: {integrity: sha512-Awszd8lDBHQA4Wj8Lfi6ynB0McLFzSxrFDRCs4lSMhxRst/SVUq88scCG7eXCW9nEUL54FjMjApUV+FqbiHhrw==}
+    dependencies:
+      '@ag-grid-community/core': 27.0.1
+    dev: false
+
+  /@ag-grid-enterprise/all-modules/27.0.1:
+    resolution: {integrity: sha512-KEI6l6v5w50spVsxACOSQTezFW8sjhBfgym703Z5auPsdqBxzfSEKZ3eRKWEOUtttz0SjNczNUKnPa/tufMO9Q==}
+    dependencies:
+      '@ag-grid-community/all-modules': 27.0.1
+      '@ag-grid-enterprise/charts': 27.0.0
+      '@ag-grid-enterprise/clipboard': 27.0.0
+      '@ag-grid-enterprise/column-tool-panel': 27.0.0
+      '@ag-grid-enterprise/core': 27.0.1
+      '@ag-grid-enterprise/excel-export': 27.0.0
+      '@ag-grid-enterprise/filter-tool-panel': 27.0.0
+      '@ag-grid-enterprise/master-detail': 27.0.0
+      '@ag-grid-enterprise/menu': 27.0.0
+      '@ag-grid-enterprise/multi-filter': 27.0.0
+      '@ag-grid-enterprise/range-selection': 27.0.0
+      '@ag-grid-enterprise/rich-select': 27.0.0
+      '@ag-grid-enterprise/row-grouping': 27.0.0
+      '@ag-grid-enterprise/server-side-row-model': 27.0.0
+      '@ag-grid-enterprise/set-filter': 27.0.0
+      '@ag-grid-enterprise/side-bar': 27.0.0
+      '@ag-grid-enterprise/sparklines': 27.0.0
+      '@ag-grid-enterprise/status-bar': 27.0.0
+      '@ag-grid-enterprise/viewport-row-model': 27.0.0
+    dev: false
+
+  /@ag-grid-enterprise/charts/27.0.0:
+    resolution: {integrity: sha512-OzoLsV8RVL35EhzMHmVWnrCRKlf7jgGszRJP/E/Whk8oyhZFgDhR98JAwVWnw7KPyorz0jsDRxFj+QuzM/7vWw==}
+    dependencies:
+      '@ag-grid-community/core': 27.0.1
+      '@ag-grid-enterprise/core': 27.0.1
+      '@ag-grid-enterprise/range-selection': 27.0.0
+      ag-charts-community: 5.0.0
+    dev: false
+
+  /@ag-grid-enterprise/clipboard/27.0.0:
+    resolution: {integrity: sha512-6P+Myq9eESezFU4kXfulYB3xSLPJKWaEhwA10OEc+RgmghLavL+eIfpaA+ZP1OXWqUBrA+41/jXZDwe6orDGgw==}
+    dependencies:
+      '@ag-grid-community/core': 27.0.1
+      '@ag-grid-community/csv-export': 27.0.0
+      '@ag-grid-enterprise/core': 27.0.1
+    dev: false
+
+  /@ag-grid-enterprise/column-tool-panel/27.0.0:
+    resolution: {integrity: sha512-GN5tJ/66HcO6x2Iml0uLWwU/Oo440B4bt/xb2VfehSVjHI6qDbUGC3zqtwuwZBMzIk2786uyK5kKapp/qwTLrA==}
+    dependencies:
+      '@ag-grid-community/core': 27.0.1
+      '@ag-grid-enterprise/core': 27.0.1
+      '@ag-grid-enterprise/row-grouping': 27.0.0
+      '@ag-grid-enterprise/side-bar': 27.0.0
+    dev: false
+
+  /@ag-grid-enterprise/core/27.0.1:
+    resolution: {integrity: sha512-u8V6pZRNHHM4FeuxUr8nD73L33Nl3ySmBABstqeBvIpT8j4PzRKwZ55QsyQ3CJuxUCE/XnYBgqz4FV5lkLmIWw==}
+    dependencies:
+      '@ag-grid-community/core': 27.0.1
+    dev: false
+
+  /@ag-grid-enterprise/excel-export/27.0.0:
+    resolution: {integrity: sha512-oHNBWbfZG71CbKS/sQolqTev+dX07BlY6F1cmCSS23Ku7bU2ovJacwnOqnwyFx4MD9IhjMqdZNwWAINXolqzfg==}
+    dependencies:
+      '@ag-grid-community/core': 27.0.1
+      '@ag-grid-community/csv-export': 27.0.0
+      '@ag-grid-enterprise/core': 27.0.1
+    dev: false
+
+  /@ag-grid-enterprise/filter-tool-panel/27.0.0:
+    resolution: {integrity: sha512-1rSaJSO88MLyw7ctL0FhhtizaKmgOHCN53SoFt0kRiMEkzIWkMzmB7oUla7ASyiJZm+on3XM8DbZwQukayonFQ==}
+    dependencies:
+      '@ag-grid-community/core': 27.0.1
+      '@ag-grid-enterprise/core': 27.0.1
+      '@ag-grid-enterprise/side-bar': 27.0.0
+    dev: false
+
+  /@ag-grid-enterprise/master-detail/27.0.0:
+    resolution: {integrity: sha512-bwCafIP5hhFHtrFnhyQit1/gSSZIYH7QnaXoeE2d7iOejyDkjkpTSAoINNoy/0WVapkIblwlo6gmLxkDpwddLQ==}
+    dependencies:
+      '@ag-grid-community/core': 27.0.1
+      '@ag-grid-enterprise/core': 27.0.1
+    dev: false
+
+  /@ag-grid-enterprise/menu/27.0.0:
+    resolution: {integrity: sha512-A08REmbpee2zZTyehS7B+Aa3IOi+KOCDYGWSNyDjnqlUSJFmP/gG8kOzOUnjf0BW9pYnN0pd/1k4ao0n5P434A==}
+    dependencies:
+      '@ag-grid-community/core': 27.0.1
+      '@ag-grid-enterprise/column-tool-panel': 27.0.0
+      '@ag-grid-enterprise/core': 27.0.1
+    dev: false
+
+  /@ag-grid-enterprise/multi-filter/27.0.0:
+    resolution: {integrity: sha512-TH+yxR6kWoFAJ9qLNr8d56kCpjmxxtf2gWLZqziusxD5ZN/NUm6hujwvNndleXH1Gv8eNzBeIP2S5qvL6qIW9w==}
+    dependencies:
+      '@ag-grid-community/core': 27.0.1
+      '@ag-grid-enterprise/core': 27.0.1
+    dev: false
+
+  /@ag-grid-enterprise/range-selection/27.0.0:
+    resolution: {integrity: sha512-UvsdQDwBEE1CN14U85FlN1iTm8s9Z0xlCB5aDTyr29RGJUYheW9IqF556DaOwuMHBYlr4qIwZeuS1GkRFzHB9A==}
+    dependencies:
+      '@ag-grid-community/core': 27.0.1
+      '@ag-grid-enterprise/core': 27.0.1
+    dev: false
+
+  /@ag-grid-enterprise/rich-select/27.0.0:
+    resolution: {integrity: sha512-06xRD19+kHZiZIjCOKbSx/21tFg+yjWRccgSnyObLL2AE+ElsNhok+7txy7gt6tophcFapUM81Wf3KYSiHq/Cw==}
+    dependencies:
+      '@ag-grid-community/core': 27.0.1
+      '@ag-grid-enterprise/core': 27.0.1
+    dev: false
+
+  /@ag-grid-enterprise/row-grouping/27.0.0:
+    resolution: {integrity: sha512-jJ71530REgRQyCCuT7v5nNxgTFGocsfyTgaun7BgpbuEhwRV4xxHWcabHvwCT3YOxhTPxcUDlDw7oTcChVWAaw==}
+    dependencies:
+      '@ag-grid-community/core': 27.0.1
+      '@ag-grid-enterprise/core': 27.0.1
+    dev: false
+
+  /@ag-grid-enterprise/server-side-row-model/27.0.0:
+    resolution: {integrity: sha512-FdLgGYpdXWSr+qtdkw+S1w8f+ke0bKpBkXjdTHiQHaEcqVXsSPmbSzhy6Is/Z0ZmgMa379L1aAwI83NISxcI4Q==}
+    dependencies:
+      '@ag-grid-community/core': 27.0.1
+      '@ag-grid-enterprise/core': 27.0.1
+    dev: false
+
+  /@ag-grid-enterprise/set-filter/27.0.0:
+    resolution: {integrity: sha512-2/M5lE7H1ne6ZAp+bhqJWyeGjcDtgZcBLobIIzifmkK7Juah+y65A7AEXpXGQ80Yf/w6/EI2l43WZZfGfjtmOA==}
+    dependencies:
+      '@ag-grid-community/core': 27.0.1
+      '@ag-grid-enterprise/core': 27.0.1
+    dev: false
+
+  /@ag-grid-enterprise/side-bar/27.0.0:
+    resolution: {integrity: sha512-Qqio7MUw4ka20SejO5XyZeWddvsNmJ0w8eClGgtzcyv3zQkAMhaba07ujHCfXaiYX/2mzbQsWhtWamad+ESSLA==}
+    dependencies:
+      '@ag-grid-community/core': 27.0.1
+      '@ag-grid-enterprise/core': 27.0.1
+    dev: false
+
+  /@ag-grid-enterprise/sparklines/27.0.0:
+    resolution: {integrity: sha512-eDkAQojVcsikPyuOgdTGNLRLdvJEZakjuiogC4WUx0ePBnK6BUVELaIzhVxRVLLzdGKQycIbWDBDpMJ6qwfEVA==}
+    dependencies:
+      '@ag-grid-community/core': 27.0.1
+      '@ag-grid-enterprise/core': 27.0.1
+    dev: false
+
+  /@ag-grid-enterprise/status-bar/27.0.0:
+    resolution: {integrity: sha512-g9ltUdWTyGSmL5bYWp6UOVsX8IWNWKuQkmUhR15XbMg9Ao0jIJtZ5xS/P7S/JUTLoMysIp5nsm3tpGrVQ6StIg==}
+    dependencies:
+      '@ag-grid-community/core': 27.0.1
+      '@ag-grid-enterprise/core': 27.0.1
+    dev: false
+
+  /@ag-grid-enterprise/viewport-row-model/27.0.0:
+    resolution: {integrity: sha512-h1DCQmCRx42fP5vVrBbSRs5+rntTn76e9BAq8E7Dh1QzruhWEf0x8VxmbbSqYwezBgWe3NCjLH+5FaYKPgmFvQ==}
+    dependencies:
+      '@ag-grid-community/core': 27.0.1
+      '@ag-grid-enterprise/core': 27.0.1
     dev: false
 
   /@babel/code-frame/7.16.7:
@@ -1603,8 +1795,16 @@ packages:
     resolution: {integrity: sha1-anmQQ3ynNtXhKI25K9MmbV9csqo=}
     dev: true
 
+  /ag-charts-community/5.0.0:
+    resolution: {integrity: sha512-G39tAwkX0NEn+EzIG608L5XZxHRzZPQS10yniYNh0IWiifXCF9A/oENYHM3e0R6odky0Idf1wFpio7fDeOuLdg==}
+    dev: false
+
   /ag-grid-community/24.1.0:
     resolution: {integrity: sha512-pWnWphuDcejZ8ahf6C734EpCx3XQ6dHEZWMWTlCdHNT0mZBLJ4YKCGACX+ttAEtSX2MGM3G13JncvuratUlYag==}
+    dev: false
+
+  /ag-grid-enterprise/27.0.1:
+    resolution: {integrity: sha512-Gg/4VG/UGu8EkDt/03ucjSHwPlqcusxDGeEfJhzKtNlAgmHhoOUC3OEQWNqNLZVDy+Lw1rMOEm8uMR8umxXdaQ==}
     dev: false
 
   /ag-grid-react/24.1.1_10b28e7de39865b8642df76ecbec36c1:
