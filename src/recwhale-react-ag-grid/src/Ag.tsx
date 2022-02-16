@@ -1,3 +1,4 @@
+import { LicenseManager }                                                                                from "@ag-grid-enterprise/core";
 import type {ColumnApi, BaseExportParams, GridOptions, ProcessCellForExportParams, ValueFormatterParams} from "ag-grid-community";
 import type {RowNode}                                                                                    from "ag-grid-community/dist/lib/entities/rowNode";
 import type {ColumnGroupOpenedEvent, GridReadyEvent, ModelUpdatedEvent, SelectionChangedEvent}           from "ag-grid-community/dist/lib/events";
@@ -13,7 +14,10 @@ import type {AgGetContextMenuItemsParams, AgMenuItemDef}                        
 import {AgContext}                                                                                       from "./context";
 import "ag-grid-community/dist/styles/ag-grid.min.css";
 import "ag-grid-community/dist/styles/ag-theme-alpine.min.css";
+import "ag-grid-enterprise";
 import "./Ag.scss";
+
+LicenseManager.setLicenseKey("your license key");
 
 export interface IAgGridReactSGProps extends GridOptions {
     rowData: any[];
@@ -144,7 +148,6 @@ export const Ag: React.FC<IAgGridReactSGProps> = (props) => {
     const theme = "ag-theme-alpine ag-theme-sg-bootstrap ag-theme-sg-bootstrap-condensed";
 
     return (
-        
         <div className={`ag-table ${theme}`} style={style}>
             {props.useSearch && <input type="text" placeholder="search..." className="form-control" onChange={e => setSearchText(e.target.value)}/>}
 
