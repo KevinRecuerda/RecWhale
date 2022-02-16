@@ -47,8 +47,7 @@ export class HtmlBuilder {
     static icon(iconType: IconType): string {
         console.log("icontype :", iconType().props.children[0].props.d);
         console.log("icontype ToString", iconType.toString());
-        const Component = icon;	
-        console.log("Composant html :", renderToStaticMarkup(React.createElement(iconType, {})));
+        const Component = iconType;	
         console.log("Composant html 2:", renderToStaticMarkup(<Component />));
 
         const svgPath = renderToStaticMarkup(<Component/>);//iconType().props.children[0].props.d
