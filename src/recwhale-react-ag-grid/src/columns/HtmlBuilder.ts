@@ -45,7 +45,6 @@ export class HtmlBuilder {
     }
 
     static icon(iconType: IconType): string {
-        console.log("icontype :", iconType().props.children[0].props.d);
         console.log("icontype ToString", iconType.toString());
         console.log("Composant html :", ReactDOMServer.renderToStaticMarkup(React.createElement(iconType, {})));
 
