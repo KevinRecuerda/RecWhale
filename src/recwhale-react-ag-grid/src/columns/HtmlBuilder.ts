@@ -49,9 +49,9 @@ export class HtmlBuilder {
         console.log("icontype ToString", iconType.toString());
         const Component = icon;	
         console.log("Composant html :", renderToStaticMarkup(React.createElement(iconType, {})));
-        console.log("Composant html 2:", ReactDOMServer.renderToStaticMarkup(<Component/>));
+        console.log("Composant html 2:", renderToStaticMarkup(<Component/>));
 
-        const svgPath = ReactDOMServer.renderToStaticMarkup(<Component/>);//iconType().props.children[0].props.d
+        const svgPath = renderToStaticMarkup(<Component/>);//iconType().props.children[0].props.d
         // const renderedIcon = icon(iconType);
         // const element      = renderedIcon.node[0] as SVGElement;
         // element.className.baseVal += " mx-1"; // eslint-disable-line @typescript-eslint/no-unsafe-member-access
