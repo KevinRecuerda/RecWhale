@@ -1,5 +1,7 @@
 ﻿import type {ICellRendererParams} from "ag-grid-community";
-import {IconType}                 from "react-icons";
+import {GenIcon, IconType}                 from "react-icons";
+import { renderToStaticMarkup } from "react-dom/server";
+import React from "react";
 
 export type contentType = string | Element | (string | Element | undefined)[];
 
@@ -43,7 +45,9 @@ export class HtmlBuilder {
     }
 
     static icon(iconType: IconType): string {
-        console.log(iconType);
+        console.log("icontype :", iconType);
+        console.log("icontype ToString", iconType.toString());
+        console.log("Composant html :", renderToStaticMarkup(React.createElement(iconType, {})));
         const svgPath = "";//iconType().props.children[0].props.d
         // const renderedIcon = icon(iconType);
         // const element      = renderedIcon.node[0] as SVGElement;
