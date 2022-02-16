@@ -12,6 +12,7 @@ importers:
     specifiers:
       '@ag-grid-community/core': ^24.0.0
       '@ag-grid-enterprise/all-modules': 24.0.0
+      '@types/jquery': ^3.5.13
       '@types/lodash': ^4.14.161
       '@types/node': ^17.0.15
       '@types/react': ^17.0.39
@@ -20,6 +21,7 @@ importers:
       ag-grid-community: ^24.0.0
       ag-grid-enterprise: 24.0.0
       ag-grid-react: ^24.0.0
+      jquery: ^3.6.0
       lodash: ^4.17.20
       moment: ^2.29.1
       react: ^17.0.2
@@ -37,10 +39,12 @@ importers:
     dependencies:
       '@ag-grid-community/core': 24.1.0
       '@ag-grid-enterprise/all-modules': 24.0.0
+      '@types/jquery': 3.5.13
       '@types/lodash': 4.14.178
       ag-grid-community: 24.1.0
       ag-grid-enterprise: 24.0.0
       ag-grid-react: 24.1.1_10b28e7de39865b8642df76ecbec36c1
+      jquery: 3.6.0
       lodash: 4.17.21
       moment: 2.29.1
       react-icons: 4.3.1_react@17.0.2
@@ -1705,6 +1709,12 @@ packages:
     resolution: {integrity: sha512-DxX1V9P8zdJPYQat1gHyY0xj3efl8gnMVjiM9iCY6y27lj+PoQWkgjt8jDqmovPqULkKVpKRg8J36iQiA+EtEg==}
     dev: false
 
+  /@types/jquery/3.5.13:
+    resolution: {integrity: sha512-ZxJrup8nz/ZxcU0vantG+TPdboMhB24jad2uSap50zE7Q9rUeYlCF25kFMSmHR33qoeOgqcdHEp3roaookC0Sg==}
+    dependencies:
+      '@types/sizzle': 2.3.3
+    dev: false
+
   /@types/lodash/4.14.178:
     resolution: {integrity: sha512-0d5Wd09ItQWH1qFbEyQ7oTQ3GZrMfth5JkbN3EvTKLXcHLRDSXeLnlvlOn0wvxVIwK5o2M8JzP/OWz7T3NRsbw==}
     dev: false
@@ -1759,6 +1769,10 @@ packages:
 
   /@types/scheduler/0.16.2:
     resolution: {integrity: sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==}
+
+  /@types/sizzle/2.3.3:
+    resolution: {integrity: sha512-JYM8x9EGF163bEyhdJBpR2QX1R5naCJHC8ucJylJ3w9/CVBaskdQ8WqBf8MmQrd1kRvp/a4TS8HJ+bxzR7ZJYQ==}
+    dev: false
 
   /@types/warning/3.0.0:
     resolution: {integrity: sha1-DSUBJorY+ZYrdA04fEZU9fjiPlI=}
@@ -3567,6 +3581,10 @@ packages:
   /isstream/0.1.2:
     resolution: {integrity: sha1-R+Y/evVa+m+S4VAOaQ64uFKcCZo=}
     dev: true
+
+  /jquery/3.6.0:
+    resolution: {integrity: sha512-JVzAR/AjBvVt2BmYhxRCSYysDsPcssdmTFnzyLEts9qNwmjmu4JTAMYubEfwVOSwpQ1I1sKKFcxhZCI2buerfw==}
+    dev: false
 
   /js-tokens/4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}

@@ -2,6 +2,7 @@
 import {IconType}                 from "react-icons";
 import ReactDOMServer from "react-dom/server";
 import React from "react";
+import $ from "jquery";
 
 export type contentType = string | Element | (string | Element | undefined)[];
 
@@ -44,15 +45,12 @@ export class HtmlBuilder {
         return input;
     }
 
-    static icon(iconType: IconType): string {
-        console.log("icontype ToString", iconType.toString());
-        console.log("Composant html :", ReactDOMServer.renderToStaticMarkup(React.createElement(iconType, {})));
-
-        const svgPath = "";//iconType().props.children[0].props.d
+    static icon(iconType: IconType): HTMLElement {
+        let html = $(ReactDOMServer.renderToStaticMarkup(React.createElement(iconType, {}))).get(0)!;
         // const renderedIcon = icon(iconType);
         // const element      = renderedIcon.node[0] as SVGElement;
         // element.className.baseVal += " mx-1"; // eslint-disable-line @typescript-eslint/no-unsafe-member-access
-        return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="${svgPath}"></path></svg>`;;
+        return html;
     }
 
     static setContent(element: HTMLElement, content: contentType): void {

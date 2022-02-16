@@ -1,9 +1,8 @@
 ﻿import type {GridApi}                      from "ag-grid-community";
 import type {ProcessHeaderForExportParams} from "ag-grid-community/dist/lib/interfaces/exportParams";
 import _                                   from "lodash";
-import React                               from "react";
-import ReactDOMServer                      from "react-dom/server";
 import {IconType}                          from "react-icons/lib";
+import { HtmlBuilder } from "../columns/HtmlBuilder";
 import type {AgMenuItemDef}                from "./index";
 
 export class AgContext implements AgMenuItemDef {
@@ -29,10 +28,9 @@ export class AgContext implements AgMenuItemDef {
 
     // Create an item
     static Item(name: string, action: () => void, icon?: IconType, disabled?: boolean, tooltip?: string): AgMenuItemDef {
-        let html = "";
+        let html: HTMLElement | undefined = undefined;
         if (icon) {
-            const Component = icon;
-            html            = ReactDOMServer.renderToStaticMarkup(<Component/>);
+            html            = HtmlBuilder.icon(icon);
         }
         return new AgContext(name, action, html, disabled, tooltip);
     }
