@@ -1,6 +1,6 @@
 ﻿import type {ICellRendererParams} from "ag-grid-community";
 import {IconType}                 from "react-icons";
-import { renderToStaticMarkup } from "react-dom/server";
+import ReactDOMServer from "react-dom/server";
 import React from "react";
 
 export type contentType = string | Element | (string | Element | undefined)[];
@@ -48,9 +48,10 @@ export class HtmlBuilder {
         console.log("icontype :", iconType().props.children[0].props.d);
         console.log("icontype ToString", iconType.toString());
         const Component = iconType;	
-        console.log("Composant html 2:", renderToStaticMarkup(<Component />));
+        console.log("Composant html 2:", ReactDOMServer.renderToStaticMarkup(<Component/>));
+        console.log("Composant html :", renderToStaticMarkup(React.createElement(iconType, {})));
 
-        const svgPath = renderToStaticMarkup(<Component/>);//iconType().props.children[0].props.d
+        const svgPath = ReactDOMServer.renderToStaticMarkup(<Component/>);//iconType().props.children[0].props.d
         // const renderedIcon = icon(iconType);
         // const element      = renderedIcon.node[0] as SVGElement;
         // element.className.baseVal += " mx-1"; // eslint-disable-line @typescript-eslint/no-unsafe-member-access
