@@ -1,5 +1,5 @@
 ﻿import type {ICellRendererParams} from "ag-grid-community";
-import {GenIcon, IconType}                 from "react-icons";
+import {IconType}                 from "react-icons";
 import { renderToStaticMarkup } from "react-dom/server";
 import React from "react";
 
