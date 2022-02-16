@@ -101,6 +101,8 @@ need lerna ? only for dependencies otherwise can loop on src/**/packages.json an
 TODO: remove lerna
 TOOD: facto tsconfig-react
 
+test
+
 ****
 https://react-ts-recwhale.stackblitz.io
 
