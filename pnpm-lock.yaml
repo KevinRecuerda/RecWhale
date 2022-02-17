@@ -8,6 +8,62 @@ importers:
     devDependencies:
       lerna: 4.0.0
 
+  sample/recwhale-react:
+    specifiers:
+      '@ag-grid-community/core': ^24.0.0
+      '@types/node': ^17.0.15
+      '@types/react': ^17.0.39
+      '@types/react-dom': ^17.0.11
+      '@vitejs/plugin-react': ^1.1.3
+      ag-grid-community: ^24.0.0
+      ag-grid-react: ^24.0.0
+      moment: ^2.29.1
+      react: ^17.0.2
+      react-bootstrap: ^1.6.3
+      react-dom: ^17.0.2
+      react-icons: ^4.3.1
+      recwhale-react-ag-grid: workspace:^
+      recwhale-react-bootstrap: workspace:^
+      recwhale-ts: workspace:^
+      sass: ^1.46.0
+      typescript: ^4.4.4
+      vite: ^2.7.10
+      vite-dts: ^1.0.4
+      vite-plugin-dts: ^0.9.6
+    dependencies:
+      '@ag-grid-community/core': 24.0.0
+      ag-grid-community: 24.0.0
+      ag-grid-react: 24.0.0_48041d66540cb0ea28ed8dfb36a0fe40
+      moment: 2.29.1
+      react-bootstrap: 1.6.4_react-dom@17.0.2+react@17.0.2
+      react-icons: 4.3.1_react@17.0.2
+      recwhale-react-ag-grid: link:../../src/recwhale-react-ag-grid
+      recwhale-react-bootstrap: link:../../src/recwhale-react-bootstrap
+      recwhale-ts: link:../../src/recwhale-ts
+    devDependencies:
+      '@types/node': 17.0.15
+      '@types/react': 17.0.39
+      '@types/react-dom': 17.0.11
+      '@vitejs/plugin-react': 1.1.3
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+      sass: 1.46.0
+      typescript: 4.5.4
+      vite: 2.7.10_sass@1.46.0
+      vite-dts: 1.0.4_vite@2.7.10
+      vite-plugin-dts: 0.9.7_vite@2.7.10
+
+  sample/recwhale-ts:
+    specifiers:
+      '@types/node': ^17.0.15
+      recwhale-ts: workspace:^
+      typescript: ^4.4.4
+    dependencies:
+      recwhale-ts: link:../../src/recwhale-ts
+    devDependencies:
+      '@types/node': 17.0.15
+      typescript: 4.5.4
+
   src/recwhale-react-ag-grid:
     specifiers:
       '@ag-grid-community/core': 24.0.0

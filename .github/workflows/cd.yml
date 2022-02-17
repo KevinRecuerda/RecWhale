@@ -18,14 +18,14 @@ jobs:
       - uses: pnpm/action-setup@v2.0.1
         with:
           version: 6.22.2
-          
+
       - name: Install
         run: pnpm -r install --frozen-lockfile --strict-peer-dependencies
-        
+
       - name: Build
         run: pnpm -r run build
-        
+
       - name: Publish
-        run: pnpm -r publish
+        run: pnpm -r publish --filter "./src"
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
