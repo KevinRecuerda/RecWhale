@@ -11,18 +11,15 @@ export const RecwhaleTs: React.FC = () => {
     const tsRows = [
         ["arr.firstOrDefault()", arr, arr.firstOrDefault()],
         ["date.formatDate()", date.format(), date.formatDate()],
-        [
-            "EnumHelper.format(x)",
-            Type.QuiteBasic,
-            EnumHelper.format(Type.QuiteBasic)
-        ],
+        ["EnumHelper.format(x)", Type.QuiteBasic, EnumHelper.format(Type.QuiteBasic)],
         ["nameof<>(string)", nameof<Item>(x => x.text)]
     ];
 
     return (
         <>
-            <h3>recwhale-ts</h3>
-            <Table size="sm" striped bordered>
+            <blockquote className="blockquote-detail">recwhale-ts</blockquote>
+
+            <Table size="sm" striped bordered style={{width: 500}}>
                 <tbody>
                 {tsRows.map((r, i) => (
                     <tr key={i}>

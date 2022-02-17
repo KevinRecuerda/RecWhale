@@ -24,6 +24,9 @@ npx lerna ls
 
 pnpm -r build --filter recwhale-ts
 
+pnpm -r dev --filter "...sample-recwhale-react"
+
+
 ```
 
 ### CD

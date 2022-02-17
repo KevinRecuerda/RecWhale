@@ -1,0 +1,15 @@
+﻿.blockquote-detail {
+  border-left: .25em solid #dfe2e5;
+  color:       #8b8e90;
+  padding:     0.5em 1em;
+  margin:      1em 0;
+  font-size:   inherit;
+
+  p {
+    margin-bottom: 0.2em;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
