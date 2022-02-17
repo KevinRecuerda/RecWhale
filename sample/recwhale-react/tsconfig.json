@@ -1,0 +1,24 @@
+﻿{
+  "extends": "../../tsconfig",
+  "compilerOptions": {
+    "outDir": "dist",
+    "allowJs": true,
+    "skipLibCheck": true,
+    "emitDeclarationOnly": true
+  },
+  "include": ["src"],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
+
+//{
+//  "compilerOptions": {
+//    "allowJs": true,
+//    "skipLibCheck": true,
+//    "resolveJsonModule": true,
+//    "isolatedModules": true,
+//    "noEmit": true,
+//  }
+//}
