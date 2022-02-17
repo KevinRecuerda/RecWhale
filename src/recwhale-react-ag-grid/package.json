@@ -1,6 +1,6 @@
 {
   "name": "recwhale-react-ag-grid",
-  "version": "0.4.12",
+  "version": "0.4.13",
   "description": "Provides component wrapper for ag-grid.",
   "repository": {
     "type": "git",
@@ -30,13 +30,13 @@
     "!dist/tsconfig.tsbuildinfo"
   ],
   "dependencies": {
-    "@ag-grid-community/core": "24.0.0",
-    "@ag-grid-enterprise/core": "24.0.0",
+    "@ag-grid-community/core": "^24.0.0",
+    "@ag-grid-enterprise/all-modules": "^24.0.0",
     "@types/jquery": "^3.5.13",
     "@types/lodash": "^4.14.161",
-    "ag-grid-community": "24.0.0",
-    "ag-grid-enterprise": "24.0.0",
-    "ag-grid-react": "24.0.0",
+    "ag-grid-community": "^24.0.0",
+    "ag-grid-enterprise": "^24.0.0",
+    "ag-grid-react": "^24.0.0",
     "jquery": "^3.6.0",
     "lodash": "^4.17.20",
     "moment": "^2.29.1",
