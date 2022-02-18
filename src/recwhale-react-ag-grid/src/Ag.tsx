@@ -145,15 +145,16 @@ export const Ag: React.FC<IAgGridReactSGProps> = (props) => {
     if (props.size)
         style.height = SizeHelper.height(props.size);
 
-    const theme = "ag-theme-alpine ag-theme-sg-bootstrap ag-theme-sg-bootstrap-condensed";
+    const theme = "ag-theme-alpine";
+    // TODO: condensed option
 
     return (
         <div className={`ag-table ${theme}`} style={style}>
             {props.useSearch && <input type="text" placeholder="search..." className="form-control" onChange={e => setSearchText(e.target.value)}/>}
 
             <AgGridReact {...AgCol.buildProps(props)}
-                // headerHeight={32}
-                // rowHeight={24}
+                         headerHeight={32}
+                         rowHeight={24}
 
                          suppressPropertyNamesCheck
                          onGridReady={onGridReady}

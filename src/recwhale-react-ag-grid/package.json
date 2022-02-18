@@ -1,6 +1,6 @@
 {
   "name": "recwhale-react-ag-grid",
-  "version": "0.4.13",
+  "version": "0.5.0",
   "description": "Provides component wrapper for ag-grid.",
   "repository": {
     "type": "git",

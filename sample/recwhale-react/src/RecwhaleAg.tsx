@@ -16,7 +16,7 @@ export const RecwhaleAg: React.FC = () => {
 
     return (
         <>
-            <h3>recwhale-react-ag-grid</h3>
+            <blockquote className="blockquote-detail">recwhale-react-ag-grid</blockquote>
 
             <div style={{height: 300}}>
                 <Ag rowData={rows}>

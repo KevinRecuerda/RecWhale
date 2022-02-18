@@ -29,7 +29,7 @@ export const ButtonIcon: React.FC<IButtonIconProps> = (props) => {
         spinnerVariant = spinnerVariant.substring(8);
     else if (spinnerVariant.startsWith("flat-"))
         spinnerVariant = spinnerVariant.substring(5);
-    
+
     const Icon = icon;
 
     return (
@@ -37,7 +37,7 @@ export const ButtonIcon: React.FC<IButtonIconProps> = (props) => {
             {props.children && <span className="mr-2">{props.children}</span>}
             {isRunning
              ? <Spinner className="pull-right" animation="border" variant={spinnerVariant}/>
-             : <Icon className="pull-right fa-w-16"/>
+             : <Icon className="pull-right"/>
             }
         </Button>
     );

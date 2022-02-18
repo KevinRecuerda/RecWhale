@@ -4,6 +4,8 @@ import {RecwhaleTs}        from "./RecwhaleTs";
 import {RecwhaleBootstrap} from "./RecwhaleBootstrap";
 import {RecwhaleAg}        from "./RecwhaleAg";
 import "recwhale-ts";
+import "recwhale-react-ag-grid/dist/style.css";
+import "recwhale-react-bootstrap/dist/style.css";
 import "./styles.css";
 import { RecwhaleAutocomplete } from "./RecwhaleAutocomplete";
 
@@ -19,7 +21,7 @@ export const App: React.FC = () => {
     return (
         <div className="container">
             <h1>RECWHALE</h1>
-            <p>some package examples</p>
+            <p>some examples</p>
 
             <Tabs defaultActiveKey="ts">
                 {[...packages.entries()].map(([name, component]) => (

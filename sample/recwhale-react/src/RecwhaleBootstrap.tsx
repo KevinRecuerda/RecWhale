@@ -11,22 +11,19 @@ export const RecwhaleBootstrap: React.FC = () => {
     ];
     const bootstrapRows: [string, any][] = [
         ["SizeHelper.width(sm)", SizeHelper.width("sm")],
-        [
-            "ButtonIcon",
-            <ButtonIcon icon={FaRocket} title="ButtonIcon" run={() => {}}/>
-        ],
-        [
-            "ButtonIcon sm",
-            <ButtonIcon icon={FaRocket} title="ButtonIcon" run={() => {}} size="sm"/>
-        ],
+        ["ButtonIcon", <ButtonIcon icon={FaRocket} title="ButtonIcon" run={() => {}}/>],
+        ["ButtonIcon sm", <ButtonIcon icon={FaRocket} title="ButtonIcon" run={() => {}} size="sm"/>],
         ["ButtonCopy", <ButtonCopy value="test"/>],
+        ["ButtonCopy sm", <ButtonCopy value="test" size="sm"/>],
         ["LinkIcon", <LinkIcon icon={FaRocket} to="/test"/>]
     ];
 
     return (
         <>
-            <h3>recwhale-react-boostrap</h3>
+            <blockquote className="blockquote-detail">recwhale-react-boostrap</blockquote>
+
             <TableKV title="TableKV with smart option" rows={rows} smart/>
+            <hr/>
             <TableKV title="Components" rows={bootstrapRows} smart/>
         </>
     );
