@@ -5,13 +5,15 @@ import {RecwhaleBootstrap} from "./RecwhaleBootstrap";
 import {RecwhaleAg}        from "./RecwhaleAg";
 import "recwhale-ts";
 import "./styles.css";
+import { RecwhaleAutocomplete } from "./RecwhaleAutocomplete";
 
 export const App: React.FC = () => {
     const packages = new Map<string, JSX.Element>(
         [
             ["ts", <RecwhaleTs/>],
             ["react-bootstrap", <RecwhaleBootstrap/>],
-            ["react-ag-grid", <RecwhaleAg/>]
+            ["react-ag-grid", <RecwhaleAg/>],
+            ["react-autcomplete", <RecwhaleAutocomplete />]
         ]);
 
     return (

@@ -15,6 +15,7 @@
     "react-icons": "^4.3.1",
     "recwhale-react-ag-grid": "workspace:^",
     "recwhale-react-bootstrap": "workspace:^",
+    "recwhale-react-autocomplete": "workspace:^",
     "recwhale-ts": "workspace:^"
   },
   "devDependencies": {
