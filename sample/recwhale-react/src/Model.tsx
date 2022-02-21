@@ -5,6 +5,11 @@ export enum Type {
     QuiteBasic = "quiteBasic"
 }
 
+export enum AnotherType {
+    Basic        = "basic",
+    AnotherBasic = "another basic"
+}
+
 export class Item {
     constructor(
         public date: Moment,

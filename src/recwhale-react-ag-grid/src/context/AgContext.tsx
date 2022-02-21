@@ -2,7 +2,7 @@
 import type {ProcessHeaderForExportParams} from "ag-grid-community/dist/lib/interfaces/exportParams";
 import _                                   from "lodash";
 import {IconType}                          from "react-icons/lib";
-import { HtmlBuilder } from "../columns/HtmlBuilder";
+import {HtmlBuilder}                       from "../columns/HtmlBuilder";
 import type {AgMenuItemDef}                from "./index";
 
 export class AgContext implements AgMenuItemDef {
@@ -30,7 +30,7 @@ export class AgContext implements AgMenuItemDef {
     static Item(name: string, action: () => void, icon?: IconType, disabled?: boolean, tooltip?: string): AgMenuItemDef {
         let html: HTMLElement | undefined = undefined;
         if (icon) {
-            html            = HtmlBuilder.icon(icon);
+            html = HtmlBuilder.icon(icon);
         }
         return new AgContext(name, action, html, disabled, tooltip);
     }

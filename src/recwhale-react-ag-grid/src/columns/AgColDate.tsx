@@ -1,6 +1,6 @@
 import type {ValueFormatterParams} from "ag-grid-community";
 import type {AgGridColumnProps}    from "ag-grid-react/lib/agGridColumn";
-import moment, {Moment}            from "moment";
+import moment                      from "moment";
 import type {ReactNode}            from "react";
 import React                       from "react";
 import {MomentView}                from "recwhale-ts";
@@ -14,10 +14,10 @@ interface IAgColDateProps extends AgGridColumnProps {
 
 export class AgColDate extends BaseAgCol<IAgColDateProps> {
 
-    static compare(filterValue: Moment, cellValue: Moment | string): number {
+    static compare(filterValue: moment.Moment, cellValue: moment.Moment | string): number {
         const a = moment(filterValue).utc(true);
         const b = moment(cellValue).utc(true);
-        return a.diff(b, 'ms');
+        return a.diff(b, "ms");
     }
 
     render(): ReactNode {

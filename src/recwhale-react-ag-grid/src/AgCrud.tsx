@@ -1,6 +1,6 @@
 ﻿import type {CellClassParams, GridApi, GridOptions, RowNode}          from "ag-grid-community";
 import type {AgGridEvent, CellValueChangedEvent, RowDataUpdatedEvent} from "ag-grid-community/dist/lib/events";
-import _                                                              from "lodash";
+import cloneDeep                                                      from "lodash/cloneDeep";
 import React, {useEffect, useRef, useState}                           from "react";
 import {FaCopy, FaPlus, FaSortAmountUp, FaSync, FaTrash, FaUndo}      from "react-icons/fa";
 import {IModalConfirmRef, ModalConfirm}                               from "recwhale-react-bootstrap";
@@ -18,11 +18,11 @@ export class Item {
     }
 
     static from<T>(obj: T): Item {
-        return _.assign(obj, new Item());
+        return Object.assign(obj, new Item());
     }
 
     static duplicate<T extends Item>(item: T): T {
-        const dup            = _.cloneDeep(item);
+        const dup            = cloneDeep(item);
         dup._new             = true;
         dup._initial         = new Map<string, any>();
         dup._hasDuplicateKey = true;

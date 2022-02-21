@@ -1,3 +1,9 @@
+.MuiInputBase-root,
+.MuiInputBase-input,
+.MuiAutocomplete-paper {
+  font-size: 0.9rem;
+}
+
 .MuiAutocomplete-inputRoot[class*='MuiOutlinedInput-root'] {
   border-radius: 0;
 

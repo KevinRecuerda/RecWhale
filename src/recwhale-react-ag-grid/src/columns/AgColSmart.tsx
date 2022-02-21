@@ -31,9 +31,10 @@ export class AgColSmart extends BaseAgCol<IAgColNumberProps> {
 
         const number = Number(params.value);
         if (!Number.isNaN(number)) {
+            const fractionDigits = props.fractionDigits ?? 2;
             if (params.colDef.field?.endsWith("weight"))
-                return number.format("%", 4);
-            return number.format(props.unit, props.fractionDigits ?? 2);
+                return number.format("%", fractionDigits + 2);
+            return number.format(props.unit, fractionDigits);
         }
 
         return params.value as string;

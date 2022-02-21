@@ -12,8 +12,6 @@ import {StatusBarComp}                                                          
 import {AgCol}                                                                                           from "./columns/AgCol";
 import type {AgGetContextMenuItemsParams, AgMenuItemDef}                                                 from "./context";
 import {AgContext}                                                                                       from "./context";
-import "ag-grid-community/dist/styles/ag-grid.min.css";
-import "ag-grid-community/dist/styles/ag-theme-alpine.min.css";
 import "ag-grid-enterprise";
 import "./Ag.scss";
 
@@ -34,6 +32,7 @@ export interface IAgGridReactSGProps extends GridOptions {
     exportLite?: boolean;
     onAgApi?: (agApi: any) => void;
     onColumnApi?: (columnApi: ColumnApi) => void;
+    condensed?: boolean;
 }
 
 export const Ag: React.FC<IAgGridReactSGProps> = (props) => {
@@ -145,16 +144,26 @@ export const Ag: React.FC<IAgGridReactSGProps> = (props) => {
     if (props.size)
         style.height = SizeHelper.height(props.size);
 
-    const theme = "ag-theme-alpine";
-    // TODO: condensed option
+    let theme = "ag-theme-alpine";
+    let size = {};
+    if (props.condensed !== false) {
+        theme += " ag-theme-condensed";
+        size = {
+            headerHeight: 32,
+            groupHeaderHeight: 32,
+            floatingFiltersHeight: 32,
+            pivotHeaderHeight: 32,
+            pivotGroupHeaderHeight: 32,
+            rowHeight: 24
+        };
+    }
 
     return (
         <div className={`ag-table ${theme}`} style={style}>
-            {props.useSearch && <input type="text" placeholder="search..." className="form-control" onChange={e => setSearchText(e.target.value)}/>}
+            {props.useSearch && <input type="text" placeholder="search..." className="form-control search" onChange={e => setSearchText(e.target.value)}/>}
 
             <AgGridReact {...AgCol.buildProps(props)}
-                         headerHeight={32}
-                         rowHeight={24}
+                         {...size}
 
                          suppressPropertyNamesCheck
                          onGridReady={onGridReady}

@@ -1,5 +1,9 @@
 @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css");
 
+@import "recwhale-react-ag-grid/dist/style.css";
+@import "recwhale-react-autocomplete/dist/style.css";
+@import "recwhale-react-bootstrap/dist/style.css";
+
 body {
     font-size: 0.85rem;
 }

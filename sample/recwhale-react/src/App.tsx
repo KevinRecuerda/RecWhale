@@ -4,8 +4,6 @@ import {RecwhaleTs}        from "./RecwhaleTs";
 import {RecwhaleBootstrap} from "./RecwhaleBootstrap";
 import {RecwhaleAg}        from "./RecwhaleAg";
 import "recwhale-ts";
-import "recwhale-react-ag-grid/dist/style.css";
-import "recwhale-react-bootstrap/dist/style.css";
 import "./styles.css";
 import { RecwhaleAutocomplete } from "./RecwhaleAutocomplete";
 

@@ -4,6 +4,7 @@ export {};
 declare global {
     interface String {
         toStartCase(lowerCase?: boolean): string;
+        toCamelCase(): string;
 
         toFieldText(): string;
 
@@ -19,6 +20,11 @@ String.prototype.toStartCase = function (this: string, lowerCase?: boolean): str
     if(lowerCase !== false)
         result = result.toLowerCase();
     return result;
+};
+
+String.prototype.toCamelCase = function (this: string): string {
+    let result = this.replace(/\s(.)/g, $ => $[1].toUpperCase());
+    return result.charAt(0).toLowerCase() + result.slice(1);
 };
 
 String.prototype.toFieldText = function (this: string): string {

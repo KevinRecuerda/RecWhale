@@ -1,8 +1,7 @@
-﻿import _                 from "lodash";
-import React, {useState} from "react";
-import {EnumHelper}      from "recwhale-ts";
-import type {Value}      from "./Autocomplete";
-import {Autocomplete, IAutocompleteWrapperProps}    from "./Autocomplete";
+﻿import React, {useState}                         from "react";
+import {EnumHelper}                              from "recwhale-ts";
+import type {Value}                              from "./Autocomplete";
+import {Autocomplete, IAutocompleteWrapperProps} from "./Autocomplete";
 
 export interface IEnumPickerProps<T extends string, Multiple extends boolean | undefined = undefined> extends IAutocompleteWrapperProps<T, Multiple> {
     useDefault?: boolean;
@@ -17,7 +16,7 @@ interface IEnumPickerValueProps<T extends string, Multiple extends boolean | und
 
 export function EnumPicker<T extends string, Multiple extends boolean | undefined = undefined>(props: IEnumPickerValueProps<T, Multiple>): JSX.Element {
 
-    const [items] = useState<T[]>(_.values(props.type));
+    const [items] = useState<T[]>(Object.values(props.type));
 
     function initSelected(items: T[]): Value<T, Multiple, undefined> | undefined {
         const defaultValue = props.defaultValue ?? (props.useDefault ? items[0] : undefined);

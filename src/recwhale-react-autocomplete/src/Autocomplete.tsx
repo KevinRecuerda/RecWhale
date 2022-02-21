@@ -6,7 +6,6 @@ import {Autocomplete as AC}                                                     
 import {createFilterOptions}                                                     from "@material-ui/lab/Autocomplete";
 import type {AutocompleteProps, AutocompleteRenderInputParams}                   from "@material-ui/lab/Autocomplete/Autocomplete";
 import type {FilterOptionsState}                                                 from "@material-ui/lab/useAutocomplete/useAutocomplete";
-import _                                                                         from "lodash";
 import queryString                                                               from "query-string";
 import React, {useState, useEffect}                                              from "react";
 import {FaCheck, FaPlus}                                                         from "react-icons/fa";
@@ -74,7 +73,7 @@ export function Autocomplete<T,
     useEffect(() => {
         function init(): Value<T, Multiple, DisableClearable> | undefined {
             if (urlLoader) {
-                const urlLabel = _.camelCase(urlLoader.label);
+                const urlLabel = urlLoader.label.toCamelCase();
                 const params   = queryString.parse(window.location.search, {arrayFormat: "comma"});
                 const keys     = Array.build(params[urlLabel]).map(x => x.toLowerCase());
 
@@ -183,10 +182,10 @@ export function Autocomplete<T,
         const options  = optionsByKey.get(key) ?? [];
         const selected = selectedValue as T[];
 
-        const missingSelected = options.filter(x => !selected.includes(x)).length > 0;
-        const selector        = missingSelected ? _.union : _.difference;
-
-        const value = selector(selected, options);
+        const itemsToSelect = options.filter(x => !selected.includes(x));
+        const value         = itemsToSelect.length > 0
+                              ? [...selected, ...itemsToSelect]
+                              : selected.delete(x => options.includes(x));
         setSelectedValue(value as Value<T, Multiple, DisableClearable>);
     };
 

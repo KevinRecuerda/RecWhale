@@ -1,57 +1,51 @@
-import moment from "moment";
-import React              from "react";
-import { EnumPicker, Autocomplete}        from "recwhale-react-autocomplete";
-import {Item, Type}       from "./Model";
+import moment                     from "moment";
+import React                      from "react";
+import {Badge}                    from "react-bootstrap";
+import {EnumPicker, Autocomplete} from "recwhale-react-autocomplete";
+import {TableKV}                  from "recwhale-react-bootstrap";
+import {AnotherType, Item, Type}  from "./Model";
 
 export const RecwhaleAutocomplete: React.FC = () => {
-    const Data: Item[] = [
+    const data: Item[] = [
         new Item(moment(), 1, "example", Type.Basic),
         new Item(moment("2021-12-31"), 2, "text", Type.QuiteBasic),
         new Item(moment("2021-12-28"), 3, "Item", Type.Basic),
         new Item(moment("2021-01-31"), 4, "Sample", Type.QuiteBasic)
 
-    ]
+    ];
 
-    const [EnumChoice, setEnumChoice] = React.useState<Type | undefined>(undefined);
-    const [AutocompleteChoice, setAutoCompleteChoice] = React.useState<Item | undefined>(undefined);
-
-    const onChangeEnumPicker = (value?: Type) => {
-        setEnumChoice(value);
-    } 
+    const [, setEnumChoice]         = React.useState<Type | undefined>(undefined);
+    const [, setEnumMultipleChoice] = React.useState<Type[]>([]);
+    const [, setAnotherEnumChoice]  = React.useState<AnotherType | undefined>(undefined);
+    const [, setAutocompleteChoice] = React.useState<Item | undefined>(undefined);
 
     const onChangeAutocomplete = (value?: Item) => {
-        setAutoCompleteChoice(value);
-    } 
+        setAutocompleteChoice(value);
+    };
+
+    const rows: [string, any][] = [
+        ["EnumPicker - optional", <EnumPicker type={Type} name="type" onChange={setEnumChoice} optional/>],
+        ["EnumPicker - default value", <EnumPicker type={Type} name="type" onChange={setEnumChoice} defaultValue={Type.Basic}/>],
+        ["EnumPicker - multiple", <EnumPicker type={Type} name="type" onChange={setEnumMultipleChoice} multiple/>],
+        ["EnumPicker - url Loader", <EnumPicker type={AnotherType} name="another type" onChange={setAnotherEnumChoice}/>],
+
+        ["Autocomplete", <Autocomplete options={data} label="item" onChange={onChangeAutocomplete}
+                                       getOptionLabel={(i: Item) => i.text}/>],
+        ["Autocomplete - render", <Autocomplete options={data} label="item" onChange={onChangeAutocomplete}
+                                                renderOption={(i: Item) =>
+                                                    <>
+                                                        {i.text}
+                                                        <Badge pill variant="secondary" className="ml-2">{i.type}</Badge>
+                                                    </>
+                                                }/>]
+    ];
 
 
     return (
         <>
-            <h3>recwhale-autocomplete-Enumpicker</h3>
-            <div style={{height: 300, flexDirection: "column"}}>
-                <h5>EnumPicker</h5>
-                <div style={{ margin: "10px"}}>
-                    <EnumPicker type={Type} name="Enumpicker" onChange={onChangeEnumPicker} optional />
-                </div>
-                <div style={{ margin: "10px"}}>
-                    <EnumPicker type={Type} name="EnumPicker Default value" onChange={onChangeEnumPicker} optional defaultValue={Type.Basic}/>
-                </div>
-                <div style={{ margin: "10px"}}>
-                    <span>EnumPicker choice value :{EnumChoice ? `${EnumChoice}` : "Value is not yet defined"}</span>
-                </div>
-                <h5>Autocomplte</h5>
-                <div style={{ margin: "10px"}}>
-                    <Autocomplete 
-                        options={Data}
-                        label="Autocomplete sample"
-                        onChange={onChangeAutocomplete}
-                        getOptionLabel={(i: Item) => i.text}
-                        />
-                </div>
-                <div style={{ margin: "10px"}}>
-                    <span>Autocomplete choice value :{AutocompleteChoice ? `${JSON.stringify(AutocompleteChoice)}` : "Value is not yet defined"}</span>
-                </div>
-            </div>
-           
+            <blockquote className="blockquote-detail">recwhale-react-autocomplete</blockquote>
+
+            <TableKV rows={rows}/>
         </>
     );
 };

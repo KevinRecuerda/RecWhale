@@ -6,9 +6,9 @@ import React                                             from "react";
 import {ReactHelper}                                     from "recwhale-react-core";
 import type {IAgGridReactSGProps}                        from "../Ag";
 import {CellClass}                                       from "../BuiltInExtended";
-import {AgColAction} from "./AgColAction";
-import {BaseAgCol}   from "./BaseAgCol";
-import {AgColBool}   from "./AgColBool";
+import {AgColAction}                                     from "./AgColAction";
+import {BaseAgCol}                                       from "./BaseAgCol";
+import {AgColBool}                                       from "./AgColBool";
 import {AgColDate}                                       from "./AgColDate";
 import {AgColDirection}                                  from "./AgColDirection";
 import {AgColEnum}                                       from "./AgColEnum";
@@ -50,17 +50,17 @@ export class AgCol {
     static defaultColDef = (props: IAgGridReactSGProps): ColDef => {
         // noinspection HtmlUnknownAttribute
         return {
-            editable:              props.editable,
-            sortable:              true,
-            filter:                true,
-            floatingFilter:        true,
-            resizable:             true,
-            enableValue:           true,
-            enableRowGroup:        true,
-            enablePivot:           true,
-            suppressSizeToFit:     true,
-            flex:                  0,
-            cellClassRules:        props.cellClassRules,
+            editable:          props.editable,
+            sortable:          true,
+            filter:            true,
+            floatingFilter:    true,
+            resizable:         true,
+            enableValue:       true,
+            enableRowGroup:    true,
+            enablePivot:       true,
+            suppressSizeToFit: true,
+            flex:              0,
+            cellClassRules:    props.cellClassRules,
             // sort order at the end
             headerComponentParams: {
                 template:

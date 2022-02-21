@@ -1,8 +1,8 @@
 ﻿import type {ICellRendererParams} from "ag-grid-community";
 import {IconType}                 from "react-icons";
-import ReactDOMServer from "react-dom/server";
-import React from "react";
-import $ from "jquery";
+import ReactDOMServer             from "react-dom/server";
+import React                      from "react";
+// import $                          from "jquery";
 
 export type contentType = string | Element | (string | Element | undefined)[];
 
@@ -46,11 +46,14 @@ export class HtmlBuilder {
     }
 
     static icon(iconType: IconType): HTMLElement {
-        let html = $(ReactDOMServer.renderToStaticMarkup(React.createElement(iconType, {}))).get(0)!;
-        // const renderedIcon = icon(iconType);
-        // const element      = renderedIcon.node[0] as SVGElement;
-        // element.className.baseVal += " mx-1"; // eslint-disable-line @typescript-eslint/no-unsafe-member-access
-        return html;
+        const icon     = document.createElement("div");
+        icon.className = "mx-1";
+
+        const element = React.createElement(iconType, {});
+        const svg     = ReactDOMServer.renderToStaticMarkup(element);
+        HtmlBuilder.setContent(icon, svg);
+
+        return icon;
     }
 
     static setContent(element: HTMLElement, content: contentType): void {
@@ -66,6 +69,6 @@ export class HtmlBuilder {
     static toNodes(content: contentType): Node[] {
         const array = Array.build(content);
         return array.mapStrict(x => x!)
-            .map(x => typeof x === "string" ? document.createTextNode(x) : x);
+                    .map(x => typeof x === "string" ? document.createTextNode(x) : x);
     }
 }

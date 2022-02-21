@@ -1,6 +1,6 @@
 {
   "name": "recwhale-react-autocomplete",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Provides component wrapper for autocomplete.",
   "repository": {
     "type": "git",
@@ -34,7 +34,6 @@
     "@material-ui/core": "^4.12.1",
     "@material-ui/lab": "^4.0.0-alpha.56",
     "@types/react-window": "^1.8.2",
-    "lodash": "^4.17.20",
     "moment": "^2.29.1",
     "query-string": "^6.13.1",
     "react-icons": "^4.3.1",
