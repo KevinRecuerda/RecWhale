@@ -1,19 +1,13 @@
 import {GridApi, RowNode}  from "ag-grid-community";
-import moment              from "moment";
 import React               from "react";
 import {Row}               from "react-bootstrap";
 import {FaRocket}          from "react-icons/fa";
 import {Ag, AgCol, AgCrud} from "recwhale-react-ag-grid";
-import {Item, Type}        from "./Model";
+import {dataMany, Item}    from "./Model";
 
 export const RecwhaleAg: React.FC = () => {
-    let rows = [
-        new Item(moment(), 1, "example", Type.Basic),
-        new Item(moment("2021-12-31"), 20, "text", Type.QuiteBasic)
-    ];
 
-    for (let i = 0; i < 5; i++)
-        rows = [...rows, ...rows];
+    const [rows] = React.useState<Item[]>(dataMany);
 
     async function refresh(): Promise<any[]> {
         return rows;
@@ -29,7 +23,8 @@ export const RecwhaleAg: React.FC = () => {
                         <AgCol.Date field="date"/>
                         <AgCol.Number field="number"/>
                         <AgCol.Text field="text"/>
-                        <AgCol.Action field="number" headerName="Action" icon={FaRocket} onClick={(node: RowNode, ag: GridApi) => console.log(node, ag)}/>
+                        <AgCol.Action field="number" headerName="Action" icon={FaRocket} showValue width={100}
+                                      onClick={(node: RowNode, ag: GridApi) => console.log(node, ag)}/>
                     </Ag>
                 </div>
 
@@ -56,7 +51,7 @@ export const RecwhaleAg: React.FC = () => {
                 </div>
 
                 <div className="col-6 mb-3" style={{height: 300}}>
-                    <AgCrud refresh={refresh} rowData={rows} >
+                    <AgCrud refresh={refresh} rowData={rows}>
                         <AgCol.Date field="date"/>
                         <AgCol.Number field="number"/>
                         <AgCol.Text field="text"/>

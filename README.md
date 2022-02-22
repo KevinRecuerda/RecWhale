@@ -26,6 +26,8 @@ pnpm -r build --filter recwhale-ts
 
 pnpm -r dev --filter "...sample-recwhale-react"
 
+test: urlloader:http://localhost:3000/?anotherType=another%20basic&itemIds=a
+
 
 ```
 

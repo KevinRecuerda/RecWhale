@@ -11,6 +11,7 @@ import React, {useState, useEffect}                                             
 import {FaCheck, FaPlus}                                                         from "react-icons/fa";
 import {Size, SizeHelper}                                                        from "recwhale-react-bootstrap";
 import {virtualizationProps}                                                     from "./AutocompleteVirtualization";
+import "recwhale-ts";
 import "./Autocomplete.scss";
 
 // prefer default 'undefined' instead of 'null'
@@ -64,7 +65,7 @@ export function Autocomplete<T,
     const groupOnClickEnabled             = props.groupBy && props.multiple;
     const [optionsByKey, setOptionsByKey] = useState<Map<string, T[]>>(new Map());
 
-    let {onChange, initSelected, label, optional, size, urlLoader, ...innerProps} = props;
+    let {options, onChange, initSelected, label, optional, size, urlLoader, ...innerProps} = props;
 
     useEffect(() => props.onLoading?.(props.isLoading ?? false), [props.isLoading]);
 
@@ -185,7 +186,7 @@ export function Autocomplete<T,
         const itemsToSelect = options.filter(x => !selected.includes(x));
         const value         = itemsToSelect.length > 0
                               ? [...selected, ...itemsToSelect]
-                              : selected.delete(x => options.includes(x));
+                              : selected.except(options);
         setSelectedValue(value as Value<T, Multiple, DisableClearable>);
     };
 
@@ -198,6 +199,10 @@ export function Autocomplete<T,
         <hr key={`${params.key}-hr`} className="border-0"/>,
         <hr key={`${params.key}-hr2`}/>
     ];
+
+    if (props.groupBy) {
+        options = options.sortBy(props.groupBy);
+    }
     //endregion
 
     //region FREESOLO
@@ -233,6 +238,7 @@ export function Autocomplete<T,
 
     return (
         <AC
+            options={options}
             value={adapt(selectedValue)}
             onChange={(_event: React.ChangeEvent<any>, value: V<T, Multiple, DisableClearable, FreeSolo>) => setSelectedValue(adaptBack(value))}
             loading={props.isLoading}

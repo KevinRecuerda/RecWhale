@@ -41,7 +41,7 @@ export class AgColAction extends BaseAgCol<IAgColActionProps & AgGridColumnProps
     render(): ReactNode {
         return <AgCol.Default width={50}
                               suppressMenu
-                              cellClass={CellClass.Centered}
+                              cellClass={this.props.showValue ? CellClass.Right : CellClass.Centered}
                               cellRenderer={(params: ICellRendererParams) => this.renderCell(params, this.props)}
                               floatingFilterComponent={FloatingFilterComp.builderSafe(this.props.onBulkClick != null, (params: IFloatingFilterParams) => this.renderActionFilter(params, this.props))}
                               floatingFilterComponentParams={{suppressFilterButton: !(this.props.showValue ?? false)}}

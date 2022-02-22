@@ -6,6 +6,7 @@ export {};
 declare global {
     interface ArrayConstructor {
         build<T>(item?: T[] | T | null): T[];
+        range(length: number): number[];
     }
 }
 
@@ -17,6 +18,7 @@ declare global {
 
         distinct(): T[];
         empty(fallbackItems: T[]): T[];
+        except(items: T[]): T[];
         sortBy<TKey>(keySelector: (element: T) => TKey, desc?: boolean): T[];
         sortByEnumOrder<TKey>(type: any, keySelector: (element: T) => TKey, desc?: boolean): T[];
 
@@ -41,13 +43,17 @@ declare global {
 }
 
 Array.build = function <T>(value?: T[] | T | null): T[] {
-    if (!value) 
+    if (!value)
         return [];
 
-    if (Array.isArray(value)) 
+    if (Array.isArray(value))
         return value;
 
     return [value];
+};
+
+Array.range = function (length: number): number[] {
+    return [...Array(length).keys()];
 };
 
 //region manipulation
@@ -63,6 +69,9 @@ Array.prototype.distinct = function <T>(this: T[]): T[] {
 };
 Array.prototype.empty = function <T>(this: T[], fallbackItems: T[]): T[] {
     return this.length ? this : fallbackItems;
+};
+Array.prototype.except = function <T>(this: T[], items: T[]): T[] {
+    return this.filter(x => !items.includes(x));
 };
 Array.prototype.sortBy = function <T, TKey>(this: T[], keySelector: (element: T) => TKey, desc?: boolean): T[] {
     return this.sort((a, b) => {

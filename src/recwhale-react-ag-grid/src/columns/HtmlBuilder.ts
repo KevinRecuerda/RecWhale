@@ -46,7 +46,7 @@ export class HtmlBuilder {
     }
 
     static icon(iconType: IconType): HTMLElement {
-        const icon     = document.createElement("div");
+        const icon     = document.createElement("span");
         icon.className = "mx-1";
 
         const element = React.createElement(iconType, {});
