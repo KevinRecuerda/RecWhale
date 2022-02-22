@@ -4,7 +4,7 @@ import moment                      from "moment";
 import type {ReactNode}            from "react";
 import React                       from "react";
 import {MomentView}                from "recwhale-ts";
-import {Filter}                    from "../BuiltIn";
+import {Filter}                    from "../built";
 import {AgCol}                     from "./AgCol";
 import {BaseAgCol}                 from "./BaseAgCol";
 

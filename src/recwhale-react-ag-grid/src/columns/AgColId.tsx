@@ -1,7 +1,7 @@
 ﻿import type {AgGridColumnProps} from "ag-grid-react/lib/agGridColumn";
 import type {ReactNode}         from "react";
 import React                    from "react";
-import {Filter}                 from "../BuiltIn";
+import {Filter}                 from "../built";
 import {AgCol}                  from "./AgCol";
 import {BaseAgCol}              from "./BaseAgCol";
 import "recwhale-ts";

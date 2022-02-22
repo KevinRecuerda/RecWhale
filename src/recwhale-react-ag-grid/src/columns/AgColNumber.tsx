@@ -3,10 +3,9 @@ import type {AgGridColumnProps}    from "ag-grid-react/lib/agGridColumn";
 import type {ReactNode}            from "react";
 import React                       from "react";
 import {Unit}                      from "recwhale-ts";
-import {CellClass}                 from "../BuiltInExtended";
+import {CellClass, FilterBuilder}  from "../built";
 import {AgCol}                     from "./AgCol";
 import {BaseAgCol}                 from "./BaseAgCol";
-import {FilterBuilder}             from "./FilterBuilder";
 
 export interface IAgColNumberProps extends AgGridColumnProps {
     unit?: Unit;

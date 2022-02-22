@@ -3,7 +3,7 @@ import type {AgGridColumnProps}            from "ag-grid-react/lib/agGridColumn"
 import type {ReactNode}                    from "react";
 import React                               from "react";
 import {FaExternalLinkAlt}                 from "react-icons/fa";
-import {CellClass}                         from "../BuiltInExtended";
+import {CellClass}                         from "../built";
 import {AgCol}                             from "./AgCol";
 import {BaseAgCol}                         from "./BaseAgCol";
 import {HtmlBuilder}                       from "./HtmlBuilder";

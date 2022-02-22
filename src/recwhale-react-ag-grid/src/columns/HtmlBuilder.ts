@@ -2,7 +2,6 @@
 import {IconType}                 from "react-icons";
 import ReactDOMServer             from "react-dom/server";
 import React                      from "react";
-// import $                          from "jquery";
 
 export type contentType = string | Element | (string | Element | undefined)[];
 

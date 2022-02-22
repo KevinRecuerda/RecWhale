@@ -8,8 +8,8 @@ import type {StatusPanelDef}                                                    
 import {AgGridReact}                                                                                     from "ag-grid-react";
 import React, {useEffect, useState}                                                                      from "react";
 import {Size, SizeHelper}                                                                                from "recwhale-react-bootstrap";
-import {StatusBarComp}                                                                                   from "./BuiltIn";
-import {AgCol}                                                                                           from "./columns/AgCol";
+import {StatusBarComp}                                                                                   from "./built";
+import {AgCol}                                                                                           from "./columns";
 import type {AgGetContextMenuItemsParams, AgMenuItemDef}                                                 from "./context";
 import {AgContext}                                                                                       from "./context";
 import "ag-grid-enterprise";
@@ -17,7 +17,7 @@ import "./Ag.scss";
 
 LicenseManager.setLicenseKey("your license key");
 
-export interface IAgGridReactSGProps extends GridOptions {
+export interface IAgGridReactProps extends GridOptions {
     rowData: any[];
     isLoading?: boolean;
     initSelectedRows?: (row: RowNode) => boolean;
@@ -35,7 +35,7 @@ export interface IAgGridReactSGProps extends GridOptions {
     condensed?: boolean;
 }
 
-export const Ag: React.FC<IAgGridReactSGProps> = (props) => {
+export const Ag: React.FC<IAgGridReactProps> = (props) => {
     const [agApi, setAgApi]           = useState<GridApi>();
     const [searchText, setSearchText] = useState<string>("");
 

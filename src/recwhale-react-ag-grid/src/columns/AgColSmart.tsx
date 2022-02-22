@@ -1,12 +1,10 @@
-﻿import type {ValueFormatterParams} from "ag-grid-community/dist/lib/entities/colDef";
-import type {ReactNode}            from "react";
-import React                       from "react";
-import {Filter}                    from "../BuiltIn";
-import {CellClass}                 from "../BuiltInExtended";
-import {AgCol}                     from "./AgCol";
-import {BaseAgCol}                 from "./BaseAgCol";
-import type {IAgColNumberProps}    from "./AgColNumber";
-import {FilterBuilder}             from "./FilterBuilder";
+﻿import type {ValueFormatterParams}        from "ag-grid-community/dist/lib/entities/colDef";
+import type {ReactNode}                   from "react";
+import React                              from "react";
+import {CellClass, Filter, FilterBuilder} from "../built";
+import {AgCol}                            from "./AgCol";
+import {BaseAgCol}                        from "./BaseAgCol";
+import type {IAgColNumberProps}           from "./AgColNumber";
 
 export class AgColSmart extends BaseAgCol<IAgColNumberProps> {
 
@@ -31,10 +29,13 @@ export class AgColSmart extends BaseAgCol<IAgColNumberProps> {
 
         const number = Number(params.value);
         if (!Number.isNaN(number)) {
-            const fractionDigits = props.fractionDigits ?? 2;
-            if (params.colDef.field?.endsWith("weight"))
-                return number.format("%", fractionDigits + 2);
-            return number.format(props.unit, fractionDigits);
+            let unit = props.unit;
+            let fractionDigits = props.fractionDigits ?? 2;
+            if (params.colDef.field?.endsWith("weight")){
+                unit = "%";
+                fractionDigits += 2;
+            }
+            return number.format(unit, fractionDigits);
         }
 
         return params.value as string;

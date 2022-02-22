@@ -2,7 +2,7 @@
 import type {ProcessHeaderForExportParams} from "ag-grid-community/dist/lib/interfaces/exportParams";
 import _                                   from "lodash";
 import {IconType}                          from "react-icons/lib";
-import {HtmlBuilder}                       from "../columns/HtmlBuilder";
+import {HtmlBuilder}                       from "../columns";
 import type {AgMenuItemDef}                from "./index";
 
 export class AgContext implements AgMenuItemDef {

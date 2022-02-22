@@ -2,10 +2,9 @@ import type {ICellRendererParams} from "ag-grid-community";
 import type {AgGridColumnProps}   from "ag-grid-react/lib/agGridColumn";
 import type {ReactNode}           from "react";
 import React                      from "react";
-import {Filter}                   from "../BuiltIn";
+import {Filter, FilterBuilder}    from "../built";
 import {AgCol}                    from "./AgCol";
 import {BaseAgCol}                from "./BaseAgCol";
-import {FilterBuilder}            from "./FilterBuilder";
 
 interface IAgColTextProps extends AgGridColumnProps {
     multiline?: boolean;

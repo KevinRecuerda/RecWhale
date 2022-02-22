@@ -4,8 +4,8 @@ import type {AgGridReactProps}                           from "ag-grid-react/lib
 import type {PropsWithChildren, ReactElement, ReactNode} from "react";
 import React                                             from "react";
 import {ReactHelper}                                     from "recwhale-react-core";
-import type {IAgGridReactSGProps}                        from "../Ag";
-import {CellClass}                                       from "../BuiltInExtended";
+import type {IAgGridReactProps}                          from "../Ag";
+import {CellClass}                                       from "../built";
 import {AgColAction}                                     from "./AgColAction";
 import {BaseAgCol}                                       from "./BaseAgCol";
 import {AgColBool}                                       from "./AgColBool";
@@ -38,7 +38,7 @@ export class AgCol {
                                       headerCheckboxSelectionFilteredOnly
                                       sortable={false} filter={false} suppressMenu/>;
 
-    static buildProps = (props: IAgGridReactSGProps): AgGridReactProps => {
+    static buildProps = (props: IAgGridReactProps): AgGridReactProps => {
         return {
             columnDefs:         AgCol.buildColDefs(props),
             defaultColDef:      AgCol.defaultColDef(props),
@@ -47,7 +47,7 @@ export class AgCol {
         };
     };
 
-    static defaultColDef = (props: IAgGridReactSGProps): ColDef => {
+    static defaultColDef = (props: IAgGridReactProps): ColDef => {
         // noinspection HtmlUnknownAttribute
         return {
             editable:          props.editable,
@@ -89,7 +89,7 @@ export class AgCol {
         // filterValueGetter: (params: ValueGetterParams): string => params.api?.getValue(params.colDef.showRowGroup, params.node)
     });
 
-    static buildColDefs(props: PropsWithChildren<IAgGridReactSGProps>): (ColDef | ColGroupDef)[] {
+    static buildColDefs(props: PropsWithChildren<IAgGridReactProps>): (ColDef | ColGroupDef)[] {
 
         const cols = ReactHelper.getChildren(props);
         if (props.onSelectedRows || props.isRowSelectable)

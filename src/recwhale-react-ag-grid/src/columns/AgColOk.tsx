@@ -3,7 +3,7 @@ import type {AgGridColumnProps}                   from "ag-grid-react/lib/agGrid
 import type {ReactNode}                           from "react";
 import React                                      from "react";
 import {FaCheck, FaExclamation, FaMinus, FaTimes} from "react-icons/fa";
-import {Filter}                                   from "../BuiltIn";
+import {Filter}                                   from "../built";
 import {AgCol}                                    from "./AgCol";
 import {BaseAgCol}                                from "./BaseAgCol";
 import {HtmlBuilder}                              from "./HtmlBuilder";

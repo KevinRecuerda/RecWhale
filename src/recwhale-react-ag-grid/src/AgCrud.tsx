@@ -5,7 +5,7 @@ import React, {useEffect, useRef, useState}                           from "reac
 import {FaCopy, FaPlus, FaSortAmountUp, FaSync, FaTrash, FaUndo}      from "react-icons/fa";
 import {IModalConfirmRef, ModalConfirm}                               from "recwhale-react-bootstrap";
 import {Ag}                                                           from "./Ag";
-import {CellClass}                                                    from "./BuiltInExtended";
+import {CellClass}                                                    from "./built";
 import type {AgGetContextMenuItemsParams, AgMenuItemDef}              from "./context";
 import {AgContext}                                                    from "./context";
 
