@@ -1,12 +1,12 @@
-﻿import type {ICellRendererParams}                 from "ag-grid-community";
-import type {AgGridColumnProps}                   from "ag-grid-react/lib/agGridColumn";
-import type {ReactNode}                           from "react";
-import React                                      from "react";
-import {FaCheck, FaExclamation, FaMinus, FaTimes} from "react-icons/fa";
-import {Filter}                                   from "../built";
-import {AgCol}                                    from "./AgCol";
-import {BaseAgCol}                                from "./BaseAgCol";
-import {HtmlBuilder}                              from "./HtmlBuilder";
+﻿import type {ICellRendererParams}                    from "ag-grid-community";
+import type {AgGridColumnProps}                      from "ag-grid-react/lib/agGridColumn";
+import type {ReactNode}                              from "react";
+import React                                         from "react";
+import {FaCheck, FaExclamation, FaQuestion, FaTimes} from "react-icons/fa";
+import {Filter}                                      from "../built";
+import {AgCol}                                       from "./AgCol";
+import {BaseAgCol}                                   from "./BaseAgCol";
+import {HtmlBuilder}                                 from "./HtmlBuilder";
 
 interface IAgColOkProps extends AgGridColumnProps {
     errorLabel?: string;
@@ -20,7 +20,7 @@ export class AgColOk extends BaseAgCol<IAgColOkProps> {
             ["true", {text: "Ok", icon: FaCheck, class: "text-success"}],
             ["false", {text: "Error", icon: FaTimes, class: "text-danger"}],
             ["mixed", {text: "Mixed", icon: FaExclamation, class: "text-warning"}],
-            [undefined, {text: "Missing", icon: FaMinus, class: "text-secondary"}]
+            [undefined, {text: "Missing", icon: FaQuestion, class: "text-secondary"}]
         ]);
 
     render(): ReactNode {

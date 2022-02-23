@@ -7,7 +7,6 @@ import {ReactHelper}                                     from "recwhale-react-co
 import type {IAgGridReactProps}                          from "../Ag";
 import {CellClass}                                       from "../built";
 import {AgColAction}                                     from "./AgColAction";
-import {BaseAgCol}                                       from "./BaseAgCol";
 import {AgColBool}                                       from "./AgColBool";
 import {AgColDate}                                       from "./AgColDate";
 import {AgColDirection}                                  from "./AgColDirection";
@@ -16,8 +15,10 @@ import {AgColId}                                         from "./AgColId";
 import {AgColLink}                                       from "./AgColLink";
 import {AgColNumber}                                     from "./AgColNumber";
 import {AgColOk}                                         from "./AgColOk";
+import {AgColSep}                                        from "./AgColSep";
 import {AgColSmart}                                      from "./AgColSmart";
 import {AgColText}                                       from "./AgColText";
+import {BaseAgCol}                                       from "./BaseAgCol";
 
 export class AgCol {
     static Action: typeof AgColAction       = AgColAction;
@@ -30,6 +31,7 @@ export class AgCol {
     static Link: typeof AgColLink           = AgColLink;
     static Ok: typeof AgColOk               = AgColOk;
     static Number: typeof AgColNumber       = AgColNumber;
+    static Sep: typeof AgColSep             = AgColSep;
     static Smart: typeof AgColSmart         = AgColSmart;
     static Text: typeof AgColText           = AgColText;
 
