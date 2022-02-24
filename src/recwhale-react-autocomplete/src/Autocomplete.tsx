@@ -44,6 +44,10 @@ export function initMultipleItems<T, Multiple extends boolean | undefined = unde
     return value as Value<T, Multiple, undefined>;
 }
 
+export function defaultValue<T, Multiple extends boolean | undefined = undefined>(multiple?: Multiple): Value<T, Multiple, undefined> {
+    return (multiple ? [] : undefined) as Value<T, Multiple, undefined>;
+}
+
 export interface IAutocompleteProps<T,
     Multiple extends boolean | undefined,
     DisableClearable extends boolean | undefined,
@@ -86,9 +90,13 @@ export function Autocomplete<T,
             return initSelected?.(props.options);
         }
 
-        const initValue = init();
-        if (initValue)
+        let initValue = init();
+        if (initValue) {
             setSelectedValue(initValue);
+        } else if (!props.disableClearable) {
+            initValue = defaultValue<T, Multiple>(props.multiple) as Value<T, Multiple, DisableClearable>;
+            setSelectedValue(initValue);
+        }
 
         if (groupOnClickEnabled)
             setOptionsByKey(props.options.groupBy(props.groupBy!));
