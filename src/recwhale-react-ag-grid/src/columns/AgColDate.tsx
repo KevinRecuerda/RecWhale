@@ -14,18 +14,11 @@ interface IAgColDateProps extends AgGridColumnProps {
 
 export class AgColDate extends BaseAgCol<IAgColDateProps> {
 
-    static compare(filterValue: moment.Moment, cellValue: moment.Moment | string): number {
-        const a = moment(filterValue).utc(true);
-        const b = moment(cellValue).utc(true);
-        return a.diff(b, "ms");
-    }
-
     render(): ReactNode {
         const view = this.props.view ?? "date";
         return <AgCol.Default width={view === "instant" ? 150 : 90}
                               valueFormatter={(params: ValueFormatterParams) => params.value ? moment(params.value).formatView(view) : ""}
                               filter={Filter.Date}
-                              filterParams={{comparator: AgColDate.compare}}
                               {...this.props}
         />;
     }
