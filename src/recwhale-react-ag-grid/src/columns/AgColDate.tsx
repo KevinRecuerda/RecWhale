@@ -17,6 +17,7 @@ export class AgColDate extends BaseAgCol<IAgColDateProps> {
     render(): ReactNode {
         const view = this.props.view ?? "date";
         return <AgCol.Default width={view === "instant" ? 150 : 90}
+                              type="date"
                               valueFormatter={(params: ValueFormatterParams) => params.value ? moment(params.value).formatView(view) : ""}
                               filter={Filter.Date}
                               {...this.props}

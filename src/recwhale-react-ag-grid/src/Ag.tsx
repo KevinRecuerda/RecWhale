@@ -1,4 +1,4 @@
-import { LicenseManager }                                                                                from "@ag-grid-enterprise/all-modules";
+import {LicenseManager}                                                                                  from "@ag-grid-enterprise/all-modules";
 import type {ColumnApi, BaseExportParams, GridOptions, ProcessCellForExportParams, ValueFormatterParams} from "ag-grid-community";
 import type {RowNode}                                                                                    from "ag-grid-community/dist/lib/entities/rowNode";
 import type {ColumnGroupOpenedEvent, GridReadyEvent, ModelUpdatedEvent, SelectionChangedEvent}           from "ag-grid-community/dist/lib/events";
@@ -24,7 +24,6 @@ export interface IAgGridReactProps extends GridOptions {
     onSelectedRows?: (rows: RowNode[]) => void;
     useDynamicCols?: boolean;
     size?: Size;
-    showRowCount?: boolean;
     cellClassRules?: Record<string, (Function | string)>; // eslint-disable-line @typescript-eslint/ban-types
     editable?: boolean;
     useSearch?: boolean;
@@ -99,18 +98,19 @@ export const Ag: React.FC<IAgGridReactProps> = (props) => {
             return name.replace("%", "").replace("()", "");
         },
         processCellCallback:   (params: ProcessCellForExportParams) => {
-            // TODO: rework this: use excel styles
             const colDef = params.column.getColDef();
-            if (!params.node || !colDef.valueFormatter)
-                return params.value as string;
 
-            const valueFormatterParams: ValueFormatterParams = {
-                ...params,
-                data:   params.node.data, // eslint-disable-line @typescript-eslint/no-unsafe-assignment
-                node:   params.node,
-                colDef: colDef
-            };
-            return (colDef.valueFormatter as (params: ValueFormatterParams) => string)(valueFormatterParams);
+            if (params.node && colDef.type == "date") {
+                const valueFormatterParams: ValueFormatterParams = {
+                    ...params,
+                    data:   params.node.data, // eslint-disable-line @typescript-eslint/no-unsafe-assignment
+                    node:   params.node,
+                    colDef: colDef
+                };
+                return (colDef.valueFormatter as (params: ValueFormatterParams) => string)(valueFormatterParams);
+            }
+
+            return params.value as string;
         }
     };
 
@@ -121,9 +121,6 @@ export const Ag: React.FC<IAgGridReactProps> = (props) => {
         ];
     }
 
-    // should we use this?
-    // const excelStyles = [{id: "dateType", dataType: "dateTime"}];
-
     // TODO: test selection
     // function onRangeSelectionChanged(event: any) {
     //     console.log(event);
@@ -133,9 +130,12 @@ export const Ag: React.FC<IAgGridReactProps> = (props) => {
     //     console.log(api.getCellRanges());
     // }
 
-    const statusBar = props.showRowCount
-                      ? {statusPanels: [{statusPanel: StatusBarComp.Total, align: "left"}] as StatusPanelDef[]}
-                      : undefined;
+    const statusPanels: StatusPanelDef[] = [
+        {statusPanel: StatusBarComp.TotalAndFiltered, align: "left"},
+        {statusPanel: StatusBarComp.Selected, align: "center"},
+        {statusPanel: StatusBarComp.Aggregation, align: "right"}
+    ];
+    const statusBar = {statusPanels};
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access,@typescript-eslint/no-unsafe-return
     const defaultGroupSortComparator = (nodeA: RowNode, nodeB: RowNode) => nodeA.key?.localeCompare(nodeB.key);
@@ -145,16 +145,16 @@ export const Ag: React.FC<IAgGridReactProps> = (props) => {
         style.height = SizeHelper.height(props.size);
 
     let theme = "ag-theme-alpine";
-    let size = {};
+    let size  = {};
     if (props.condensed !== false) {
         theme += " ag-theme-condensed";
         size = {
-            headerHeight: 32,
-            groupHeaderHeight: 32,
-            floatingFiltersHeight: 32,
-            pivotHeaderHeight: 32,
+            headerHeight:           32,
+            groupHeaderHeight:      32,
+            floatingFiltersHeight:  32,
+            pivotHeaderHeight:      32,
             pivotGroupHeaderHeight: 32,
-            rowHeight: 24
+            rowHeight:              24
         };
     }
 

@@ -20,6 +20,7 @@ export const RecwhaleAg: React.FC = () => {
             <Row>
                 <div className="col-6 mb-3" style={{height: 300}}>
                     <Ag rowData={rows}>
+                        <AgCol.Date field="date" view="instant" headerName="Date instant"/>
                         <AgCol.Date field="date"/>
                         <AgCol.Number field="number"/>
                         <AgCol.Text field="text"/>
@@ -30,11 +31,11 @@ export const RecwhaleAg: React.FC = () => {
 
                 <div className="col-6 mb-3" style={{height: 300}}>
                     <Ag rowData={rows}>
-                        <AgCol.Default headerName="GROUP 1">
+                        <AgCol.Default headerName="HEADER GROUP 1">
                             <AgCol.Date field="date"/>
                             <AgCol.Number field="number"/>
                         </AgCol.Default>
-                        <AgCol.Default headerName="GROUP 2">
+                        <AgCol.Default headerName="HEADER GROUP 2">
                             <AgCol.Text field="text"/>
                         </AgCol.Default>
                         <AgCol.Action field="number" headerName="Action" icon={FaRocket} onClick={(node: RowNode, ag: GridApi) => console.log(node, ag)}/>
