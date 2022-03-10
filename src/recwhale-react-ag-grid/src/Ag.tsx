@@ -14,6 +14,7 @@ import type {AgGetContextMenuItemsParams, AgMenuItemDef}                        
 import {AgContext}                                                                                       from "./context";
 import "ag-grid-enterprise";
 import "./Ag.scss";
+import {AgExportHelper} from "./built/AgExportHelper";
 
 LicenseManager.setLicenseKey("your license key");
 
@@ -129,6 +130,8 @@ export const Ag: React.FC<IAgGridReactProps> = (props) => {
     //     console.log(api.getSelectedNodes());
     //     console.log(api.getCellRanges());
     // }
+    
+    const FormatTypeNumbers: number = 10;
 
     const statusPanels: StatusPanelDef[] = [
         {statusPanel: StatusBarComp.TotalAndFiltered, align: "left"},
@@ -164,7 +167,7 @@ export const Ag: React.FC<IAgGridReactProps> = (props) => {
 
             <AgGridReact {...AgCol.buildProps(props)}
                          {...size}
-
+                         excelStyles={AgExportHelper.Build(FormatTypeNumbers)}
                          suppressPropertyNamesCheck
                          onGridReady={onGridReady}
                          onModelUpdated={onModelUpdated}

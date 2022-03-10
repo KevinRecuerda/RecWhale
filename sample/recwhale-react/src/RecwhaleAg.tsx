@@ -23,6 +23,7 @@ export const RecwhaleAg: React.FC = () => {
                         <AgCol.Date field="date" view="instant" headerName="Date instant"/>
                         <AgCol.Date field="date"/>
                         <AgCol.Number field="number"/>
+                        <AgCol.Number unit="%" field="number"/>
                         <AgCol.Text field="text"/>
                         <AgCol.Action field="number" headerName="Action" icon={FaRocket} showValue width={100}
                                       onClick={(node: RowNode, ag: GridApi) => console.log(node, ag)}/>
@@ -58,6 +59,15 @@ export const RecwhaleAg: React.FC = () => {
                         <AgCol.Text field="text"/>
                         <AgCol.Action field="number" headerName="Action" icon={FaRocket} onClick={(node: RowNode, ag: GridApi) => console.log(node, ag)}/>
                     </AgCrud>
+                </div>
+
+                <div className="col-6 mb-3" style={{height: 300}}>
+                    <Ag rowData={rows}>
+                        <AgCol.Number field="number"/>
+                        <AgCol.Number unit={"%"} field="number" headerName="Percentage"/>
+                        <AgCol.Number field="number" unit={"%"} fractionDigits={4} headerName="fractionDigit"/>
+                        <AgCol.Text field="text"/>
+                    </Ag>
                 </div>
             </Row>
 

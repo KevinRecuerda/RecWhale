@@ -6,6 +6,7 @@ import {Unit}                      from "recwhale-ts";
 import {CellClass, FilterBuilder}  from "../built";
 import {AgCol}                     from "./AgCol";
 import {BaseAgCol}                 from "./BaseAgCol";
+import {AgFormatClass} from "../built/AgExportHelper";
 
 export interface IAgColNumberProps extends AgGridColumnProps {
     unit?: Unit;
@@ -21,7 +22,7 @@ export class AgColNumber extends BaseAgCol<IAgColNumberProps> {
 
     render(): ReactNode {
         return <AgCol.Default width={this.props.large ? 120 : 80}
-                              cellClass={CellClass.Right}
+                              cellClass={[CellClass.Right, this.getCellClass()]}
                               {...FilterBuilder.number(this.props.unit)}
                               valueFormatter={(params: ValueFormatterParams) => this.valueFormatter(params, this.props)}
                               {...this.props}
@@ -35,4 +36,13 @@ export class AgColNumber extends BaseAgCol<IAgColNumberProps> {
         const number = Number(params.value);
         return number.format(props.unit, props.fractionDigits);
     }
+    
+    getCellClass(): string {
+        const cellClassName: AgFormatClass = (this.props.unit === "%" ? "percentType" : "numberType");
+        
+        if (this.props.fractionDigits)
+            return `${cellClassName}${this.props.fractionDigits}`;
+        return `${cellClassName}0`;
+    }
+  
 }
