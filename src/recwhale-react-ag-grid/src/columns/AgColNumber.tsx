@@ -1,11 +1,11 @@
-import type {ValueFormatterParams}                 from "ag-grid-community/dist/lib/entities/colDef";
-import type {AgGridColumnProps}                    from "ag-grid-react/lib/agGridColumn";
-import type {ReactNode}                            from "react";
-import React                                       from "react";
-import {Unit}                                      from "recwhale-ts";
-import {CellClass, ExcelStyleType, FilterBuilder}  from "../built";
-import {AgCol}                                     from "./AgCol";
-import {BaseAgCol}                                 from "./BaseAgCol";
+import type {ValueFormatterParams}                from "ag-grid-community/dist/lib/entities/colDef";
+import type {AgGridColumnProps}                   from "ag-grid-react/lib/agGridColumn";
+import type {ReactNode}                           from "react";
+import React                                      from "react";
+import {Unit}                                     from "recwhale-ts";
+import {CellClass, ExcelStyleType, FilterBuilder} from "../built";
+import {AgCol}                                    from "./AgCol";
+import {BaseAgCol}                                from "./BaseAgCol";
 
 export interface IAgColNumberProps extends AgGridColumnProps {
     unit?: Unit;
@@ -35,13 +35,11 @@ export class AgColNumber extends BaseAgCol<IAgColNumberProps> {
         const number = Number(params.value);
         return number.format(props.unit, props.fractionDigits);
     }
-    
+
     buildCellClass(): string {
-        const cellClassName: ExcelStyleType = (this.props.unit === "%" ? "percentType" : "numberType");
-        
-        if (this.props.fractionDigits)
-            return `${cellClassName}${this.props.fractionDigits}`;
-        return `${cellClassName}0`;
+        const type: ExcelStyleType = (this.props.unit === "%" ? "percentType" : "numberType");
+
+        return `${type}${this.props.fractionDigits ?? 0}`;
     }
-  
+
 }
