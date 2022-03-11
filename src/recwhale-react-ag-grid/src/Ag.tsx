@@ -8,13 +8,12 @@ import type {StatusPanelDef}                                                    
 import {AgGridReact}                                                                                     from "ag-grid-react";
 import React, {useEffect, useState}                                                                      from "react";
 import {Size, SizeHelper}                                                                                from "recwhale-react-bootstrap";
-import {StatusBarComp}                                                                                   from "./built";
+import {ExportHelper, StatusBarComp}                                                                     from "./built";
 import {AgCol}                                                                                           from "./columns";
 import type {AgGetContextMenuItemsParams, AgMenuItemDef}                                                 from "./context";
 import {AgContext}                                                                                       from "./context";
 import "ag-grid-enterprise";
 import "./Ag.scss";
-import {AgExportHelper} from "./built/AgExportHelper";
 
 LicenseManager.setLicenseKey("your license key");
 
@@ -131,8 +130,6 @@ export const Ag: React.FC<IAgGridReactProps> = (props) => {
     //     console.log(api.getCellRanges());
     // }
     
-    const FormatTypeNumbers: number = 10;
-
     const statusPanels: StatusPanelDef[] = [
         {statusPanel: StatusBarComp.TotalAndFiltered, align: "left"},
         {statusPanel: StatusBarComp.Selected, align: "center"},
@@ -167,7 +164,7 @@ export const Ag: React.FC<IAgGridReactProps> = (props) => {
 
             <AgGridReact {...AgCol.buildProps(props)}
                          {...size}
-                         excelStyles={AgExportHelper.Build(FormatTypeNumbers)}
+                         excelStyles={ExportHelper.buildExcelStyles()}
                          suppressPropertyNamesCheck
                          onGridReady={onGridReady}
                          onModelUpdated={onModelUpdated}
