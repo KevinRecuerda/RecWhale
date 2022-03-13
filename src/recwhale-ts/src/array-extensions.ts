@@ -14,6 +14,7 @@ declare global {
     interface Array<T> {
         // manipulation
         firstOrDefault(): T | undefined;
+        lastOrDefault(): T | undefined;
         last(): T;
 
         distinct(): T[];
@@ -59,6 +60,9 @@ Array.range = function (length: number): number[] {
 //region manipulation
 Array.prototype.firstOrDefault = function <T>(this: T[]): T | undefined {
     return this.length ? this[0] : undefined;
+};
+Array.prototype.lastOrDefault = function <T>(this: T[]): T | undefined {
+    return this.length ? this.last() : undefined;
 };
 Array.prototype.last = function <T>(this: T[]): T {
     return this[this.length-1];

@@ -9,7 +9,7 @@ interface IModalActionProps extends IModalActionsProps {
 
 export const ModalAction: React.FC<IModalActionProps> = (props) => {
 
-    const okLabel  = props.labelAction ?? "Ok";
+    const okLabel  = props.labelAction ?? "ok";
     const okButton = props.onAction && <Button title={okLabel} onClick={() => props.onAction?.()}>{okLabel}</Button>;
     return <ModalActions {...props} actions={okButton}/>;
 };

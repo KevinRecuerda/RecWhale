@@ -1,9 +1,12 @@
+import {LicenseManager}    from "@ag-grid-enterprise/all-modules";
 import {GridApi, RowNode}  from "ag-grid-community";
 import React               from "react";
 import {Row}               from "react-bootstrap";
 import {FaRocket}          from "react-icons/fa";
 import {Ag, AgCol, AgCrud} from "recwhale-react-ag-grid";
 import {dataMany, Item}    from "./Model";
+
+LicenseManager.setLicenseKey("your license key");
 
 export const RecwhaleAg: React.FC = () => {
 
@@ -23,7 +26,7 @@ export const RecwhaleAg: React.FC = () => {
                         <AgCol.Date field="date" view="instant" headerName="Date instant"/>
                         <AgCol.Date field="date"/>
                         <AgCol.Number field="number" fractionDigits={3}/>
-                        <AgCol.Number unit="%" field="number" fractionDigits={2} />
+                        <AgCol.Number unit="%" field="number" fractionDigits={2}/>
                         <AgCol.Text field="text"/>
                         <AgCol.Action field="number" headerName="Action" icon={FaRocket} showValue width={100}
                                       onClick={(node: RowNode, ag: GridApi) => console.log(node, ag)}/>
@@ -60,7 +63,7 @@ export const RecwhaleAg: React.FC = () => {
                         <AgCol.Action field="number" headerName="Action" icon={FaRocket} onClick={(node: RowNode, ag: GridApi) => console.log(node, ag)}/>
                     </AgCrud>
                 </div>
-                
+
             </Row>
 
             <hr/>

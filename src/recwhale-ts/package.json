@@ -1,6 +1,6 @@
 {
   "name": "recwhale-ts",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "description": "Provides typescript extensions. Mainly, as C# Linq.",
   "repository": {
     "type": "git",

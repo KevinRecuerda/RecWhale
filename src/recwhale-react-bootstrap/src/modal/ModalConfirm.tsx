@@ -30,7 +30,7 @@ export const ModalConfirm: IModalConfirm = forwardRef((props, ref) => {
     }));
 
     return (
-        <ModalAction title={props.title} onAction={onAction} show={show} onClose={() => onClose()} labelClose="Cancel">
+        <ModalAction title={props.title} onAction={onAction} show={show} onClose={() => onClose()} labelClose="cancel">
             {props.warning && <p className="text-warning"><FaExclamation/> {props.warning}</p>}
             {props.children}
         </ModalAction>

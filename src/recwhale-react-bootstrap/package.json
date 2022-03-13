@@ -1,6 +1,6 @@
 {
   "name": "recwhale-react-bootstrap",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Provides component wrapper for react-bootstrap.",
   "repository": {
     "type": "git",

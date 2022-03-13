@@ -18,4 +18,14 @@ export class SizeHelper {
     static height = (size?: Size): number | string => {
         return SizeHelper.map.get(size ?? "responsive")![1];
     };
+
+    static fonts = new Map<Size, string>(
+        [
+            ["xs", "0.75em"],
+            ["sm", "0.875em"],
+            ["md", "1em"],
+            ["lg", "1.25em"],
+            ["xl", "1.5em"]
+        ]
+    );
 }

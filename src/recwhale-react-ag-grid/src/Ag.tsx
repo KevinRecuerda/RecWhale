@@ -1,4 +1,3 @@
-import {LicenseManager}                                                                                  from "@ag-grid-enterprise/all-modules";
 import type {ColumnApi, BaseExportParams, GridOptions, ProcessCellForExportParams, ValueFormatterParams} from "ag-grid-community";
 import type {RowNode}                                                                                    from "ag-grid-community/dist/lib/entities/rowNode";
 import type {ColumnGroupOpenedEvent, GridReadyEvent, ModelUpdatedEvent, SelectionChangedEvent}           from "ag-grid-community/dist/lib/events";
@@ -14,8 +13,6 @@ import type {AgGetContextMenuItemsParams, AgMenuItemDef}                        
 import {AgContext}                                                                                       from "./context";
 import "ag-grid-enterprise";
 import "./Ag.scss";
-
-LicenseManager.setLicenseKey("your license key");
 
 export interface IAgGridReactProps extends GridOptions {
     rowData: any[];
@@ -129,7 +126,7 @@ export const Ag: React.FC<IAgGridReactProps> = (props) => {
     //     console.log(api.getSelectedNodes());
     //     console.log(api.getCellRanges());
     // }
-    
+
     const statusPanels: StatusPanelDef[] = [
         {statusPanel: StatusBarComp.TotalAndFiltered, align: "left"},
         {statusPanel: StatusBarComp.Selected, align: "center"},

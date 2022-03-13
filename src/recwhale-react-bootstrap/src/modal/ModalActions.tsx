@@ -29,7 +29,7 @@ export const ModalActions: React.FC<IModalActionsProps> = (props) => {
             {props.children}
         </Modal.Body>
         <Modal.Footer>
-            {!props.noClose && <Button onClick={onClose} variant="secondary">{props.labelClose ?? "Close"}</Button>}
+            {!props.noClose && <Button onClick={onClose} variant="secondary">{props.labelClose ?? "close"}</Button>}
             {canExecute && props.actions}
         </Modal.Footer>
     </Modal>;

@@ -15,7 +15,9 @@ export const RecwhaleBootstrap: React.FC = () => {
         ["ButtonIcon sm", <ButtonIcon icon={FaRocket} title="ButtonIcon" run={() => {}} size="sm"/>],
         ["ButtonCopy", <ButtonCopy value="test"/>],
         ["ButtonCopy sm", <ButtonCopy value="test" size="sm"/>],
-        ["LinkIcon", <LinkIcon icon={FaRocket} to="/test"/>]
+        ["LinkIcon", <LinkIcon icon={FaRocket} to="/test" tooltip="go to test"/>],
+        ["icon", <FaRocket />],
+        ["icon sm", <FaRocket size={SizeHelper.fonts.get("sm")}/>]
     ];
 
     return (
