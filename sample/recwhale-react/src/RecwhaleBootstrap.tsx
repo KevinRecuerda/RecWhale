@@ -1,8 +1,12 @@
 import React                                                   from "react";
 import {ButtonCopy, ButtonIcon, LinkIcon, SizeHelper, TableKV} from "recwhale-react-bootstrap";
+import {useRerender}                                           from "recwhale-react-core";
 import {FaRocket}                                              from "react-icons/fa";
 
 export const RecwhaleBootstrap: React.FC = () => {
+
+    const rerender = useRerender();
+
     const rows: [string, any][]          = [
         ["name", "kevin"],
         ["age", 29],
@@ -11,14 +15,16 @@ export const RecwhaleBootstrap: React.FC = () => {
     ];
     const bootstrapRows: [string, any][] = [
         ["SizeHelper.width(sm)", SizeHelper.width("sm")],
-        ["ButtonIcon", <ButtonIcon icon={FaRocket} title="ButtonIcon" run={() => {}}/>],
+        ["ButtonIcon", <ButtonIcon icon={FaRocket} title="ButtonIcon" run={rerender}/>],
         ["ButtonIcon sm", <ButtonIcon icon={FaRocket} title="ButtonIcon" run={() => {}} size="sm"/>],
         ["ButtonCopy", <ButtonCopy value="test"/>],
         ["ButtonCopy sm", <ButtonCopy value="test" size="sm"/>],
         ["LinkIcon", <LinkIcon icon={FaRocket} to="/test" tooltip="go to test"/>],
-        ["icon", <FaRocket />],
+        ["icon", <FaRocket/>],
         ["icon sm", <FaRocket size={SizeHelper.fonts.get("sm")}/>]
     ];
+
+    console.log("--render");
 
     return (
         <>

@@ -28,6 +28,7 @@ importers:
       recwhale-react-ag-grid: workspace:^
       recwhale-react-autocomplete: workspace:^
       recwhale-react-bootstrap: workspace:^
+      recwhale-react-core: workspace:^
       recwhale-ts: workspace:^
       sass: ^1.46.0
       typescript: ^4.4.4
@@ -47,6 +48,7 @@ importers:
       recwhale-react-ag-grid: link:../../src/recwhale-react-ag-grid
       recwhale-react-autocomplete: link:../../src/recwhale-react-autocomplete
       recwhale-react-bootstrap: link:../../src/recwhale-react-bootstrap
+      recwhale-react-core: link:../../src/recwhale-react-core
       recwhale-ts: link:../../src/recwhale-ts
     devDependencies:
       '@types/node': 17.0.15
