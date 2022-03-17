@@ -2,17 +2,15 @@
 import {OverlayTrigger, Tooltip} from "react-bootstrap";
 import {OverlayInjectedProps}    from "react-bootstrap/Overlay";
 import {OverlayTriggerProps}     from "react-bootstrap/OverlayTrigger";
-import {ButtonVariant}           from "react-bootstrap/types";
 
 
-export interface ITooltipTextProps extends Omit<OverlayTriggerProps, 'overlay'> {
+export interface ITooltipTextProps extends Omit<OverlayTriggerProps, "overlay"> {
     title: string;
-    variant?: ButtonVariant;
 }
 
 export const TooltipText: React.FC<ITooltipTextProps> = (props) => {
     const renderTooltip = (propsInjected: OverlayInjectedProps) => (
-        <Tooltip id={`tooltip-${props.title}`} className={`text-${props.variant}`} {...propsInjected}>
+        <Tooltip id={`tooltip-${props.title}`} {...propsInjected}>
             {props.title}
         </Tooltip>
     );

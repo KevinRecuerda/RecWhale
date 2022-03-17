@@ -2,7 +2,9 @@
 import {ITooltipTextProps, TooltipText} from "./TooltipText";
 import { FaInfoCircle}                  from "react-icons/all";
 
-export const TooltipInfo: React.FC<ITooltipTextProps> = (props) => {
+interface ITooltipInfoProps extends Omit<ITooltipTextProps, "children"> {}
+
+export const TooltipInfo: React.FC<ITooltipInfoProps> = (props) => {
     return (
         <TooltipText {...props}>
             <FaInfoCircle />
