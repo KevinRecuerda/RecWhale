@@ -2,7 +2,6 @@ import React                                                                    
 import {ButtonCopy, ButtonIcon, LinkIcon, SizeHelper, TableKV, TooltipInfo, TooltipText} from "recwhale-react-bootstrap";
 import {useRerender}                                                                     from "recwhale-react-core";
 import {FaRocket}                                                                        from "react-icons/fa";
-import {Tooltip} from "react-bootstrap";
 
 export const RecwhaleBootstrap: React.FC = () => {
 
@@ -32,9 +31,7 @@ export const RecwhaleBootstrap: React.FC = () => {
     return (
         <>
             <blockquote className="blockquote-detail">recwhale-react-boostrap</blockquote>
-            <Tooltip id={`tool`} className={`text-danger`} >
-                test
-            </Tooltip>
+            
             <TableKV title="TableKV with smart option" rows={rows} smart/>
             <hr/>
             <TableKV title="Components" rows={bootstrapRows} smart/>
