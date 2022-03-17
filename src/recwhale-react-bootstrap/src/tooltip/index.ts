@@ -1,2 +1,2 @@
-export * from "./TooltipIcon";
+export * from "./TooltipInfo";
 export * from "./TooltipText";
