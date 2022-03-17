@@ -20,7 +20,7 @@ export const RecwhaleBootstrap: React.FC = () => {
         ["ButtonCopy", <ButtonCopy value="test"/>],
         ["ButtonCopy sm", <ButtonCopy value="test" size="sm"/>],
         ["Tooltip text", <TooltipText title={"recwhale-react-bootstrap"}><span>recwhale-react-bootstrap</span></TooltipText>],
-        ["Info Tooltip Icon", <TooltipInfo title={"recwhale-react-bootstrap"}><span>recwhale-react-bootstrap</span></TooltipInfo>],
+        ["TooltipInfo", <TooltipInfo title={"recwhale-react-bootstrap"} />],
         ["LinkIcon", <LinkIcon icon={FaRocket} to="/test" tooltip="go to test"/>],
         ["icon", <FaRocket/>],
         ["icon sm", <FaRocket size={SizeHelper.fonts.get("sm")}/>]
