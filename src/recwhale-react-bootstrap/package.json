@@ -1,6 +1,6 @@
 {
   "name": "recwhale-react-bootstrap",
-  "version": "0.5.4",
+  "version": "0.5.5",
   "description": "Provides component wrapper for react-bootstrap.",
   "repository": {
     "type": "git",
@@ -20,8 +20,9 @@
   "scripts": {
     "clean": "rm -rf dist",
     "dev": "vite",
-    "build": "rm -rf dist && vite build && tsc",
-    "preview": "vite preview"
+    "build": "pnpm clean && vite build && tsc && pnpm scss",
+    "preview": "vite preview",
+    "scss": "cp src/style.scss dist/src/"
   },
   "main": "dist/index.es.js",
   "types": "dist/src/index.d.ts",

@@ -49,6 +49,28 @@ $margins: (
   }
 }
 
+// TABLE
+table {
+  .min {
+    width: 1% !important;
+    white-space: nowrap !important;
+  }
+
+  &.table-striped-reverse tbody tr:nth-of-type(odd) { background-color: transparent; }
+  &.table-striped-reverse tbody tr:nth-of-type(even) { background-color: rgba(0,0,0,.05); }
+}
+
+.table-responsive {
+  overflow-x: unset !important;
+}
+
+// BUTTON
+button .spinner-border {
+  width: 1.2em;
+  height: 1.2em;
+  border-width: 0.15em;
+}
+
 // BLOCKQUOTE
 .blockquote-detail {
   border-left: .25em solid #DFE2E5;

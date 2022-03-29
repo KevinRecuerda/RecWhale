@@ -4,7 +4,6 @@ import {Table}      from "react-bootstrap";
 import type {Size}  from "../Size";
 import {SizeHelper} from "../Size";
 import "recwhale-ts";
-import "./TableKV.scss";
 
 export interface ITableKVProps {
     rows: [string, any][];

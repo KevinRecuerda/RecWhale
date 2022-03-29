@@ -3,7 +3,6 @@ import type {ButtonProps} from "react-bootstrap";
 import {Button, Spinner}  from "react-bootstrap";
 import {IconType}         from "react-icons/lib";
 import {SizeHelper}       from "../Size";
-import "./ButtonIcon.scss";
 
 export interface IButtonIconProps extends ButtonProps {
     run: () => Promise<void> | void;
