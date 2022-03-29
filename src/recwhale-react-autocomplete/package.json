@@ -1,6 +1,6 @@
 {
   "name": "recwhale-react-autocomplete",
-  "version": "0.5.3",
+  "version": "0.6.0",
   "description": "Provides component wrapper for autocomplete.",
   "repository": {
     "type": "git",
