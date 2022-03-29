@@ -182,11 +182,13 @@ importers:
       '@types/react': ^17.0.39
       '@types/react-dom': ^17.0.11
       '@vitejs/plugin-react': ^1.1.3
+      bootstrap: ^4.6.1
       moment: ^2.29.1
       react: ^17.0.2
       react-bootstrap: ^1.6.3
       react-dom: ^17.0.2
       react-icons: ^4.3.1
+      recwhale-react-core: workspace:^
       recwhale-ts: workspace:^
       sass: ^1.46.0
       typescript: ^4.4.4
@@ -194,9 +196,11 @@ importers:
       vite-dts: ^1.0.4
       vite-plugin-dts: ^0.9.6
     dependencies:
+      bootstrap: 4.6.1
       moment: 2.29.1
       react-bootstrap: 1.6.4_react-dom@17.0.2+react@17.0.2
       react-icons: 4.3.1_react@17.0.2
+      recwhale-react-core: link:../recwhale-react-core
       recwhale-ts: link:../recwhale-ts
     devDependencies:
       '@types/node': 17.0.15
@@ -220,11 +224,14 @@ importers:
       react: ^17.0.2
       react-dom: ^17.0.2
       react-router-dom: ^6.2.1
+      recwhale-ts: workspace:^
       sass: ^1.46.0
       typescript: ^4.4.4
       vite: ^2.7.10
       vite-dts: ^1.0.4
       vite-plugin-dts: ^0.9.6
+    dependencies:
+      recwhale-ts: link:../recwhale-ts
     devDependencies:
       '@types/node': 17.0.15
       '@types/react': 17.0.39
@@ -2044,6 +2051,13 @@ packages:
     resolution: {integrity: sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==}
     engines: {node: '>=8'}
     dev: true
+
+  /bootstrap/4.6.1:
+    resolution: {integrity: sha1-vCU4DCwUGSN06N7AfPAbJ0LSIqI=}
+    peerDependencies:
+      jquery: 1.9.1 - 3
+      popper.js: ^1.16.1
+    dev: false
 
   /brace-expansion/1.1.11:
     resolution: {integrity: sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA==}

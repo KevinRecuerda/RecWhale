@@ -1,6 +1,6 @@
 {
   "name": "recwhale-react-core",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "description": "Provides react core helpers.",
   "repository": {
     "type": "git",
@@ -30,7 +30,9 @@
     "dist",
     "!dist/tsconfig.tsbuildinfo"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "recwhale-ts": "workspace:^"
+  },
   "devDependencies": {
     "@types/node": "^17.0.15",
     "@types/react": "^17.0.39",

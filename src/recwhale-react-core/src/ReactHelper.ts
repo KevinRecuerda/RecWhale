@@ -1,5 +1,6 @@
 ﻿import type {Component, PropsWithChildren, ReactElement, ReactNode} from "react";
-import React from "react";
+import React                                                        from "react";
+import "recwhale-ts";
 
 export class ReactHelper {
 
@@ -13,6 +14,13 @@ export class ReactHelper {
         const children: ReactNode[] = [];
         React.Children.map(props.children, child => children.push(child));
         return children;
+    }
+
+    static getChildrenOfType(props: PropsWithChildren<unknown>, typeName: string): ReactElement[] {
+        return ReactHelper.getChildren(props)
+                          .filter(React.isValidElement)
+                          .cast<ReactElement>()
+                          .filter(x => (x.type as any).name === typeName);
     }
 
     static getAsset(path: string): string {

@@ -1,15 +1,64 @@
-﻿.blockquote-detail {
-  border-left: .25em solid #dfe2e5;
-  color:       #8b8e90;
+﻿@import "node_modules/bootstrap/scss/bootstrap";
+
+// COMMON
+.font-weight-semibold {font-weight: 500;}
+.muted {opacity: 0.5;}
+.no-background-color { background-color: transparent !important; }
+
+a.no-link {
+  text-decoration: none !important;
+}
+
+// MARGINS flex
+$margins: (
+  "1": .25rem,
+  "2": .5rem,
+  "3": 1rem
+);
+
+@each $i, $value in $margins {
+
+  .c-ml-#{$i} > *:not(:first-child) { margin-left: $value; }
+  .c-mr-#{$i} > *:not(:last-child) { margin-right: $value; }
+  .c-mt-#{$i} > *:not(:first-child) { margin-top: $value; }
+  .c-mb-#{$i} > *:not(:last-child) { margin-bottom: $value; }
+}
+
+// COLORS light
+@each $color, $value in $theme-colors {
+  $light:       rgba($value, 0.2);
+  $light-hover: rgba($value, 0.4);
+
+  .bg-light-#{$color} {
+    background-color: $light !important;
+  }
+
+  .badge.badge-light-#{$color} {
+    color:            $value;
+    background-color: $light;
+  }
+
+  .btn.btn-light-#{$color} {
+    font-weight:      500;
+    color:            $value;
+    background-color: $light;
+
+    &:hover {
+      background-color: $light-hover;
+    }
+  }
+}
+
+// BLOCKQUOTE
+.blockquote-detail {
+  border-left: .25em solid #DFE2E5;
+  color:       #8B8E90;
   padding:     0.5em 1em;
   margin:      1em 0;
   font-size:   inherit;
 
   p {
     margin-bottom: 0.2em;
-  }
-
-  p:last-child {
-    margin-bottom: 0;
+    &:last-child { margin-bottom: 0; }
   }
 }

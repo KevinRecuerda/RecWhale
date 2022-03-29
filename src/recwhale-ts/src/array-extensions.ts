@@ -19,7 +19,7 @@ declare global {
 
         distinct(): T[];
         empty(fallbackItems: T[]): T[];
-        except(items: T[]): T[];
+        except(...items: T[]): T[];
         sortBy<TKey>(keySelector: (element: T) => TKey, desc?: boolean): T[];
         sortByEnumOrder<TKey>(type: any, keySelector: (element: T) => TKey, desc?: boolean): T[];
 
@@ -74,7 +74,7 @@ Array.prototype.distinct = function <T>(this: T[]): T[] {
 Array.prototype.empty = function <T>(this: T[], fallbackItems: T[]): T[] {
     return this.length ? this : fallbackItems;
 };
-Array.prototype.except = function <T>(this: T[], items: T[]): T[] {
+Array.prototype.except = function <T>(this: T[], ...items: T[]): T[] {
     return this.filter(x => !items.includes(x));
 };
 Array.prototype.sortBy = function <T, TKey>(this: T[], keySelector: (element: T) => TKey, desc?: boolean): T[] {

@@ -194,7 +194,7 @@ export function Autocomplete<T,
         const itemsToSelect = options.filter(x => !selected.includes(x));
         const value         = itemsToSelect.length > 0
                               ? [...selected, ...itemsToSelect]
-                              : selected.except(options);
+                              : selected.except(...options);
         setSelectedValue(value as Value<T, Multiple, DisableClearable>);
     };
 
