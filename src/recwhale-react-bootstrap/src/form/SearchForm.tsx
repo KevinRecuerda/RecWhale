@@ -46,8 +46,11 @@ export const SearchForm: ISearchForm = (props) => {
             return;
 
         setIsLoading(true);
-        await props.search();
-        setIsLoading(false);
+        try {
+            await props.search();
+        } finally {
+            setIsLoading(false);
+        } 
     }
 
     let classes = "d-flex align-items-center c-mr-3";
