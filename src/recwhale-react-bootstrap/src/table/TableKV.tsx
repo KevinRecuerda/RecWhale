@@ -1,10 +1,13 @@
-﻿import moment       from "moment";
-import React        from "react";
-import {Table}      from "react-bootstrap";
-import type {Size}  from "../Size";
-import {SizeHelper} from "../Size";
+﻿import moment           from "moment";
+import React            from "react";
+import {Table}          from "react-bootstrap";
+import type {Size}      from "../Size";
+import {SizeHelper}     from "../Size";
 import "recwhale-ts";
 import "./TableKV.scss";
+import {TableKVRowBase} from "./rows/TableKVRowBase";
+
+export type AcceptedRows = typeof TableKVRowBase;
 
 export interface ITableKVProps {
     rows: [string, any][];
@@ -14,6 +17,7 @@ export interface ITableKVProps {
     smart?: boolean;
     bordered?: boolean;
     stripedReverse?: boolean;
+    children?: AcceptedRows[];
 }
 
 export const TableKV: React.FC<ITableKVProps> = (props) => {
@@ -50,6 +54,13 @@ export const TableKV: React.FC<ITableKVProps> = (props) => {
                         <th className="min">{key}</th>
                         {/* eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access */}
                         <td>{renderValue(key, value)}</td>
+                    </tr>
+                )}
+                {props.children?.map((child, index) =>
+                    <tr key={index}>
+                        <th className="min">{child.name}</th>
+                        {/* eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access */}
+                        <td>{child}</td>
                     </tr>
                 )}
                 </tbody>
