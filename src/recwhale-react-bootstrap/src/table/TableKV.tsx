@@ -5,9 +5,9 @@ import type {Size}      from "../Size";
 import {SizeHelper}     from "../Size";
 import "recwhale-ts";
 import "./TableKV.scss";
-import {TableKVRowBase} from "./rows/TableKVRowBase";
+import {TableKvRow } from "./rows";
 
-export type AcceptedRows = typeof TableKVRowBase;
+//export type AcceptedRows = typeof TableKVRowDate | typeof TableKVRowNumber;
 
 export interface ITableKVProps {
     rows: [string, any][];
@@ -17,7 +17,6 @@ export interface ITableKVProps {
     smart?: boolean;
     bordered?: boolean;
     stripedReverse?: boolean;
-    children?: AcceptedRows[];
 }
 
 export const TableKV: React.FC<ITableKVProps> = (props) => {
@@ -56,11 +55,11 @@ export const TableKV: React.FC<ITableKVProps> = (props) => {
                         <td>{renderValue(key, value)}</td>
                     </tr>
                 )}
-                {props.children?.map((child, index) =>
-                    <tr key={index}>
-                        <th className="min">{child.name}</th>
+                {TableKvRow.buildRows(props).map(([key, value]) =>
+                    <tr key={key}>
+                        <th className="min">{key}</th>
                         {/* eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access */}
-                        <td>{child}</td>
+                        <td>{value}</td>
                     </tr>
                 )}
                 </tbody>

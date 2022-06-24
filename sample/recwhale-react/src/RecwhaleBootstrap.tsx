@@ -1,5 +1,13 @@
 import React                                                                             from "react";
-import {ButtonCopy, ButtonIcon, LinkIcon, SizeHelper, TableKV, TooltipInfo, TooltipText} from "recwhale-react-bootstrap";
+import {
+    ButtonCopy,
+    ButtonIcon,
+    LinkIcon,
+    SizeHelper,
+    TableKV,
+    TooltipInfo,
+    TooltipText
+} from "recwhale-react-bootstrap";
 import {useRerender}                                                                     from "recwhale-react-core";
 import {FaRocket}                                                                        from "react-icons/fa";
 
@@ -35,6 +43,9 @@ export const RecwhaleBootstrap: React.FC = () => {
             <TableKV title="TableKV with smart option" rows={rows} smart/>
             <hr/>
             <TableKV title="Components" rows={bootstrapRows} smart/>
+            <hr/>
+            <TableKV title="TableKV with Children" rows={[]} smart>
+            </TableKV>
         </>
     );
 };

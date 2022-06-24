@@ -32,7 +32,9 @@
   "dependencies": {
     "moment": "^2.29.1",
     "react-bootstrap": "^1.6.3",
+    "react-hook-form": "^7.33.0",
     "react-icons": "^4.3.1",
+    "recwhale-react-core": "^0.6.0",
     "recwhale-ts": "workspace:^"
   },
   "devDependencies": {
