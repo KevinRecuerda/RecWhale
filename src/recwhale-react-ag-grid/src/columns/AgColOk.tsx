@@ -20,6 +20,7 @@ export class AgColOk extends BaseAgCol<IAgColOkProps> {
             ["true", {text: "Ok", icon: FaCheck, class: "text-success"}],
             ["false", {text: "Error", icon: FaTimes, class: "text-danger"}],
             ["mixed", {text: "Mixed", icon: FaExclamation, class: "text-warning"}],
+            ["optional", {text: "Optional", icon: FaQuestion, class: "text-success"}],
             [undefined, {text: "Missing", icon: FaQuestion, class: "text-secondary"}]
         ]);
 
