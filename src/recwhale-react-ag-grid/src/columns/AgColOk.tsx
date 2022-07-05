@@ -10,7 +10,7 @@ import {HtmlBuilder}                                 from "./HtmlBuilder";
 
 interface IAgColOkProps extends AgGridColumnProps {
     errorLabel?: string;
-    useMissing?: (params: ICellRendererParams) => boolean;
+    ignoreMissing?: (params: ICellRendererParams) => boolean;
 }
 
 export class AgColOk extends BaseAgCol<IAgColOkProps> {
@@ -28,13 +28,13 @@ export class AgColOk extends BaseAgCol<IAgColOkProps> {
         return <AgCol.Default width={50}
                               filter={Filter.Set}
                               filterParams={{cellRenderer: this.filterCellRenderer}}
-                              cellRenderer={(params: ICellRendererParams) => this.cellRenderer(params, this.props.useMissing)}
+                              cellRenderer={(params: ICellRendererParams) => this.cellRenderer(params, this.props.ignoreMissing)}
                               {...this.props}
         />;
     }
 
-    cellRenderer(params: ICellRendererParams, useMissing?: (params: ICellRendererParams) => boolean): HTMLElement | string {
-        if (params.value == "missing" && !useMissing?.(params))
+    cellRenderer(params: ICellRendererParams, ignoreMissing?: (params: ICellRendererParams) => boolean): HTMLElement | string {
+        if (params.value == "missing" && !ignoreMissing?.(params))
             return "";
 
         // eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access
