@@ -34,7 +34,7 @@ export class AgColOk extends BaseAgCol<IAgColOkProps> {
     }
 
     cellRenderer(params: ICellRendererParams, ignoreMissing?: (params: ICellRendererParams) => boolean): HTMLElement | string {
-        if (params.value == "missing" && !ignoreMissing?.(params))
+        if (params.value == "missing" && ignoreMissing?.(params))
             return "";
 
         // eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access
