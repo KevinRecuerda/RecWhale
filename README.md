@@ -22,9 +22,9 @@ npx lerna bootstrap
 npx lerna ls
 
 
-pnpm -r build --filter recwhale-ts
+pnpm -r --filter recwhale-ts build 
 
-pnpm -r dev --filter "...sample-recwhale-react"
+pnpm -r --filter "...sample-recwhale-react" dev
 
 test: urlloader:http://localhost:3000/?anotherType=another%20basic&itemIds=a
 

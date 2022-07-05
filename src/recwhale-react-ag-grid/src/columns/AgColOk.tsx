@@ -10,7 +10,7 @@ import {HtmlBuilder}                                 from "./HtmlBuilder";
 
 interface IAgColOkProps extends AgGridColumnProps {
     errorLabel?: string;
-    useMissing?: (params: ICellRendererParams) => boolean;
+    ignoreMissing?: (params: ICellRendererParams) => boolean;
 }
 
 export class AgColOk extends BaseAgCol<IAgColOkProps> {
@@ -20,24 +20,28 @@ export class AgColOk extends BaseAgCol<IAgColOkProps> {
             ["true", {text: "Ok", icon: FaCheck, class: "text-success"}],
             ["false", {text: "Error", icon: FaTimes, class: "text-danger"}],
             ["mixed", {text: "Mixed", icon: FaExclamation, class: "text-warning"}],
-            [undefined, {text: "Missing", icon: FaQuestion, class: "text-secondary"}]
+            ["missing", {text: "Missing", icon: FaQuestion, class: "text-danger"}],
+            [undefined, {}]
         ]);
 
     render(): ReactNode {
         return <AgCol.Default width={50}
                               filter={Filter.Set}
                               filterParams={{cellRenderer: this.filterCellRenderer}}
-                              cellRenderer={(params: ICellRendererParams) => this.cellRenderer(params, this.props.useMissing)}
+                              cellRenderer={(params: ICellRendererParams) => this.cellRenderer(params, this.props.ignoreMissing)}
                               {...this.props}
         />;
     }
 
-    cellRenderer(params: ICellRendererParams, useMissing?: (params: ICellRendererParams) => boolean): HTMLElement | string {
-        if (params.value == null && !useMissing?.(params))
+    cellRenderer(params: ICellRendererParams, ignoreMissing?: (params: ICellRendererParams) => boolean): HTMLElement | string {
+        if (params.value == "missing" && ignoreMissing?.(params))
             return "";
 
         // eslint-disable-next-line @typescript-eslint/no-unsafe-call,@typescript-eslint/no-unsafe-member-access
         const item = AgColOk.map.get(params.value?.toString())!;
+        if (!item.icon)
+            return "";
+
         const icon = HtmlBuilder.icon(item.icon);
         return HtmlBuilder.span(icon, item.class);
     }
