@@ -19,7 +19,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
       - uses: pnpm/action-setup@v2.0.1
         with:
-          version: 6.30.0
+          version: 7.5.0
 
       - name: Install
         run: pnpm -r install --frozen-lockfile --strict-peer-dependencies
