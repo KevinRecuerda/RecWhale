@@ -1,4 +1,4 @@
-﻿import type {GridApi}                      from "ag-grid-community";
+﻿import type {ExcelExportParams, GridApi}   from "ag-grid-community";
 import type {ProcessHeaderForExportParams} from "ag-grid-community/dist/lib/interfaces/exportParams";
 import _                                   from "lodash";
 import {IconType}                          from "react-icons/lib";
@@ -57,14 +57,15 @@ export class AgContext implements AgMenuItemDef {
         });
     }
 
-    static ExcelCustom(agApi: GridApi, fileName: string, columns: string[], name?: string): AgMenuItemDef {
+    static ExcelCustom(agApi: GridApi, fileName: string, columns: string[], name?: string, params?: ExcelExportParams): AgMenuItemDef {
         return AgContext.Item(name ?? "Excel Export (Custom)", () => {
             agApi.exportDataAsExcel(
                 {
                     columnGroups: true,
                     allColumns:   false,
                     columnKeys:   columns,
-                    fileName:     fileName
+                    fileName:     fileName,
+                    ... params
                 });
         });
     }
